@@ -1,3 +1,6 @@
 -remote_theme: "mmistakes/so-simple-theme"
 -title: Caio Mizerkowski
 -description: Curriculum vitae
+
+plugins:
+  - jekyll-remote-theme
