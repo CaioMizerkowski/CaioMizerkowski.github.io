@@ -12,5 +12,5 @@
 #   url: /tags/
 # - title: Recipes
 #   url: /recipes/
-# - title: Search
-#   url: /search/
+- title: Search
+  url: /search/
