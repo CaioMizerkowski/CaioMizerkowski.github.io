@@ -1,4 +1,4 @@
-#Curriculo
+# Curriculo
 
 ## Formação Acadêmica
 #### UFPR
