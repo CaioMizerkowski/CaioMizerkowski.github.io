@@ -17,8 +17,8 @@
 remote_theme: mmistakes/so-simple-theme
 locale: en-US
 title: "Caio Mizerkowski"
-description: ""
-baseurl: /blog # the subpath of your site, e.g. "/blog"
+description: " "
+baseurl: # the subpath of your site, e.g. "/blog"
 url: # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 logo: # path of site logo, e.g. "/images/logo.png"
 date_format: "%B %-d, %Y"
