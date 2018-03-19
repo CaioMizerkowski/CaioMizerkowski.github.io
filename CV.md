@@ -1,3 +1,5 @@
+#Curriculo
+
 ## Formação Acadêmica
 #### UFPR
 Bacharelado em Engenharia Elétrica, 5° Período Graduação no curso noturno de Engenharia Elétrica com Enfase em Sistemas Eletrônicos Embarcados da Universdade Federal do Paraná.(2016 - 2012)
