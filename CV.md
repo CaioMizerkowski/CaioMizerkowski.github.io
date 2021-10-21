@@ -15,11 +15,6 @@ Estudante de Iniciação Cientiﬁca no Grupo de Concepção de Circuitos e Sist
 ### Inglês:
 Compreende Razoavelmente, Fala Pouco, Lê Bem, Escreve Pouco.
 
-### Francês:
-Compreende Pouco, Fala Pouco, Lê Pouco, Escreve Pouco.
-
-Cursando o 2° semestre do curso Francês: Língua e Cultura no Centro de Línguas e Interculturalidade (CELIN UFPR).
-
 ## Conhecimento em Tecnologia da Informação
 ### Linguagens de programação: 
 C, Python e Matlab.
