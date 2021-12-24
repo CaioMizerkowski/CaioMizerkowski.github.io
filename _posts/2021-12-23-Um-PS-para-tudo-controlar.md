@@ -27,6 +27,7 @@ Get-ChildItem $Path  -Directory -Recurse | ForEach-Object {
 	echo $SubPath
 	$Acl = Get-Acl $SubPath
 	$Acl.AddAccessRule($AcessRule)
+	$Acl.SetOwner($Principal)
 	$acl | Set-Acl $SubPath
 }
 
@@ -35,7 +36,7 @@ Get-ChildItem $Path -Recurse | ForEach-Object {
 	echo $SubPath
 	$Acl = Get-Acl $SubPath
 	$Acl.AddAccessRule($AcessRule2)
-	)
+	$Acl.SetOwner($Principal)
 	$acl | Set-Acl $SubPath
 }
 
