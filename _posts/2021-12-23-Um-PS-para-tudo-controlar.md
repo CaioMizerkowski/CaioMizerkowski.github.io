@@ -1,3 +1,10 @@
+---
+title: Um PS para todos controlar ~~apagar~~
+date: 2021-12-23
+---
+
+Código em PS para quando precisar dar autorização para todos os arquivos e diretorios a partir de um path.
+
 ```PS
 $Path = "D:"
 $Principal = "Caio"
