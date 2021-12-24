@@ -7,7 +7,7 @@ date: 2021-12-23
 
 ```powershell
 $Path = "D:"
-$Principal = "Caio"
+$Principal = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
 $AcessRule = (New-Object System.Security.AccessControl.FileSystemAccessRule(
 			$Principal,
 			"FullControl", # [System.Security.AccessControl.FileSystemRights]
