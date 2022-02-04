@@ -1,5 +1,5 @@
 ---
-title: Um PS para todos controlar ~~apagar~~
+title: Um PS para todos controlar (beta) ~~apagar~~
 date: 2021-12-23
 ---
 
@@ -41,3 +41,5 @@ Get-ChildItem $Path -Recurse | ForEach-Object {
 }
 
 ```
+
+No final funcionou parcial, mas serviu para eu controlar todos os arquivos que eu precisava e copiar eles para o SSD antes de formatar o HD.
