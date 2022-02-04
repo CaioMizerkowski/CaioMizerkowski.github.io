@@ -42,4 +42,4 @@ Get-ChildItem $Path -Recurse | ForEach-Object {
 
 ```
 
-No final funcionou parcial, mas serviu para eu controlar todos os arquivos que eu precisava e copiar eles para o SSD antes de formatar o HD.
+No final funcionou parcialmente, mas serviu para eu controlar todos os arquivos que eu precisava e copiar eles para o SSD antes de formatar o HD.
