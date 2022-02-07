@@ -5,9 +5,9 @@ date: 2022-02-06
 
 ## Motivação
 
-Tudo começou durante um [curso da Alura de JS](https://cursos.alura.com.br/course/javascript-es6-orientacao-a-objetos-parte-1) que estava realizando e no qual aprendi que em JS existia o método [_bind_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind), que quando chamado cria uma nova função que passa a estar conectada a alguma classe especificada.
+Por meio de um [curso na Alura](https://cursos.alura.com.br/course/javascript-es6-orientacao-a-objetos-parte-1) descobri que no JS existe o método [_bind_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind), que permite conectar uma função a uma instância de uma classe. Isso sem a necessidade de criar a função como um método interno da classe.
 
-O exemplo do curso é o seguinte:
+O exemplo no curso é o seguinte:
 
 ```javascript
 class Pessoa {
@@ -25,7 +25,7 @@ exibeNome = exibeNome.bind(pessoa);
 exibeNome();
 ```
 
-E nisso, pensei comigo mesmo se conseguiria reproduzir esse comportamento em Python. Iniciei criando uma classe com dois atributos e com o método get_nome, necessário para se fazer algumas comparações com a função que uniria através do binding a instância da classe.
+Em vista disso, me desafiei a conseguir o mesmo resultado através do Python. Precisava para tal criar uma classe com dois atributos e um método para ser comparado a função que será integrada a posteriore na instância.
 
 
 ```python
@@ -38,8 +38,7 @@ class Foo:
         return self._nome
 ```
 
-Como da para observar, um método em Python possui uma classe diferente das funções. Mas eu me preocupei somente em reproduzir o mesmo comportamento.
-
+Enquanto o objetivo principal é reproduzir o mesmo comportamento de um método, é importante notar que métodos e funções possuem tipos diferentes dentro do Python.
 
 ```python
 foo = Foo('Caio', 25)
@@ -56,7 +55,7 @@ print(foo.get_nome)
     <bound method Foo.get_nome of <__main__.Foo object at 0x00000218FC8EE280>>
     
 
-Após um bocado de experimentações, cheguei a uma solução a partir da criação de uma [closure](https://www.geeksforgeeks.org/python-closures). No código, a função inner da closure é salva em foo.get_idade, recebendo como parâmetro no momento de sua criação a própria instância foo. Esse parâmetro passado no momento da criação é lembrado pela função e permite a chamada dos atributos da instância em seu interior.
+Tendo estes pormenores em mente, comecei a fazer algumas experimentações com [closure](https://www.geeksforgeeks.org/python-closures). Chegando a esse código, no qual a função inner da closure é salva para foo.get_idade, recebendo como parâmetro em sua criação a instância foo. Esse parâmetro é lembrado pela função e permite a chamada dos atributos da instância em seu interior.
 
 
 ```python
@@ -76,10 +75,10 @@ print(foo.get_idade)
     <function get_idade.<locals>.inner at 0x00000218FC8DF8B0>
     
 
-## Stackoverflow 
-Após conseguir chegar a uma solução minha, procurei na internet mais informações sobre, chegando a essa questão no [stack overflow](https://stackoverflow.com/questions/972/adding-a-method-to-an-existing-object-instance). Isso me permitiu ver algumas soluções variadas e entender melhor essa questão de _binding_ uma função em uma classe em Python.
+## Stackoverflow
+Após chegar a uma das soluções para o problema, procurei para ver se encontrava maiores discussões sobre isso e formas mais canonicas de realizar o mesmo processo. A principal página que consultei, foi essa [questão no stack overflow](https://stackoverflow.com/questions/972/adding-a-method-to-an-existing-object-instance). As diversas respostas me permitiram ver soluções variadas para o problema e entender um pouco melhor o que acontecia.
 
-Dentre as diversas soluções presentes, duas se destacam por fazer com que a função seja vista como um método da instância foo e não somente uma função salva em um atributo da instância. 
+Duas soluções se destacam entre as apresentadas, por funcionarem não somente conectando a função a classe, como alterando seu tipo para _bound method_ e, pelo menos numa primeira analise, tornando-as tais quais os métodos nativos da classe. Como a chamada direta dos _dunder methods_ não é aconselhada, o uso da biblioteca _types_ me parece a solução mais aconselhada para o problema.
 
 
 ```python
@@ -111,7 +110,7 @@ print(foo.get_idade)
     <bound method get_idade of <__main__.Foo object at 0x00000218FC8EE280>>
     
 
-Outra forma que eu achei divertida por usar um lambda fuction. 
+Outras formas de se conseguir o mesmo efeito também estão presentes, como o uso da _lambda function_ que nesse contexto não deixa de se comportar como uma closure de algum modo.
 
 
 ```python
@@ -129,7 +128,7 @@ print(foo.get_idade)
     <function <lambda> at 0x00000218FC901310>
     
 
-Uma forma um tanto mais sofisticada de realizar o mesmo que eu fiz, considerando os argumentos que a função possa ter e que me gerou o estalo para transformar esse processo em um decorador.
+Uma forma mais sofisticada de usar funções aninhadas também está presente, o que me gerou o estalo para produzir o _decorador_ que vou apresentar. Esse método permite com que diversos parâmetros sejam passados a função por se preocupar com os args e kwargs.
 
 
 ```python
@@ -149,7 +148,7 @@ print(foo.get_idade)
     <function bind.<locals>.binding_scope_fn at 0x00000218FC9015E0>
     
 
-Criação de uma partial function, algo que já usei algumas vezes no Matlab de formas não tão agradáveis ao olhar, mas que nunca tinha visto sendo usadas em Python.
+Descobri também nas respostas a possibilidade de se usar uma _partial function_, algo que nunca usei em Python mas já possui a necessidade de usar enquanto fazia meus projetos de IC no Matlab.
 
 
 ```python
@@ -163,11 +162,9 @@ print(foo.get_idade)
     25
     <class 'functools.partial'>
     functools.partial(<function get_idade at 0x00000218FC901280>, <__main__.Foo object at 0x00000218FC8EE280>)
-    
 
 ## Transformando num decorador
-Bem, uma coisa é realizar esse processo para uma função especifica, outra é deixar isso de forma genérica para várias funções. Então resolvi transformar esse processo em um [decorador](https://towardsdatascience.com/how-to-use-decorators-in-python-by-example-b398328163b).
-
+Inspirado nas diversas respostas, resolvi montar um [decorador](https://towardsdatascience.com/how-to-use-decorators-in-python-by-example-b398328163b) para estes casos. Permitindo então aplicar o mesmo a qualquer função e a integrar em uma instância já em funcionamento.
 
 ```python
 def bind(self):
@@ -191,8 +188,7 @@ print(foo.get_idade)
     <class 'function'>
     <function bind.<locals>.inner_bind.<locals>.inner at 0x00000218FC9010D0>
     
-
-Com um pouco mais de esforço e usando a biblioteca types, deu até para transformar em um bound method da instância foo.
+Como se pode ver, embora se comporte como esperado, ainda não é visto pelo Python como um _bound method_ da instância. Vamos arrumar isso usando a biblioteca _types_, conseguindo assim o efeito e o tipo pretendido para o agora método.
 
 
 ```python
@@ -206,7 +202,7 @@ def bind(self):
 
 ```
 
-Adicionando outro atributo ao objeto foo, testei e funcionou.
+E vamos testar o mesmo com outra variável, para vermos seu funcionamento no modo esperado.
 
 
 ```python
@@ -229,7 +225,7 @@ print(foo.get_universidade)
 
 ## Monkey Patching
 
-Tudo isso é bem similar a algo conhecimento como [monkey patching](https://medium.com/analytics-vidhya/monkey-patching-in-python-dc3b3f52906c). A principal diferença é que no monkey patching se altera a própria classe, enquanto que nesse processo está sendo alterado a instância. Portando, caso se crie uma nova instância da classe estes métodos adicionados não estarão presentes. O erro a seguir mostra bem isso.
+Esse processo é bem similar ao [monkey patching](https://medium.com/analytics-vidhya/monkey-patching-in-python-dc3b3f52906c). A principal diferença é que no monkey patching se altera a própria classe, enquanto que nesse processo está sendo alterado a instância. Portando, caso se crie uma nova instância da classe estes métodos adicionados não estarão presentes. O erro a seguir mostra bem isso.
 
 
 ```python
