@@ -55,7 +55,7 @@ print(foo.get_nome)
     <bound method Foo.get_nome of <__main__.Foo object at 0x00000218FC8EE280>>
     
 
-Tendo estes pormenores em mente, comecei a fazer algumas experimentações com [closure](https://www.geeksforgeeks.org/python-closures). Chegando a esse código, no qual a função inner da closure é salva para foo.get_idade, recebendo como parâmetro em sua criação a instância foo. Esse parâmetro é lembrado pela função e permite a chamada dos atributos da instância em seu interior.
+Tendo estes pormenores em mente, comecei a fazer algumas experimentações com [closures](https://www.geeksforgeeks.org/python-closures). Chegando a esse código, no qual a função inner da closure é salva para foo.get_idade, recebendo como parâmetro em sua criação a instância foo. Esse parâmetro é lembrado pela função e permite a chamada dos atributos da instância em seu interior.
 
 
 ```python
