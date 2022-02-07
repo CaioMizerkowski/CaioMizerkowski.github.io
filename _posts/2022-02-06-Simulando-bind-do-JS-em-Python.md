@@ -111,7 +111,7 @@ print(foo.get_idade)
     <bound method get_idade of <__main__.Foo object at 0x00000218FC8EE280>>
     
 
-Outra forma, eu achei divertida por usar um lambda fuction. 
+Outra forma que eu achei divertida por usar um lambda fuction. 
 
 
 ```python
@@ -166,7 +166,7 @@ print(foo.get_idade)
     
 
 ## Transformando num decorador
-Bem, uma coisa é transformar uma função. Mas pensei com meus miolos enquanto olhava o stackoverflow e resolvi transformar isso em um [decorador](https://towardsdatascience.com/how-to-use-decorators-in-python-by-example-b398328163b).
+Bem, uma coisa é realizar esse processo para uma função especifica, outra é deixar isso de forma genérica para várias funções. Então resolvi transformar esse processo em um [decorador](https://towardsdatascience.com/how-to-use-decorators-in-python-by-example-b398328163b).
 
 
 ```python
@@ -192,7 +192,7 @@ print(foo.get_idade)
     <function bind.<locals>.inner_bind.<locals>.inner at 0x00000218FC9010D0>
     
 
-Com um pouco mais de esforço e usando a biblioteca types, da até para transformar isso em um 'bound method'.
+Com um pouco mais de esforço e usando a biblioteca types, deu até para transformar em um bound method da instância foo.
 
 
 ```python
@@ -229,7 +229,7 @@ print(foo.get_universidade)
 
 ## Monkey Patching
 
-Tudo isso é bem similar a algo conhecimento como [monkey patching](https://medium.com/analytics-vidhya/monkey-patching-in-python-dc3b3f52906c). A principal diferença é que no Monkey Patching se altera a própria classe, enquanto que nesse processo está sendo alterado a instância. Portando, caso se crie uma nova instância da classe, estes métodos adicionados não estarão presentes.
+Tudo isso é bem similar a algo conhecimento como [monkey patching](https://medium.com/analytics-vidhya/monkey-patching-in-python-dc3b3f52906c). A principal diferença é que no monkey patching se altera a própria classe, enquanto que nesse processo está sendo alterado a instância. Portando, caso se crie uma nova instância da classe estes métodos adicionados não estarão presentes. O erro a seguir mostra bem isso.
 
 
 ```python
