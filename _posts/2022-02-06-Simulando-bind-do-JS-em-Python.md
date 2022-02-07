@@ -25,7 +25,7 @@ exibeNome = exibeNome.bind(pessoa);
 exibeNome();
 ```
 
-E nisso, pensei comigo mesmo se conseguiria reproduzir esse comportamento em Python. Parti criar uma classe com dois atributos e uma função get_nome para comparar com a que criaria e faria o "bind" na instância.
+E nisso, pensei comigo mesmo se conseguiria reproduzir esse comportamento em Python. Iniciei criando uma classe com dois atributos e com o método get_nome, necessário para se fazer algumas comparações com a função que uniria através do binding a instância da classe.
 
 
 ```python
