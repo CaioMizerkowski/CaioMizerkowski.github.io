@@ -56,7 +56,7 @@ print(foo.get_nome)
     <bound method Foo.get_nome of <__main__.Foo object at 0x00000218FC8EE280>>
     
 
-Após um bocado de experimentações, cheguei a uma solução a partir da criação de uma [closure](https://www.geeksforgeeks.org/python-closures). No código, a função inner da closure é salva em foo.get_idade, recebendo como parametro no momento de sua criação a própria instância foo. Esse parametro passado no momento da criação é lembrado pela função e permite a chamada dos atributos da instância em seu interior.
+Após um bocado de experimentações, cheguei a uma solução a partir da criação de uma [closure](https://www.geeksforgeeks.org/python-closures). No código, a função inner da closure é salva em foo.get_idade, recebendo como parâmetro no momento de sua criação a própria instância foo. Esse parâmetro passado no momento da criação é lembrado pela função e permite a chamada dos atributos da instância em seu interior.
 
 
 ```python
@@ -149,7 +149,7 @@ print(foo.get_idade)
     <function bind.<locals>.binding_scope_fn at 0x00000218FC9015E0>
     
 
-Criação de uma partial function, algo que já usei algumas vezes no Matlab de formas não tão agravavéis ao olhar, mas que nunca tinha visto sendo usadas em Python.
+Criação de uma partial function, algo que já usei algumas vezes no Matlab de formas não tão agradáveis ao olhar, mas que nunca tinha visto sendo usadas em Python.
 
 
 ```python
