@@ -76,9 +76,9 @@ print(foo.get_idade)
     
 
 ## Stackoverflow
-Após chegar a uma das soluções para o problema, procurei para ver se encontrava maiores discussões sobre isso e formas mais canonicas de realizar o mesmo processo. A principal página que consultei, foi essa [questão no stack overflow](https://stackoverflow.com/questions/972/adding-a-method-to-an-existing-object-instance). As diversas respostas me permitiram ver soluções variadas para o problema e entender um pouco melhor o que acontecia.
+Após chegar a uma das soluções para o problema, procurei para ver se encontrava maiores discussões sobre isso e formas mais canonicas de realizar o mesmo processo. A principal página que consultei foi esta [questão no stack overflow](https://stackoverflow.com/questions/972/adding-a-method-to-an-existing-object-instance). As diversas respostas me permitiram ver soluções variadas para o problema e entender um pouco melhor o que acontecia.
 
-Duas soluções se destacam entre as apresentadas, por funcionarem não somente conectando a função a classe, como alterando seu tipo para _bound method_ e, pelo menos numa primeira analise, tornando-as tais quais os métodos nativos da classe. Como a chamada direta dos _dunder methods_ não é aconselhada, o uso da biblioteca _types_ me parece a solução mais aconselhada para o problema.
+Duas soluções se destacam entre as apresentadas, por funcionarem não somente conectando a função a classe como também alterando o seu tipo para _bound method_ e, pelo menos numa primeira analise, tornando-as tais quais os métodos nativos da classe. Como a chamada direta dos _dunder methods_ não é aconselhada, o uso da biblioteca _types_ me parece a solução mais aconselhada para o problema.
 
 
 ```python
@@ -110,7 +110,7 @@ print(foo.get_idade)
     <bound method get_idade of <__main__.Foo object at 0x00000218FC8EE280>>
     
 
-Outras formas de se conseguir o mesmo efeito também estão presentes, como o uso da _lambda function_ que nesse contexto não deixa de se comportar como uma closure de algum modo.
+Outras formas de se conseguir o mesmo efeito também estão presentes, como o uso da _lambda function_ que nesse contexto não deixa de se comportar como uma closure.
 
 
 ```python
@@ -128,7 +128,7 @@ print(foo.get_idade)
     <function <lambda> at 0x00000218FC901310>
     
 
-Uma forma mais sofisticada de usar funções aninhadas também está presente, o que me gerou o estalo para produzir o _decorador_ que vou apresentar. Esse método permite com que diversos parâmetros sejam passados a função por se preocupar com os args e kwargs.
+Uma forma mais sofisticada de usar funções aninhadas também está presente, o que me gerou o estalo para produzir o _decorador_ que vou apresentar. Esse método permite com que diversos parâmetros sejam passados a função por esta se preocupar em trata-los.
 
 
 ```python
