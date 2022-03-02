@@ -37,7 +37,7 @@ Uma alteração nos algoritmos genéticos clássicos, a evolução diferencial s
 
 Diferentes estratégias de mutação existem, mas a mais comum é a utilizada neste trabalho foi a DE/rand/1/bin, no qual o operador de mutação é:
 
-\\[ V_{i} = X_{r^{i}_{1}} + mr*(X_{r^{i}_{2}}-X_{r^{i}_{3}}) \\]
+\[ V_{i} = X_{r^{i}_{1}} + mr*(X_{r^{i}_{2}}-X_{r^{i}_{3}}) \]
 
 Sendo o fator diferencial, que da o nome ao algoritmo, a diferença $$X_{r^{i}_{2}}-X_{r^{i}_{3}}$$, pois quanto maior a proximidade de ambos, menor o seu efeito será e a busca se tornará mais regional, ao invés de ser global.
 
@@ -54,7 +54,7 @@ O ajuste dos _mr_ se dá por meio de uma distribuição normal cujo centro é de
  
 Outra modificação da JADE é o operador de mutação utilizado, conhecido como DE/current-to-pbest/1:
  
-\\[ V_{i} = X_{i} + mr_{i}*(X^{P}_{best}-X_{i}) + mr*(X_{r^{i}_{1}}-X_{r^{i}_{2}}) \\]
+\[ V_{i} = X_{i} + mr_{i}*(X^{P}_{best}-X_{i}) + mr*(X_{r^{i}_{1}}-X_{r^{i}_{2}}) \]
  
 No qual $$X^{P}_{best}$$ é um dos p% melhores indivíduos da população, evitando que o algoritmo seja muito guloso na sua busca por mínimos locais.
  
