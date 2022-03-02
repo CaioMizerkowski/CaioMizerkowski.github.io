@@ -7,7 +7,7 @@ date: 2022-03-02
 
 Na disciplina de Inteligência Artificial e Aprendizagem de Máquina ministrada pelo professor Leandro Coelho no curso de Engenharia Elétrica da UFPR, foi requisitada a comparação entre o funcionamento do algoritmo genético e a evolução diferencial. Aproveitando o incentivo da disciplina também comparei estes dois algoritmos, implementados por mim, com a [evolução diferencial](https://link.springer.com/article/10.1023/A:1008202821328) presente no [scipy](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.differential_evolution.html) e com uma implementação da [jade](https://ieeexplore.ieee.org/document/5208221).
 
-Todos os códigos produzidos por mim podem ser encontrados em [AIML](https://github.com/CaioMizerkowski/AIML), construídos em Python e utilizando principalmente a biblioteca [numpy](https://numpy.org/) e com o uso do [pandas](https://pandas.pydata.org/) para o describe final dos dados. O material aqui expresso é em grande parte derivado do aprendizado realizado na disciplina, sendo qualquer equívoco expresso aqui de responsabilidade totalmente minha.
+Todos os códigos produzidos por mim podem ser encontrados em [AIML](https://github.com/CaioMizerkowski/AIML), construídos em Python e utilizando principalmente a biblioteca [numpy](https://numpy.org/) e com o uso do [pandas](https://pandas.pydata.org/) para o describe final dos dados. O material aqui expresso são anotações minhas da disciplina, sendo qualquer equívoco presente de minha total responsabilidade. Maiores detalhes podem ser encontrados nos links disponibilizados com os artigos para os algoritmos.
 
 ## Algoritmo Genético com números com ponto flutuantes
 
@@ -39,7 +39,7 @@ Diferentes estratégias de mutação existem, mas a mais comum é a utilizada ne
 
 $$ V_{i} = X_{r^{i}_{1}} + mr*(X_{r^{i}_{2}}-X_{r^{i}_{3}}) $$
 
-Sendo o fator diferencial, que da o nome ao algoritmo, a diferença $$X_{r^{i}_{2}}-X_{r^{i}_{3}}$$, pois quanto maior a proximidade de ambos, menor o seu efeito será e a busca se tornará mais regional, ao invés de ser global.
+Sendo o fator diferencial, que da o nome ao algoritmo, a diferença $$X_{r^{i}_{2}}-X_{r^{i}_{3}}$$, ambos individuos escolhidos de maneira aleatória, pois quanto maior a proximidade de ambos, menor o seu efeito será e a busca se tornará mais regional, ao invés de ser global.
 
 Outro parâmetro do algoritmo é o _cr_, que determina qual a probabilidade de recombinação entre os genes de *X* e de *V*. No caso clássico da Evolução Diferencial estes valores são ajustados a mão, enquanto que técnicas mais avançadas como a JADE permitem que estes parâmetros sejam ajustados durante a execução.
 
@@ -50,13 +50,13 @@ Como diferentes valores de _mr_ e _cr_ podem gerar resultados bastante discrepan
  
 Uma variante popular e poderosa é a JADE, no qual a cada iteração _mr_ e _cr_ individuais são ajustados conforme os que tiveram os melhores resultados na iteração anterior.
  
-O ajuste dos _mr_ se dá por meio de uma distribuição normal cujo centro é definido pelos _mr_ de sucesso na etapa anterior. O análogo ocorreu para o _cr_, mas utilizando-se uma distribuição de Cauchy.
+O ajuste dos _mr_ se dá por meio de uma distribuição normal cujo centro é definido pelos _mr_ de sucesso na etapa anterior. O análogo ocorre para os _cr_, mas utilizando-se uma distribuição de Cauchy cujo centro é calculado através dos _cr_ de sucesso da iteração anterior.
  
 Outra modificação da JADE é o operador de mutação utilizado, conhecido como DE/current-to-pbest/1:
  
 $$ V_{i} = X_{i} + mr_{i}*(X^{P}_{best}-X_{i}) + mr*(X_{r^{i}_{1}}-X_{r^{i}_{2}}) $$
  
-No qual $$X^{P}_{best}$$ é um dos p% melhores indivíduos da população, evitando que o algoritmo seja muito guloso na sua busca por mínimos locais.
+No qual $$X^{P}_{best}$$ é um dos p% melhores indivíduos da população, escolhido aleatoriamente, evitando que o algoritmo seja muito guloso na sua busca por mínimos locais. O uso de Arquivo se encontra na seleção dos valores $$X_{r^{i}_{2}}$$, cujo pool de escolhas inclui também uma lista de individuos rejeitados nas gerações anteriores.
  
 ## Resultados
  
