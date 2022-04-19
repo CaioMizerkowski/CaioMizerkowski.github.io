@@ -6,7 +6,7 @@ date: 2021-12-23
 ##### Código em PS para quando precisar dar autorização para todos os arquivos e diretorios a partir de um path.
 
 ```powershell
-$Path = "D:\"
+$Path = "\\?\D:\" #Aceita path maiores que 260 caracteres
 $Principal = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
 $Account = New-Object -TypeName System.Security.Principal.NTAccount -ArgumentList $Principal;
 
