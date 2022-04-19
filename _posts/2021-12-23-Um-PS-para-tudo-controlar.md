@@ -43,3 +43,5 @@ Get-ChildItem $Path -Recurse | ForEach-Object {
 ```
 
 No final funcionou parcialmente, mas serviu para eu controlar todos os arquivos que eu precisava e copiar eles para o SSD antes de formatar o HD.
+
+Atualizado 18/04/2022 - Adicionada a capacidade de lidar com arquivos ocultos que estavam faltando e corrigidos alguns problemas. Ainda não está 100%, mas quase lá.
