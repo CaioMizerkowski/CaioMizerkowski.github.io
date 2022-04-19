@@ -6,8 +6,10 @@ date: 2021-12-23
 ##### Código em PS para quando precisar dar autorização para todos os arquivos e diretorios a partir de um path.
 
 ```powershell
-$Path = "D:"
+$Path = "D:\"
 $Principal = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
+$Account = New-Object -TypeName System.Security.Principal.NTAccount -ArgumentList $Principal;
+
 $AcessRule = (New-Object System.Security.AccessControl.FileSystemAccessRule(
 			$Principal,
 			"FullControl", # [System.Security.AccessControl.FileSystemRights]
@@ -22,24 +24,25 @@ $AcessRule2 = (New-Object System.Security.AccessControl.FileSystemAccessRule(
 			"None",      # [System.Security.AccessControl.PropagationFlags]
 			"Allow"      # [System.Security.AccessControl.AccessControlType]
 		))
-Get-ChildItem $Path  -Directory -Recurse | ForEach-Object {
+
+Get-ChildItem $Path  -Directory -Recurse -Hidden | ForEach-Object {
 	$SubPath = $_.FullName
 	echo $SubPath
 	$Acl = Get-Acl $SubPath
 	$Acl.AddAccessRule($AcessRule)
-	$Acl.SetOwner($Principal)
+	$Acl.AddAccessRule($AcessRule2)
+	$Acl.SetOwner($Account)
 	$acl | Set-Acl $SubPath
 }
 
-Get-ChildItem $Path -Recurse | ForEach-Object {
+Get-ChildItem $Path -Recurse -Hidden | ForEach-Object {
 	$SubPath = $_.FullName
 	echo $SubPath
 	$Acl = Get-Acl $SubPath
 	$Acl.AddAccessRule($AcessRule2)
-	$Acl.SetOwner($Principal)
+	$Acl.SetOwner($Account)
 	$acl | Set-Acl $SubPath
 }
-
 ```
 
 No final funcionou parcialmente, mas serviu para eu controlar todos os arquivos que eu precisava e copiar eles para o SSD antes de formatar o HD.
