@@ -1,5 +1,8 @@
 ---
 title: Curriculo
+layout: 
+permalink: /cv/
+sitemap: false
 ---
 
 ## Formação Acadêmica
