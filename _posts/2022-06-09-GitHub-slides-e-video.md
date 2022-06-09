@@ -1,7 +1,0 @@
----
-title: "GitHub: Apresentação feita para a faculdade"
-date: 2022-06-09
----
-
-[Vídeo](https://www.youtube.com/watch?v=udlL3eGLakk)
-[Slides](https://mizerkowski.com.br/pdf/GitHub.pdf)
