@@ -7,7 +7,7 @@
     <title>Whats sem add</title><br>
     <form>
       <label for="num">Número:</label><br>
-      <input type="text" oninput="myFunction(this.value)">
+      <input type="text" oninput="myFunction(this.value)" onclick="myClick(this.value)">
     <form>
     <p><a href="https://web.whatsapp.com/" id="demo">Whatsapp</a></p>
   </head>
@@ -15,6 +15,9 @@
   <script>
 function myFunction(val) {
   document.getElementById("demo").setAttribute("href",'https://api.whatsapp.com/send?phone='+val); 
+}
+function myClick(val){
+  location.replace('https://api.whatsapp.com/send?phone='+val)
 }
   </script>
   </body>
