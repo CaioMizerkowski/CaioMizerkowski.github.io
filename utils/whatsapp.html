@@ -7,18 +7,31 @@
     <title>Whats sem add</title><br>
     <form>
       <label for="num">Número:</label><br>
-      <input type="text" oninput="myFunction(this.value)" onclick="myClick(this.value)">
+      <input type="text" oninput="myFunction(this.value)" id="num">
+      <button id="button" onclick="myClick(this.value)">GO</button>
     <form>
     <p><a href="https://web.whatsapp.com/" id="demo">Whatsapp</a></p>
   </head>
   <body>
-  <script>
+<script>
+var num = document.getElementById("num");
+var button = document.getElementById("button");
+var link = document.getElementById("demo")    
+
 function myFunction(val) {
-  document.getElementById("demo").setAttribute("href",'https://api.whatsapp.com/send?phone='+val); 
+  link.setAttribute("href",'https://api.whatsapp.com/send?phone='+val);
+  link.innerHTML = 'https://api.whatsapp.com/send?phone='+val; 
 }
+
 function myClick(val){
-  location.replace('https://api.whatsapp.com/send?phone='+val)
+  location.replace(link.innerHTML)
 }
-  </script>
+
+num.addEventListener("keyup", function (event) {
+  if (event.keyCode == 13) {
+      button.click();
+  }
+}
+</script>
   </body>
 </html>
