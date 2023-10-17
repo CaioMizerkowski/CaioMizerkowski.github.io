@@ -5,17 +5,17 @@ date: 2023-10-16
 
 ## A little night youtube video
 
-É engraçado como as vezes conhecemos conceitos ao acaso, por exemplo, vendo uma discussão na rede caótica ao lado. Nestes acasos da vida, descobri sobre a linguagem Linda (nome cuja origem está ligado a alguns assuntos complicados) e sobre o conceito de espaço de tuplas. Tudo começou ao ver um vídeo criticando o uso de uma analogia bastante comum: dizer que o corpo humano, e em especial a bioquímica do corpo humano, funciona de maneira similar a uma máquina.
+É engraçado como as vezes conhecemos conceitos ao acaso, por exemplo: vendo uma discussão na rede caótica ao lado. Nestes acasos da vida, descobri sobre a linguagem Linda (nome cuja origem está ligado a alguns assuntos complicados) e sobre o conceito de espaço de tuplas. Tudo começou enquanto eu via um [vídeo](https://www.youtube.com/watch?v=jPhvic-eqbc) criticando o uso de uma analogia bastante comum: dizer que o corpo humano, e em especial a bioquímica do corpo humano, funciona de maneira similar a uma máquina.
 
-Posso trazer uma reflexão sobre isso ser ou não um obstáculo epistemológico ao entendimento do funcionamento da bioquímica humana, sobre ser uma analogia válida e falar que as analogias e modelos, embora incompletos, possam ajudar a entender coisas mais complexas, mas a verdade é que não entendo nada de bioquímica. O que eu sei é que em um comentário, falavam sobre a linguagem Linda e sobre esse paradigma (será que dá para se chamar assim?) de programação baseado em espaços de tuplas.
+Posso trazer uma reflexão sobre isso ser ou não um obstáculo epistemológico ao entendimento do funcionamento da bioquímica humana, sobre ser uma analogia válida e até mesmo falar que as analogias e modelos, embora incompletos, podem ajudar a entender coisas mais complexas, mas a verdade é que não entendo nada de bioquímica. O que eu sei é que em um comentário falou-se sobre a linguagem Linda e sobre esse paradigma (será que dá para se chamar assim?) de programação baseado em espaços de tuplas.
 
-A ideia básica (se não entendi tudo errado), é que existe um único espaço de memória compartilhado nesse modelo e que diferentes programas se comunicam por meio desse espaço. Para isso eles podem adicionar uma tupla ou retirar uma tupla deste espaço, deste que essa tupla se adeque ao padrão de entrada do programa.
+A ideia (se não entendi tudo errado) é que existe um único espaço de memória compartilhado nesse modelo e que diferentes programas se comunicam por meio desse espaço. Para isso eles podem adicionar uma tupla ou retirar uma tupla deste espaço, deste que essa tupla se adeque ao padrão de entrada do programa.
 
-Então vamos dizer que um programa só aceite como entrada tuplas no formato `(int, int)`, e retorne uma tupla no formato `(int)` para o espaço de tuplas, com o resultado da soma. Caso uma tupla nesse formato não exista no espaço de tuplas, o programa não poderá executar, mas caso a tupla seja adicionada por outro programa ao espaço de tuplas, o programa poderá executar e retornar o resultado da soma.
+Então vamos dizer que um programa só aceite como entrada tuplas no formato `(int, int)`, e retorne uma tupla no formato `(int)` para o espaço de tuplas, com o resultado da soma. Caso uma tupla nesse formato não exista no espaço de tuplas: o programa não retornará nada. Mas caso a tupla seja adicionada por outro programa ao espaço de tuplas: o programa vai executar e retornar o resultado da soma.
 
 Eu acho essa ideia interessante por ser caótica e não-determinística, o que talvez seja uma analogia mais próxima a bioquímica, já que uma proteína pode agir em diferentes moléculas (segundo o que o vídeo explicava, não conheço nada de bioquímica) e diferentes proteínas podem agir na mesma molécula. Embora totalmente ignorante na bioquímica e com pouco conhecimento sobre o espaço de tuplas, resolvi testar essa ideia em Python.
 
-Claro, é uma forma muito simples, boba até, pois no momento falta qualquer paralelismo, o espaço de tuplas é uma lista e os programas são simples classes. Mas considerando estas limitações, foi algo que eu me diverti fazendo e acho que isso é o principal. Então vou omitir alguns detalhes da implementação, para tornar a escrita desse texto mais fácil e apresentar as ideias.
+Claro, de uma forma muito simples, boba até, pois no momento falta qualquer paralelismo, o espaço de tuplas é uma lista e os programas são simples classes. Mas considerando estas limitações, foi algo que eu me diverti fazendo e acho que isso é o principal. Então vou omitir alguns detalhes da implementação, para tornar a escrita desse texto mais fácil e apresentar as ideias.
 
 ## O espaço de tuplas
 
@@ -50,7 +50,7 @@ class TupleSpace:
         return template._fields == item._fields
 ```
 
-A primeira coisa a se notar, é o meu uso insistente da classe *NamedTuple*, algo que é culpa do Luciano Ramalho e seu espetacular livro [Python Fluente](https://pythonfluente.com/). Essa estrutura permite que se criem tuplas em que cada campo possui um nome e um tipo atribuído, o que é meio essencial quando se deseja fazer uma comparação da estrutura de duas tuplas e não somente de seus tamanhos (comparação realizada no método *_match*).
+A primeira coisa a se notar, é o meu uso insistente da classe *NamedTuple*, cuja culpa é do Luciano Ramalho e seu espetacular livro [Python Fluente](https://pythonfluente.com/). Essa estrutura permite que se criem tuplas em que cada campo possui um nome e um tipo atribuído, o que é meio essencial quando se deseja fazer uma comparação da estrutura de duas tuplas e não somente de seus tamanhos (comparação realizada no método *_match*).
 
 Os dois principais métodos são *put* e *get*, cujos nomes são autoexplicativos. O primeiro adiciona a tupla no espaço de tuplas, enquanto o segundo faz a busca por uma tupla que se adeque ao padrão e a retorna. Bem simples, não?
 
@@ -183,3 +183,5 @@ if __name__ == "__main__":
     main_loop()
 
 ```
+
+E é isso, no pior dos casos serviu para escrever algumas classes e pesquisar na wikipedia sobre o comportamento das abelhas.
