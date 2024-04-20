@@ -120,4 +120,29 @@ Um trecho do episódio e a diarização gerada, com os valores em milissegundos,
 | 227071 | 235882 | SPEAKER_08 | 05, 06, 07, 08, 09 |
 | 235882 | 251332 | SPEAKER_13 | 10, 11 |
 
-Nesse pequeno trecho é possível perceber que a diarização conseguiu separar razoavelmente bem as falas, separando as duas pessoas que estão falando nesse trecho do episódio. Ainda é necessária a criação de um script para fazer o mapeamento entre as informações e uma revisão manual sempre vai ser importante para se garantir a qualidade do resultado. Outro problema é que não existe como a diarização saber quem é quem, sendo necessário especificar a posteriori cada falante.
+Nesse pequeno trecho é possível perceber que a diarização conseguiu separar razoavelmente bem as falas, separando as duas pessoas que estão falando nesse trecho do episódio.
+
+## União
+
+Para se unir as falas, eu usei um algoritmo em Python que calcula a intersecção entre os intervalos de tempo da transcrição e da diarização, assim é possível saber quem está falando em cada momento. A parte do código relevante para a intersecção é a seguinte:
+
+```py
+def intersection_1d(start_a: int, stop_a: int, start_b: int, stop_b: int) -> int:
+    return max(0, min(stop_a, stop_b) - max(start_a, start_b))
+```
+
+| Início | Fim | Falantes | Fala |
+| --- | --- | --- | --- |
+| 218180 | 220780 | 13 | A oeste está Aldrin, que é a Isabela. |
+| 220920 | 221820 | 13 | Qual é a aparência do seu personagem? |
+| 222100 | 223020 | 08 | Ela é jovem, né? |
+| 223340 | 225060 | 08 | Ela tem uma estatura média. |
+| 225060 | 227800 | 08 | Tá com um vestido preto, curto. |
+| 228040 | 230060 | 08 | Um casaco bem confortável. |
+| 231180 | 232640 | 08 | E sapatos de salto. |
+| 232960 | 234840 | 08 | E um cabelo bem arrumado, maquiado. |
+| 235200 | 235820 | 08 | Bem vestida. |
+| 235960 | 239220 | 13 | Ao norte, um homem muito alto e forte, sem camisa. |
+| 239640 | 241620 | 13 | Sua cabeça é a cabeça de um corvo. |
+
+Uma revisão manual sempre vai ser importante para se garantir a qualidade do resultado, além de que sem informações adicionais, não tem como se marcar quem é o autor de cada fala. Com a ajuda de uma pessoa que tenha ouvido o episódio, é possível se fazer essa atribuição entre os ids dos falantes e os nomes dos personagens.
