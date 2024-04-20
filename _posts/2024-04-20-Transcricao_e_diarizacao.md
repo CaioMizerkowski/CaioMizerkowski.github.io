@@ -3,9 +3,7 @@ title: "Transcrição e Diarização de Podcast"
 date: 2024-04-20
 ---
 
-## RPGuaxa
-
-Existe um podcast que eu ouço faz bastante tempo e que eu gosto muito, é o [RPGuaxa](https://www.deviante.com.br/podcasts/rpguaxa/) ([linktree](https://linktr.ee/Rpguaxa)). É um podcast de RPG muito bem feito, pois além dos jogadores e do narrador, vários NPCs são dublados pelos ouvintes do podcast, isso o torna muito gostoso de ouvir. Decidi, por causa de tudo isso, fazer a transcrição e a diarização dos episódios com a ajuda de ferramentas de Inteligência Artificial voltadas para o áudio e foi um aprendizado bastante interessante.
+Existe um podcast que eu ouço faz bastante tempo e que eu gosto muito, é o [RPGuaxa](https://www.deviante.com.br/podcasts/rpguaxa/) ([linktree](https://linktr.ee/Rpguaxa)). É um podcast de RPG muito bem feito, pois além dos jogadores e do narrador, vários NPCs são dublados pelos ouvintes do podcast, isso o torna muito gostoso de ouvir. Decidi fazer a transcrição e a diarização dos episódios com a ajuda de algumas ferramentas de Inteligência Artificial voltadas para o processamento de áudio e foi um aprendizado muito interessante.
 
 O código pode ser encontrado no [repositório](https://github.com/CaioMizerkowski/guaxa), assim como os arquivos gerados.
 
@@ -19,7 +17,7 @@ Após fazer a instalação da biblioteca e o download dos episódios, o processo
 for f in *.mp3; do echo $f; whisper $f --model large --language Portuguese ; done
 ```
 
-O processo ser simples não significa que ele seja rápido, como o modelo é bem grande, ele leva mais ou menos o próprio tempo do áudio para fazer a transcrição, o resultado, no entanto é muito bom pelo o que averiguei. Acabei fazendo esse processo para todos os episódios disponíveis, o que levou alguns dias para terminar.
+O processo ser simples não significa que ele seja rápido, como o modelo é bem grande, ele leva aproximadamente o tempo do áudio para fazer a transcrição. O resultado no final é muito bom pelo o que averiguei. Acabei fazendo esse processo para todos os episódios disponíveis, o que levou alguns dias para terminar.
 
 Um pequeno exemplo da saída em formato srt, outros exemplos estão no repositório do [projeto](https://github.com/CaioMizerkowski/guaxa) na pasta `transcricoes`:
 
@@ -47,7 +45,9 @@ mas possui um efeito colateral melhor que o efeito primário.
 
 ## Diarização
 
-O processo de diarização é aquele que se faz para se identificar quem está falando em cada momento, como é possível observar no exemplo acima, não existe nenhuma informação sobre quem é o autor das falas ou sobre uma mudança de falante. A diarização foi feita utilizando a ferramenta [pyannote](https://github.com/pyannote/pyannote-audio), uma ferramenta de uso relativamente simples. O grande problema dela foi alcançar uma performance, por algum motivo que eu não consegui identificar, a ferramenta não utilizava a GPU ao se passar o áudio através de um caminho para o arquivo, consegui resolver isso carregando todo o áudio na memória. Espero que esse problema seja corrigido nas próximas versões.
+O processo de diarização é aquele que se faz para se identificar quem está falando em cada momento, como é possível observar no exemplo acima, não existe nenhuma informação sobre quem é o autor das falas ou sobre uma mudança de falante. A diarização foi feita utilizando a ferramenta [pyannote](https://github.com/pyannote/pyannote-audio), uma ferramenta de uso supostamente simples.
+
+O grande problema dela foi alcançar uma boa performance, visto que por algum motivo a ferramenta não utilizava a GPU ao se enviar o áudio através de um caminho para o arquivo, consegui resolver isso carregando o áudio na memória. Eu espero que esse problema seja corrigido nas próximas versões da biblioteca.
 
 Um exemplo de código em Python para a diarização, aonde eu carrego o áudio na memória e passo para a ferramenta:
 
@@ -120,4 +120,4 @@ Um trecho do episódio e a diarização gerada, com os valores em milissegundos,
 | 227071 | 235882 | SPEAKER_08 | 05, 06, 07, 08, 09 |
 | 235882 | 251332 | SPEAKER_13 | 10, 11 |
 
-Nesse pequeno trecho é possível perceber que a diarização conseguiu separar razoavelmente bem as falas, separando as duas pessoas. Ainda é necessária a criação de um script para fazer o mapeamento entre as informações e uma revisão manual sempre vai ser importante para se garantir a qualidade do resultado.
+Nesse pequeno trecho é possível perceber que a diarização conseguiu separar razoavelmente bem as falas, separando as duas pessoas que estão falando nesse trecho do episódio. Ainda é necessária a criação de um script para fazer o mapeamento entre as informações e uma revisão manual sempre vai ser importante para se garantir a qualidade do resultado. Outro problema é que não existe como a diarização saber quem é quem, sendo necessário especificar a posteriori cada falante.
