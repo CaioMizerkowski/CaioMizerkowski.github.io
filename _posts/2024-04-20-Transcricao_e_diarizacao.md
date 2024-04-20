@@ -5,13 +5,13 @@ date: 2024-04-20
 
 ## RPGuaxa
 
-Existe um podcast que eu ouço faz bastante tempo e que eu gosto muito, é o [RPGuaxa](https://www.deviante.com.br/podcasts/rpguaxa/) ([linktree](https://linktr.ee/Rpguaxa)). É um podcast de RPG muito bem feito, pois além dos jogadores e do narrador, vários NPCs são dublados pelos ouvintes do podcast, isso o torna muito gostoso de ouvir. Decidi, por causa de tudo isso, fazer a transcrição e a diarização dos episódios com a ajuda de ferramentas de Inteligência Artificial voltadas para o aúdio e foi um aprendizado bastante interessante.
+Existe um podcast que eu ouço faz bastante tempo e que eu gosto muito, é o [RPGuaxa](https://www.deviante.com.br/podcasts/rpguaxa/) ([linktree](https://linktr.ee/Rpguaxa)). É um podcast de RPG muito bem feito, pois além dos jogadores e do narrador, vários NPCs são dublados pelos ouvintes do podcast, isso o torna muito gostoso de ouvir. Decidi, por causa de tudo isso, fazer a transcrição e a diarização dos episódios com a ajuda de ferramentas de Inteligência Artificial voltadas para o áudio e foi um aprendizado bastante interessante.
 
 O código pode ser encontrado no [repositório](https://github.com/CaioMizerkowski/guaxa), assim como os arquivos gerados.
 
 ## Transcrição
 
-O primeiro passo foi a transcrição, ou seja, pegar o aúdio e transformar as palavras faladas em texto. A openAI tem uma ferramenta que ajuda nesse processo, a [Whisper](https://github.com/openai/whisper). Eu já tinha feito um teste a meses com essa ferramenta usando uma versão menor dos modelos disponíveis, mas como comprei recentemente uma GPU nova com 16GB de VRAM, resolvi testar o maior modelo disponível.
+O primeiro passo foi a transcrição, ou seja, pegar o áudio e transformar as palavras faladas em texto. A openAI tem uma ferramenta que ajuda nesse processo, a [Whisper](https://github.com/openai/whisper). Eu já tinha feito um teste a meses com essa ferramenta usando uma versão menor dos modelos disponíveis, mas como comprei recentemente uma GPU nova com 16GB de VRAM, resolvi testar o maior modelo disponível.
 
 Após fazer a instalação da biblioteca e o download dos episódios, o processo foi simples, rodando o seguinte código:
 
@@ -19,7 +19,7 @@ Após fazer a instalação da biblioteca e o download dos episódios, o processo
 for f in *.mp3; do echo $f; whisper $f --model large --language Portuguese ; done
 ```
 
-O processo ser simples não significa que ele seja rápido, como o modelo é bem grande, ele leva mais ou menos o próprio tempo do aúdio para fazer a transcrição, o resultado no entanto é muito bom pelo o que averiguei. Acabei fazendo esse processo para todos os episódios disponíveis, o que levou alguns dias para terminar.
+O processo ser simples não significa que ele seja rápido, como o modelo é bem grande, ele leva mais ou menos o próprio tempo do áudio para fazer a transcrição, o resultado, no entanto é muito bom pelo o que averiguei. Acabei fazendo esse processo para todos os episódios disponíveis, o que levou alguns dias para terminar.
 
 Um pequeno exemplo da saída em formato srt, outros exemplos estão no repositório do [projeto](https://github.com/CaioMizerkowski/guaxa) na pasta `transcricoes`:
 
@@ -47,9 +47,9 @@ mas possui um efeito colateral melhor que o efeito primário.
 
 ## Diarização
 
-O processo de diarização é aquele que se faz para se identificar quem está falando em cada momento, como é possível observar no exemplo acima, não existe nenhuma informação sobre quem é o autor das falas ou sobre uma mudança de falante. A diarização foi feita utilizando a ferramenta [pyannote](https://github.com/pyannote/pyannote-audio), uma ferramenta de uso relativamente simples. O grande problema dela foi alcançar uma performance, por algum motivo que eu não consegui identificar, a ferramenta não utilizava a GPU ao se passar o aúdio através de um caminho para o arquivo, consegui resolver isso carregando todo o aúdio na memória. Espero que esse problema seja corrigido nas próximas versões.
+O processo de diarização é aquele que se faz para se identificar quem está falando em cada momento, como é possível observar no exemplo acima, não existe nenhuma informação sobre quem é o autor das falas ou sobre uma mudança de falante. A diarização foi feita utilizando a ferramenta [pyannote](https://github.com/pyannote/pyannote-audio), uma ferramenta de uso relativamente simples. O grande problema dela foi alcançar uma performance, por algum motivo que eu não consegui identificar, a ferramenta não utilizava a GPU ao se passar o áudio através de um caminho para o arquivo, consegui resolver isso carregando todo o áudio na memória. Espero que esse problema seja corrigido nas próximas versões.
 
-Um exemplo de código em Python para a diarização, aonde eu carrego o aúdio na memória e passo para a ferramenta:
+Um exemplo de código em Python para a diarização, aonde eu carrego o áudio na memória e passo para a ferramenta:
 
 ```python
 from pathlib import Path
@@ -97,7 +97,7 @@ if __name__ == "__main__":
             diarize(audio_path)
 ```
 
-Um trecho do episódio e a diarização gerada, com os valores em milisegundos, as atribuições de falas foram feitas manualmente (processo ainda a ser automatizado):
+Um trecho do episódio e a diarização gerada, com os valores em milissegundos, as atribuições de falas foram feitas manualmente (processo ainda a ser automatizado):
 
 | Id | Início | Fim | Fala |
 | --- | --- | --- | --- |
@@ -120,4 +120,4 @@ Um trecho do episódio e a diarização gerada, com os valores em milisegundos, 
 | 227071 | 235882 | SPEAKER_08 | 05, 06, 07, 08, 09 |
 | 235882 | 251332 | SPEAKER_13 | 10, 11 |
 
-Nesse pequeno trecho é possível perceber que a diarização conseguiu separar razoalemente bem as falas, separando as duas pessoas. Ainda é necessária a criação de um scrip para fazer o mapeamento entre as informações e uma revisão manual sempre vai ser importante para se garantir a qualidade do resultado.
+Nesse pequeno trecho é possível perceber que a diarização conseguiu separar razoavelmente bem as falas, separando as duas pessoas. Ainda é necessária a criação de um script para fazer o mapeamento entre as informações e uma revisão manual sempre vai ser importante para se garantir a qualidade do resultado.
