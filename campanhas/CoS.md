@@ -14,7 +14,7 @@ Dentre um bando de corvos, havia um que chamava a atenção por possuir olhos co
 Em Barovia podia se ouvir um choro muito alto pelas ruas.
 A mulher que chora constantemente é conhecida como Maria Chorona, pois lamenta o desaparecimento de Gertruda, sua filha, que não aparece em casa a uma semana e agora lamenta ainda mais por receber a notícia da morte de seu filho... Ela implora ao grupo que encontre sua filha.
 
-Ismark indirovich não sabia da carta escrita por seu pai, Kolyan Indirovich, antes de falecer. Ele pediu que Tianikra que ajudasse a enterrar seu pai, pois ele sozinho não conseguiria e sua irmã, Irina, que é vista como monstro pelos plebeus da cidade por causa das visitas do Diabo, não conseguia sair de casa.
+Ismark indirovich não sabia da carta escrita por seu pai, Kolyan Indirovich, antes de falecer. Ele pediu que Tianikra que ajudasse a enterrar seu pai, pois ele sozinho não conseguiria e sua irmã, Irina, que é vista como monstro pelos plebeus da cidade por causa das visitas do Diabo, não conseguia sair 0de casa.
 
 Um grupo de pessoas na taverna conhecido como Vistanis convidou ao grupo a visitarem seu acampamento próximo a cidade, lá Madame Eva seria capaz de ler nosso futuro e talvez assim possamos encontrar um meio de sair desse mundo de névoa ( apenas Tianikra e Wei sabem dessas últimas informações).
 
@@ -500,10 +500,6 @@ Quests:
 
 ### Sessão 21
 
-???
-
-### Sessão 22
-
 A Passagem Tsolenka
 
 Após muita discussão de qual caminho tomaríamos até o Templo Âmbar, fomos pelo mais curto porém mais difícil seguindo ribanceira acima em direção sul. Antes de partir, investigamos as gemas mágicas da bruxa e Nikolaj informa que são gemas que trazem vida ao solo estéril de Barovia e fazem o famoso vinho dos Martikov.
@@ -522,7 +518,7 @@ Porém ao passar da carroça as duas estátuas grandes que estavam acima do port
 
 Quando enfim derrotamos as criaturas mal tivemos um tempo para respirar pois ao longe vindo das montanhas o que parece ser a “mãe” dos Vrock surge voando em nossa direção.
 
-### Sessão 23
+### Sessão 22
 
 A Roca
 
@@ -534,7 +530,7 @@ Porém ao longe novamente a gigantesca ave surge com asas abertas facilmente sob
 
 O combate foi difícil principalmente quando a Roca capturou Esmeralda e começou levá-la embora, mas graças as magias de Lilad que evitava que alguém se machucasse em queda e Nikolaj que enfraqueceu os ataques da criatura, o bom posicionamento de Tianikra na hora de golpear divinamente, Wei distraindo a criatura com seu guardião espiritual, Ryan consegue soltar Esmeralda e voltar voando para o chão. Por fim, todos concentram seus ataques mais fortes na Roca e consegue derrubá-la no rio abaixo.
 
-### Sessão 24
+### Sessão 23
 
 O Templo  Âmbar
 
@@ -545,3 +541,17 @@ Numa sala razoavelmente grande encontramos um grupo de bárbaros e um lobo grand
 Na manhã seguinte continuamos a explorar o templo, Ryan e Wei insistem por um caminho onde a um corpo carbonizado e sem encontrar armadilhas adentram o corredor seguidos de seus companheiros mas quando Wei abriu uma porta mais adiante 3 caveiras flamejantes surgem no fim do corredor e disparam bolas de fogo. Wei que estava mais a frente não é afetado e segue para cima delas junto de Tianikra levemente chamuscada e eliminam uma caveira. Lilad dissipa a magia protetora de uma delas e os outros atacam à distância trazendo o fim das caveiras flamejantes.
 
 Voltando a uma das portas o grupo encontra uma réplica do castelo Ravenloft bem fiel por fora de acordo com Esmeralda e Ryan remove de um baú ao fundo um tomo de conhecimento mágico antigo.
+
+### Sessão 24
+
+Vinho Para Todo Sempre!
+
+Saindo da sala com a réplica do castelo, Wei lidera o caminho para um corredor pequeno para descobrir que leva para uma sequência de escadas para baixo e retorna sugerindo que fechassem a exploração do andar, Ryan concorda pois tem encontrado informações e um artefato útil. Voltando ao corredor principal passam pelas portas dupla do norte e se deparam com uma mesa comprida, nela um belo banquete. Ao seu centro uma jarra de bronze chama a atenção de Nikolaj que não resiste e tenta pegar o jarro acionando uma armadilha de espectros que se lançam contra ele o deixando mais pálido que o normal, para se salvar ele usa seu símbolo sagrado assustando alguns espectros enquanto o próprio retorna as portas da sala, mas os restantes continuam avançando.
+
+Wei e Tianikra adentram a sala para proteger Nikolaj, a duras penas Wei derrota um dos espectros enquanto a paladina com sua espada cintilante derrota outro. Ryan enfraquece dois com suas flechas e Esmeralda os finaliza pondo o fim do combate, Nikolaj mesmo enfraquecido e pálido pega seu prêmio uma jarra mágica capaz de eliminar veneno de bebidas colocadas em seu interior, além de criar diariamente 4L de vinho de excelente qualidade que é servido a todos em comemoração.
+
+Seguindo pela porta ao leste da sala, Ryan encontra mezanino parcialmente deteriorado que conecta à outra porta, abaixo dele o piso Inferior do grande salão de entrada onde há uma gigantesca estátua de um mago com mantos cobrindo o rosto semelhantes as seis estátuas do lado de fora do templo. Porém quando Wei o segue no mezanino, o mesmo não suporta o peso dos dois e desaba 9m abaixo (aquela montanha de músculos…pior que nem dá pra ficar irritado pois ele só queria fazer minha guarda. Hmm!).
+
+O restante do grupo faz a volta para se reencontrar com Wei e Ryan no saguão, quando chegam aquela voz volta a falar na mente de todos, como se viesse da estátua repetindo a pergunta de quem éramos e  nossas intenções. Ryan questiona o nome da voz cobrando uma educação mas é ignorado e por fim diz que buscam o companheiro caído com receio de citar o nome de Blaze, ele guarda para si. A voz diz que há muito tempo o Templo  Âmbar não funciona mas da mesma forma e agora é apenas um lugar para aguardar enquanto seu mestre aumenta seu poder, questionado pela identificação do mestre ele também não responde e ordena que o grupo vá embora, seguindo o exemplo dado pela voz o grupo a ignora e volta explorar a sala.
+
+Ryan e Wei sobem o mezanino que ficava no sentido oposto àquele do qual caíram, pois perceberam uma porta aberta, Lilad e Tio Walter os seguiram enquanto o grupo resolveu dar a volta. A voz irritada por ser ignorada enfim revela que a alma de Blaze sim está ali em algum lugar do templo e pelo nosso desacato a estátua começa a girar a cabeça disparando 3 dardos de energia na direção de Wei, Lilad e Ryan.

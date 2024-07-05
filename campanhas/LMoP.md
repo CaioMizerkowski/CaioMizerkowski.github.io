@@ -45,6 +45,28 @@ Após isso, pouca coisa de nota aconteceu, somente as criaturas normais desta te
 
 Ao voltarmos a cidade, eu tive a visão mais terrível, uma quimera, criada por alguma magia antiga e poderosa desse reino, capaz de moldar a carne e fundir diferentes bestas. Esse ser horripilante, com feições de lobo, serpente, dragão e águia me assombrou e me deu um terrível enjoo durante a noite, que me impediu de dormir bem.
 
+### Dia 74 P.G
+
+**Quem procura sempre acha**
+
+O começo do dia foi um grande sucesso, partimos cedo para a estrada e vimos novamente o mar. Obviamente o oceano dessa terra não é tão belo como os mares de Feywild, mas ainda assim são apreciaveis e mostrei eles para o Jhonny 5 durante o nosso trajeto.
+
+Essa criatura de metal parece também ter vindo de outro local e estar tão perdido como eu, ele também tem um mascote, embora este seja um pouco assustador e não tão amigável como o Au-Fredo, que é um bom garoto, o melhor garoto de todos.
+
+Outro fato importante é que mostrei logo minha imensa utilidade para o grupo na minha especialidade, buscar e encontrar coisas e pessoas. O Ewan pediu para que caso víssemos alguma criatura híbrida ou misteriosa, que avisassemos a ele, ora, eu fui o mais rápido de todos e apontei para o bugbear Hrrrrrrrrank (acho que eram 7 r, ou será que eram mais?). Ele obviamente é uma criatura híbrida entre um clássico bugbear e uma blueberry, um... bluebear :D
+
+O Hrrrrrrrrank pareceu um pouco surpreso com a minha descoberta, talvez por ter crescido nesse mundo tão descolorido, ele não tenha tido muito contato com outros bugbear. Eu no entanto, tenho até uma tia cuja vizinha tem uma filha que é amiga da mulher de um bugbear, é muito bom ter conexões.
+
+Infelizmente o caminho estava interrompido por dois cavalos mortos, embora do alto eu não visse ninguém que parecesse responsável por isso. Mas a vista era linda lá de cima, com muitos vales e o oceano, montanhas e a floresta, um reflexo enevoado do reino das fadas em terras mortais.
+
+Quando desci, para a minha surpresa, uma flecha me acertou e me carregou com ela para junto da carroça, tudo parecia tão pacífico lá de cima, esse mundo sempre me surpreende negativamente.
+
+Felizmente estou acompanhando de guerreiros muito capazes que logo eliminaram as ameaças. Mas de onde elas vieram é uma pergunta que vai ficar na minha cabeça por um bom tempo.
+
+Após esse curto combate, precisaram novamente das minhas habilidades para encontrar um anão. Ora, olhei as pegadas no solo e segui elas com muito cuidado, até observar as costas dessa criatura gigantesca que chamam de anão. Duas buscas, dois sucessos.
+
+Tivemos que deixar a estrada, por algum motivo que não prestei a atenção e matar mais alguns goblins. Aparentemente a tortura é algo muito bem visto nessa sociedade, bastante estranho, mas ei de me adaptar.
+
 ## Diários de Hrrank por Sara Barboza
 
 Tendo, pois, muitos empreendido pôr em ordem a narração dos fatos que entre nós se cumpriram, conforme me transmitiram os mesmos que os presenciaram desde o princípio, e eu, que estive e vivi tais acontecimentos.
@@ -106,3 +128,31 @@ A batalha foi árdua nunca tive tanta desventura em minhas brutas investidas dot
 Após o fim de nossa terrível luta contra os Hobgoblins e os malditos goblins, Ewan, Pi e eu amparamos a jovem donzela Rafaela da fogueira e a estabilizamos. Todavia, a jovem necessita de uma curar milagrosa para recompor os membros danificados, braços e pele.
 
 Nesse meio tempo, Harpysune estabilizava Johnny 5 e ...
+
+### Supositório para Goblins - 3º Sessão (02.07.24)
+
+Ó gloriosa Helga, continuo a relatar minha aventura por estas terras caóticas ao lado dos meus novos companheiros de viagem.
+
+Permita-me refrescar vossa memória a respeito da missão que meu grupo recebeu de Sir Tião: encontrar Gundren Buscarrosca e um humano membro da Aliança dos Lordes em Phandalin.
+
+Durante o percurso até a Trilha do Trijavali, conversávamos sobre nossas vidas e sobre a singularidade de nossas individualidades. Foi quando Ewan pediu para informarmos se víssemos algum ser híbrido, e o fado Pi apontou para mim, indicando-me como tal. Querida Helga, acreditais que ele se referia a mim? Será que sou tão diferente dos outros bugbears? Meu corpo é assim tão peculiar? Mais cedo, Harpysune ficou a observar minha cueca, que tu fizeste com tanto apreço; fiquei envergonhado por estar tão exposto, mas realmente esta vestimenta evita meu superaquecimento, é arejada e fácil para lutar. Contudo, ela destaca algumas protuberâncias de curvas não tão discretas. Agora questiono-me se outras pessoas também reparam na minha tanga.
+
+Confesso que fiquei triste e entediado durante todo o percurso, até avistarmos dois cavalos caídos na estrada. Quase fomos surpreendidos por quatro goblins que tramavam uma emboscada contra nós. Mas deverias ter visto a forma esplêndida como os explodimos em mil pedaços.
+
+Os cavalos estavam mortos há um dia, para ser exato. Sabeis que sou bom em analisar essas coisas; tudo indicava que foram mortos por flechadas dos goblins. Encontrei junto ao corpo de um dos cavalos um objeto cilíndrico, confeccionado em couro, medindo 10 cm de largura e 30 cm de comprimento. Acredito que seja uma bolsa para pergaminhos ou mapas. Pi insinuou que essa bolsa tem outra utilidade, mas não revelou o que costuma guardar nela. Acredito que esse fado fala por enigmas, o que é sensacional. Estou tentando desvendar esse pequeno quebra-cabeça que meu novo amigo Pi me deu.
+
+Johnny 5 percebeu que os cavalos têm a sela da família dos irmãos Buscarrosca. Continuando seu discurso eloquente, Johnny 5 informou que foram esses anões que o religaram. Durante toda essa belíssima e trágica explicação da vida metálica do pobre autômato, Jonathan informou que o cavalo pertencia a Gundren.
+
+Passado todo esse momento cansativo e de odor fétido devido à putrefação dos cavalos, Ewan encontrou o que parecia ser uma trilha na floresta, graças ao olhar perspicaz de Jonathan, que percebeu rastros de corpos supostamente arrastados até essa trilha.
+
+Tinhas razão, Helga. Tem tudo para ser emocionante aventurar-se entre árvores e arbustos. Porém, tudo isso me incomoda; irrita-me sentir tantas coisas encostarem em mim. Sinto-me perdendo o controle, quase virando realmente a tal "Besta" que tens o costume de me chamar. No meio de tantas sensações desagradáveis que experimentei num mesmo dia, o silêncio grotesco da floresta foi rompido pelos berros de dois goblinoides que jogavam um tal de uno. Pegamos os dois miseráveis desprevenidos, graças às habilidades extraordinárias do autômato Johnny 5.
+
+O ataque de Pi explodiu um dos braços do goblin preso à corda mágica de Johnny 5. A barda Harpysune, uma mulher voraz e faminta, finalizou o moribundo goblin em uma única estocada de sua cimitarra. Posso jurar que pude ouvir a harpia desmembrando e separando os pedaços daquele ser decrépito como se fosse um boi de corte. Parece ser sua comida de emergência; estou ciente de que não devo comer nada vindo de suas mãos.
+
+Restou apenas um goblin de pé após levar uma machadada no peito desferida por Johnny 5, que o fez sangrar feito um porco. Do outro lado do riacho, Ewan, usando graciosamente a musculatura das pernas, realizou um salto magistral até a outra margem. Foi realmente uma cena digna de apreciação, como se fosse uma dança clássica. Ele foi tão ágil que emendou o salto com uma contenção, dominando o goblin com seus braços.
+
+Com o maldito goblinoide preso, pude auxiliar no interrogatório. Perdi a paciência com o goblin, que se identificou como Klar, ou assim pareceu pronunciar. O desgraçado mal sabia falar; pareceu-me mais burro que os goblins que enfrentamos anteriormente, quando resgatamos Rafaela da fogueira. Arrisco a dizer que estes goblins são ainda mais feios e ignóbeis. Posso afirmar que a seleção natural irá eliminá-los em breve. O modo como lutam é de tamanha ignorância que chega a dar dó a um ser desprovido de intelecto. Estou exagerando, sabemos que a maioria dos goblins são desprovidos de saber. Acredite, esses eram terríveis.
+
+Minha falta de paciência foi tamanha que Johnny 5 intimidou Klar com sua aranha autômata, que pode virar um supositório. Não sabia que ela podia fazer isso. Klar urinou-se de puro medo e nos disse que o humano fora levado para ser devorado (mau gosto culinário para carnes) e que o anão foi levado para o castelo do Rei Groll. Continuou narrando que não sabia a localização do castelo, então Ewan o amarrou.
+
+Como posso finalizar este relato? Pois bem, estamos em um impasse. Ver se há outro goblin que saiba o caminho ou seguir com a não orientação deste goblin que nada sabe. Também precisamos descansar, pois tivemos alguns feridos após a emboscada meia-boca que sofremos.
