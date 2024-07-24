@@ -65,6 +65,40 @@ Após o fim de nossa terrível luta contra os Hobgoblins e os malditos goblins, 
 
 Nesse meio tempo, Harpysune estabilizava Johnny 5 e ...
 
+## A Guilda de Aventureiros de Neverwinter -  Segunda parte da 1º Sessão (segunda sessão)(25.06.24)
+
+Olá, querida e encantadora Helga,
+
+Realmente, a cidade de onde viestes é extremamente animada, complexa e problemática. As pessoas aqui chamam qualquer um para se aventurar com coisas terríveis. Não é necessário nem mesmo o título de aventureiro, ou seja, papai mentiu para mim, contando balelas sobre aventuras e insígnias.
+
+Sou, de fato, um homem tolo que se deixou levar pela ideia romântica do heroísmo. Pensei que haveria um crivo para testar a aptidão dos aventureiros, mas não existiu teste algum. Tu me avisaste que tal preparação não seria necessária.
+
+Ora bolas, pensei cá com meus botões que estavas a brincar comigo. Agora vejo o equívoco que cometi ao levantar mil vezes aquele enorme tronco na Costa da Espada e vir alternando entre marcha pesada, leve e corrida até chegar a esta cidade imunda que tens a mania de chamar de “lar doce lar”. Doce és a vossa graça; esta cidade, no mínimo, cheira a fezes de cavalo, ferro fundido, álcool barato, suor e outros odores corporais. Sabes que meu olfato é muito apurado; estou vivendo um martírio para lhe encontrar e viver minhas aventuras longe da Masmorra.
+
+Doravante, após a enfadonha batalha contra os goblins malditos e os dois hobgoblins, regressamos à Guilda de Aventureiros de Neverwinter. Lá recebemos um bom pagamento pelo nosso “trabalho” e uma boa comida. Sir Tião nos deu uma nova missão. Ele propôs a Ewan um trabalho de escolta para um anão cujo nome não me recordo; só sei que vamos pôr mãos à obra mais uma vez. Tenho a impressão de que encontrei um grupo ao qual pertenço. Pergunto-me se era disso que falavas quando me incentivavas a sair e explorar o mundo. Parece que ouço tua voz em meu ouvido repetindo vossa fala na nossa despedida: “Besta, sai logo desse lugar. Tenho certeza que vai achar em dois tempos companheiros de aventura em quem confiar. Você é um cara bacanudo depois que a gente deixa de lado o seu jeito seboso de lidar com as coisas e a sua carasca rabugenta. Você precisa aprender a enfiar o pé na jaca, chutar o pau da barraca e descobrir com quantos paus se faz uma canoa” — seguido do som esganiçado da tua gargalhada irritante que me faz tanta falta.
+
+Já que abordei a questão da sujeira e do álcool barato, fiquei contente com os conhecidos amigáveis que o acaso juntou a mim. A barda Harpysune ficou um tanto quanto alterada ao beber meu experimento 51. Parecia até um bezerro faminto pelo leite da mãe. Teceu muitos elogios ao meu álcool etílico 95%. Fiquei furioso com tamanha falta de educação ao tomar o frasco de higienização de minhas mãos e entornar goela abaixo, mas o elogio dela amenizou minha ira. Ainda estou chateado, era meu último frasco e não trouxe o equipamento necessário para produzir mais. É maldade desejar que ela tenha uma bela ressaca?
+
+Sobre a sujeira, o enigmático Ewan disse que precisava de um banho, o que me fez admirá-lo, pois mostra que é asseado, diferente dos demais habitantes de Neverwinter. Até ofereci meus inventos de banho para ele, o xampu e o condicionador de pêlos. Ele agradeceu e perguntou se tinha algum hidratante para carapaças, mas infelizmente não o possuo.
+
+Já o Johnny 5 tem cheiro de óleo; gosto desse cheiro, pois me lembra dos inventos do papai. O fado Pi deve ter se banhado em sua casa móvel, que fica nas costas do leal escudeiro Au-Fredo.
+
+O pequenino Pi veio relatar sobre uma sala bem interessante na Guilda, e o que descobrimos foi estupendo! Pi encontrou um livro de capa vermelha e dourada com uma diversidade de nomes de heróis da Guilda. Nessa extensa lista de nomes, apenas um chamou a atenção de Pi: “Mizzar, O Herói da Chama Verde”. O nome parecia saltar da página.
+
+Pi também me mostrou uma criatura que se assemelhava às que habitam a Masmorra do Mago Louco. Era uma quimera com feições de lobo, serpente, águia e cauda de dragão com escamas verdes (a parte de grifo não tem penas, mas sim escamas verdes). Só de olhar, tenho certeza de que é o experimento de um mago muito habilidoso; arrisco dizer que seu criador seja o próprio Mizzar.
+
+Curiosidade interessantíssima sobre Mizzar:
+
+Era um grande tiefling feiticeiro capaz de manusear o mineral chamado Mindar, uma pedra que emite calor como um carvão em brasa, mas que libera o calor de uma chama verde. O mago está morto há mais de 400 anos.
+
+P.S. descobri o motivo de Ewan cobrir o rosto, sua boca é incomum das de outras raças, creio que este é o motivo de o deixar acanhado ao ponto de se alimentar utilizando a máscara.
+
+Lembrete:
+
+Sir Tião incumbiu-me de entregar em mãos a Johnny 5 um atlas de capa marrom, adornado com o desenho detalhado do perfil da cabeça de um veado em tons de verde, este é o símbolo do enclave esmeralda. O atlas contém o mapa de Faerûn, além de mapas de outras cidades, continentes e até de outros Planos.
+
+O velho homem também informou que, caso o Autômato tenha dúvidas ou deseje mais informações, deve procurar pelo Druida Rodolfo, que está a caminho de Phandalin para encontrar-se com a Halfling Queline Alderleaf.
+
 ## Supositório para Goblins - Sessão 3 (02.07.24)
 
 Ó gloriosa Helga, continuo a relatar minha aventura por estas terras caóticas ao lado dos meus novos companheiros de viagem.
