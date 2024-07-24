@@ -129,7 +129,7 @@ Após o fim de nossa terrível luta contra os Hobgoblins e os malditos goblins, 
 
 Nesse meio tempo, Harpysune estabilizava Johnny 5 e ...
 
-### Supositório para Goblins - 3º Sessão (02.07.24)
+### Supositório para Goblins - Sessão 3 (02.07.24)
 
 Ó gloriosa Helga, continuo a relatar minha aventura por estas terras caóticas ao lado dos meus novos companheiros de viagem.
 
@@ -156,3 +156,69 @@ Com o maldito goblinoide preso, pude auxiliar no interrogatório. Perdi a paciê
 Minha falta de paciência foi tamanha que Johnny 5 intimidou Klar com sua aranha autômata, que pode virar um supositório. Não sabia que ela podia fazer isso. Klar urinou-se de puro medo e nos disse que o humano fora levado para ser devorado (mau gosto culinário para carnes) e que o anão foi levado para o castelo do Rei Groll. Continuou narrando que não sabia a localização do castelo, então Ewan o amarrou.
 
 Como posso finalizar este relato? Pois bem, estamos em um impasse. Ver se há outro goblin que saiba o caminho ou seguir com a não orientação deste goblin que nada sabe. Também precisamos descansar, pois tivemos alguns feridos após a emboscada meia-boca que sofremos.
+
+### Olhos Rubros, o Urso-coruja e a Misteriosa Gruta - Sessão 4 (09.07.24)
+
+Sinto as rochas sob meus pés enquanto seguimos o desafortunado goblin Klar por veredas sinuosas e lamacentas, às vezes ásperas e, por incrível que pareça, de certo modo mais belas que a cidade. Algo parece agradar-me, embora não consiga definir o que seja.
+
+No entanto, posso afirmar com convicção que percorremos a amaldiçoada floresta em círculos por cerca de quinze minutos, perdidos e sem direção certa, seguindo o goblin tão insensato quanto um bardo lascivo apanhando do taberneiro após ser flagrado aos beijos com a filha deste.
+
+Bem, não mexer com as filhas ou filhos dos taberneiros é algo que aprendi ao testemunhar um conhecido, talvez um amigo, sim, meu amigo bardo Dórémi de Fásollási, apanhar do taberneiro após ser encontrado na cama com a filha do mesmo. Dia trágico aquele, tive que carregar o desgraçado por quinze dias, até perceber sua farsa. O perturbado gnomo fingira todo esse tempo estar doente devido à surra.
+
+Enfurecido com o impostor, não me contive e bati nele até perceber que estava completamente... veja só que vexame, estou a divagar em meus pomposos relatos para ti, ó minha grande musa inspiradora. Prosseguindo, Karl realmente não sabia o caminho. Ponderamos longamente sobre o que deveríamos fazer ou para onde seguir, quando Ewan notou algo estranho em uma árvore. Eram enormes arranhões profundos de garras e o que parecia ser marcas de um bico afiado e colossal. Ao analisar essas marcas, percebemos que seriam de uma criatura enorme e perturbadora, tal qual um urso-coruja.
+
+Acredito que saibas a que tipo de monstruosidade me refiro; caso contrário, tentarei ser breve ao explicar: esses seres fabulosos emergiram inicialmente da imaginação fértil de dois homens insanos, devotos de criar abominações. Gary, o Venerado, e Dave, o Lendário, são os extraordinários idealizadores daquela célebre masmorra que muitos aventureiros evitam explorar. A saber, refiro-me a Dungeons & Dragons.
+
+Os urso-coruja personificam a essência feroz e indomável do reino das feras e aves. Podem parecer uma junção improvável entre uma coruja e um urso, mas sua constituição física singular e aterrorizante inspira temor e reverência nos intrépidos e desprevenidos que ousam enfrentar tal perigo.
+
+Ewan, Harpysune, Pi e eu estremecemos ao perceber o iminente perigo diante de nós, naquela clareira onde um modesto acampamento estava montado. A cena era trágica; meu estômago revirava ao avistar restos de corpos com as entranhas expostas. Creio ter notado o corpo de alguém muito jovem ou, talvez, de alguma raça diminuta, totalmente mutilado. E ali, devorando um humano sem a necessidade de mastigar, estava o que temíamos: o Urso-Coruja.
+
+O autômato Johnny 5 não compreendeu completamente e muito menos havia contemplado com seus olhos metálicos aquela magnífica e monstruosa criatura. Johnny 5, posicionado mais atrás no grupo, teve sua visão obstruída talvez pelo meu corpo robusto.
+
+A lembrança da cena seguinte ainda me causa arrepios. Não me refiro ao Urso-Coruja, mas aos meus companheiros tentando, de maneira grotesca, explicar o que era aquele ser para o autômato. Todos explicavam de forma tola o fascinante ser que avistamos; eu apenas observava, remoendo-me por dentro. A cada palavra, sentia pontadas no cérebro, como se parte do meu imenso intelecto escorresse pelas orelhas, semelhante ao efeito excruciante do derretimento da pele de um ser natural se tornando um recém-illithid ou um gnoll.
+
+A pior explicação foi a de Ewan, que simplesmente disse que o Urso-Coruja era uma mistura de pernas de cavalo, urso e coruja. Era como comparar uma obra rococó, que valoriza a beleza, com uma obra barroca, que exalta o feísmo. O autômato deu-se por satisfeito, enquanto H.s2 me acalmava recitando aquele mantra que tu, minha musa inspiradora, fizeste com tanto amor e carinho para mim: “Para com essa merda de mimimi inteligentinho de mago. Ninguém pediu a caralha da sua opinião. Deixa de ser um arrombado, babaca e um tremendo de um cuzão preso ao que tu acha certo. Porra, a vida não é um morango, Hrrank!”.
+
+Perdido nos recônditos de minha mente e percebendo que realmente me irrito facilmente com esses contratempos de convivência, ouvi o som da criatura disparando em nossa direção. A percepção de um Urso-Coruja é simplesmente fantástica! Nosso grupo, em perfeita sintonia e fluindo com harmonia, sofreu poucos ferimentos e combateu com maestria aquela monstruosidade. A cada golpe desferido, era uma luta alucinante pela sobrevivência; somos, afinal, animais racionais, embora alguns não pareçam pensar.
+
+Lembras quando mencionei que o Urso-Coruja “inspira temor e reverência nos intrépidos e desprevenidos que ousam enfrentar tal perigo”? Teus belos olhos castanho-escuros brilhariam ao nos ver lutar de forma majestosa contra esse monstro. Foi árduo, mas saímos vitoriosos.
+
+Admiramos, sim, admiramos aquele ser que jazia morto aos nossos pés. As enormes garras e bico, perfeitamente desenhados, afiados e que provocam pavor só de encará-los. Ewan, sem hesitar e com grande destreza, conseguiu retirar o bico e as garras do Urso-Coruja. Depois, caminhou até o que parecia ser o ninho da besta e encontrou algumas quinquilharias, um Ovo de Urso-Coruja, um Manto e um Elmo.
+
+Fiquei com o Ovo, é claro. Quero ter esse ser belo e majestoso comigo. Cuidarei dele como se fosse meu filho. Acho que observei muito Pi e Au-Fredo, e desejei ter um amigo de quatro patas que faz jus à minha grandiosidade. Pi e Ewan experimentaram o Elmo, que, segundo a etiqueta interna, era um Elmo do Pavor. Notei que esse temível elmo de aço faz os olhos brilharem em vermelho enquanto está em uso e pode mudar de tamanho para se acomodar perfeitamente à cabeça de quem o estiver vestindo. Já o Manto Longo de Muitas Modas permite mudar o estilo, a cor e a qualidade aparente da vestimenta ao bel-prazer do usuário. O peso da capa não muda, e, independentemente da sua aparência, o manto não passa de um manto. Embora possa duplicar a aparência de outras capas mágicas, não adquire suas propriedades mágicas.
+
+Johnny 5 admirava a capa e mostrava seu belíssimo sobretudo de couro e óculos de soldador, que estão com ele há uns cinquenta anos. Ele nos explicava o quão à vontade se sentia vestindo essas peças de roupa, embora não as precisasse. Até disse que ficaria mais garboso se usasse uma cueca similar à minha. Pedi-lhe para fazer um sobretudo para mim com o couro do Urso-Coruja. Vai demorar algum tempo até ficar pronto; ele me disse que o couro necessita ser curtido antes de ser costurado.
+
+Fiquei a imaginar uma bela cueca e um glorioso sobretudo. No entanto, a conversa sobre o couro precisar ser curtido desencadeou uma teoria horripilante sobre o que poderia significar "curtir" o couro. Alguns disseram que o gesto de polegares opositores levantados, enquanto os demais dedos se contraem na palma da mão, bastava para "curtir" o couro.
+
+Estupefato com tamanha ignorância e repensando como ainda não surtei com esses apontamentos, graças ao teu mantra, minha amada Helga, minha cabeça se mantém no lugar. Se mantém tão bem sobre o meu pescoço, que enquanto pensava em algo para rebater o desserviço educativo, meu olhar investigativo e minha boa percepção para notar olhares avistaram pares de olhos rubros sobrevoando entre as árvores e uma figura misteriosa, como se fosse uma nuvem negra. Falei sobre o que vi para Harpysune e apontei a direção. A pobre moça ficou amedrontada ao ver aqueles olhos.
+
+Pedi para que ela avisasse os demais enquanto eu me dirigia ao encontro daquilo. Meu espírito investigativo e minha curiosidade de mago estudioso me levaram até aquele local. Vi que naquela árvore havia a marca de uma mão, e onde ela pousara, estava apodrecido. Os outros se juntaram a mim e, infelizmente, o que eu e Harpysune contemplamos havia desaparecido. Mas, graças a H.s2, que captura imagens em tempo real para reproduzir como se fosse uma mensagem gravada na nuvem da trama, pude mostrar a eles tudo o que vi. Concluímos que poderia ser algo que também possui o Elmo do Pavor, igual ao nosso.
+
+Esperamos por um tempo e regressamos para a gruta onde encontramos Klar. Começamos a explorar o ambiente quando entramos em combate com três lobos atrozes. Foi uma bela batalha que culminou na morte dos lupinos. Ewan viu uma fenda na parede atrás dos lobos, que parecia ser um local de onde lançavam alimentos para eles. O que o fado Pi tem de diminuto, de igual modo tem de xereta. Ele voou até o topo da fenda, próxima ao teto da gruta repleta de estalactites, e avistou alguns Goblins e um forte bugbear no centro alimentando outro lobo atroz.
+
+O bugbear falava algumas coisas em goblin, que Pi reproduziu muito bem sem saber o significado; era algo como “tome esse pedaço de carne **” e mais algumas piadas e xingamentos.
+
+Querida Helga, o restante desse relato será um espetáculo de pura luta e muito sangue, do jeito que amas.
+
+### Klarg, o Fujão - Sessão 5 (16.07.24)
+
+O que irei lhe relatar agora é o prólogo do que poderia ser o início de um confronto épico, não fosse pelas infortunas desventuras de um bugbear covarde. Tal demonstração de falsa bravura muito me irrita, pois retira o esplendor das batalhas e das conquistas, algo que faz o sangue de todo guerreiro fervilhar de ira.
+
+Portanto, minha amada Helga, prosseguirei com meus relatos sem mais delongas. Continuando, Pi atou a corda de maneira firme a uma rocha. O pequeno ser demonstrou furtividade e engenhosidade, facilitando para que nosso grupo escalasse a parede até a fenda sem dificuldade. Ele é, de fato, admirável.
+
+Ascendemos facilmente a parede de nove metros. Ewan, com o auxílio do Manto Longo de Muitas Modas, camuflou-se de tal forma que desapareceu de nossa visão. Harpysune também se ocultou. Pi manteve-se furtivo, e eu, logo atrás da barda, agarrado à parede. Infelizmente, Johnny 5 caiu, fazendo um barulho que aguçou a curiosidade de um dos goblins, que veio investigar o que estava acontecendo.
+
+Com meus longos braços fortes, frutos da natureza bestial de minha linhagem híbrida de bugbear e outras origens desconhecidas, agarrei e imobilizei rapidamente o goblin antes que ele pudesse alertar os demais. Johnny 5, com destreza divina, finalizou o inimigo. Entretanto, a caverna não exalava um aroma floral, e o lobo, a quem o bugbear chamava de Estripador, aproximou-se para investigar. Num ímpeto astuto, Pi arremessou o Elmo com cheiro de carne na direção do lobo, que o considerou apetitoso e o devorou facilmente. Contudo, o maldito lupino uivou, alertando sobre a presença de intrusos. Como você diz, "estamos fritos" foi o que lampejou em minha memória.
+
+Ewan, num ímpeto feroz, lançou um dos goblins na direção do lobo, que morreu instantaneamente devido à força do impacto. A cabeça do goblin colidiu violentamente com a do Estripador. O líder bugbear, sem hombridade, fugiu para chamar reforços e se esconder. No entanto, não contava com nossa astúcia e recebeu um golpe certeiro da aranha de Johnny 5, que o fez sangrar. O autômato intimidou o bugbear com a cabeça do lobo, o Estripador, dizendo: "Chegou a sua encomenda."
+
+A luta foi como uma brincadeira infantil; perseguíamos o bugbear, que descobrimos chamar-se Klarg. Achei uma tremenda falta de criatividade goblinoide terem nomes tão similares. Agradeço por ter sido nomeado por mim mesmo; Hrrank foi o primeiro som que pronunciei, e meu pai, intrigado, batizou-me assim. Hrrank é um nome original, forte, com presença.
+
+Klarg corria enquanto nos aproximávamos. Em um corredor estreito, eu e Johnny 5 ficamos cercados por goblins. A aranha autômata havia se desligado, enquanto Pi, Ewan e Harpysune combatiam outros goblins na bifurcação abaixo da ponte onde o rio passava suavemente pelo caminho esculpido ao longo dos anos. Num misto de desespero e tentativa de salvar sua vida que se esvaía pelo sangramento, Klarg gritou: "Parem de me atacar e se rendam. Se fizerem isso, eu solto o humano." Meus companheiros, que tinham visão do bugbear, viram que o velho guerreiro humano estava sem um dos braços, desacordado e com uma adaga no pescoço.
+
+Aceitamos a oferta de Klarg e resgatamos o humano Sildar Hallwinter, que fora sequestrado junto de Gundren. O nobre homem informou que o anão fora levado para o Castelo do Rei Groll, pois ele e seus irmãos estavam na posse do mapa de uma antiga caverna, a mina de Phandelver.
+
+Lembro de meu pai ensinando-me sobre a trama. Ele mencionou que, há mais de quinhentos anos, foi feito o pacto de Phandelver entre humanos, anões e gnomos. Essas três raças utilizaram a mina, banhada pela força mágica das chamas verdes, para forjar artefatos mágicos. Até mesmo magos humanos criavam tomos usando a magia da chama verde, possivelmente relacionados ao herói Feiticeiro da Chama Verde, o herói de Neverwinter.
+
+Gundren está no castelo do Rei Groll. Voltamos à caverna e negociamos com um goblin que estava planejando um motim contra Klarg. No entanto, o infeliz não havia informado os outros goblins e retornou, oferecendo-se para nos levar pessoalmente até o castelo que tanto falam. Helga, o que mais me deixou roxo de nojo, foi o fato de estar coberto de sangue. Cheiro horrível e forte em minhas narinas, metálico e pútrido.
