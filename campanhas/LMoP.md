@@ -29,6 +29,36 @@ Johnny 5: O metálico lutou bravamente contra os hobgoblins. Mesmo gravemente av
 
 Neverwinter parece promissora. Vamos ver o que o futuro reserva para um fugitivo tentando começar de novo.
 
+### Dia 5: caminho até Phandalin
+
+Sigo mantendo meus registros sempre que possível para ter certeza que ainda conservo ao menos minha sanidade. Os últimos dias têm sido atribulados, mas confesso que a vida em grupo me conforta bem mais que as fugas solitárias.
+
+Juntos sobrepujamos algumas dúzias de goblins e outros goblinoides crescidos. Inclusive preciso pontuar que por mais que eu tenha ouvido falar como tais criaturas podem ser viis eu jamais pensei que pudesse sentir tanto desprezo por outro ser consciente. Eles são brutais, covardes, egoístas e trapaceiros. Não consigo entender como alguém como a senhorita Sune tem coragem de comer aqueles malditos.
+
+Nunca pensei em mim mesmo como um heroi, sequer um aventureiro. Minha vida sempre foi simples, ajudando em trabalhos acadêmicos ou administrativos de meus pais. Devo admitir que essas adaptações feitas pela Combine trouxeram a tona um lado meu que eu desconhecia… ou será que isso também foi por conta deles? Até que ponto ainda tenho algo de [nome riscado] e não Ewan, a arma biológica da Combine? Por um lado me sinto bem podendo ajudar os outros e sendo útil.
+
+Essa vida de aventuras por mais que tenha apenas começado já está rendendo bons frutos, entre eles o Manto das muitas modas - um acessório perfeito para quem precisa estar desaparecido, capaz de alterar suas cores e padrões conforme a vontade de seu mestre. Quem sabe com ele eu possa finalmente me livrar dessa maldita máscara metálica incômoda?.
+
+Talvez por uma estranha piada do destino, talvez por determinação divina, mas esse estranho grupo de indivíduos parece não se importar muito com minha aparência. Ainda bem, já que desde aquele dia evito espelhos ou mesmo reflexos na água e uso essa maldita máscara de metal.
+
+Mesmo tentando fugir da imagem dessa nova versão distorcida de mim mesmo ainda tem Ele, que sempre está ali, escarlate como sangue, sempre a me observar. Não sei se acompanha meus movimentos e decisões, analisando cada ação, cada golpe para um dia se virar contra mim. Talvez seja a minha consciência me forçando a reconhecer o monstro que me tornei. Será que é alguma força maior zombando de mim pelos meus erros do passado?
+
+Ele sempre fica lá, calado. No começo eu tinha medo, pensava ser algo que a Combine enviou para me capturar, mas depois fui me acostumando e percebi que ele só reagia às minhas vontades, quase como se fosse um Eu mais brutal, mais impulsivo, alguém guiado pelas reações e desejos.
+
+No nosso último combate algo estranho aconteceu. Um goblin maldito acertou uma flechada em meu ombro e eu realmente, realmente queria esmagar o crânio dele, mas seria suicidio pular no meio de três inimigos para atacar sem suporte… foi aí que o vermelho avançou e atacou o goblin. Qual foi a minha surpresa quando o ataque acertou em cheio, arrancando os dentes daquele infeliz!
+
+Parece que meus outros companheiros também conseguem ver o vermelho agora. Desde que acordei do controle mental ele sempre esteve lá, mas agora ele parece mais ativo e desconfiado. Preciso entender melhor o que o vermelho é.
+
+Droga. Odeio goblins. E hobgoblins. E até agora não fui muito afeiçoado à Bubears também com exceção do nosso amigo azul Hrrrank, que apesar da aparência feral e vestimenta “chamativa” têm se mostrado um verdadeiro cavalheiro.
+
+O senhor Pipérion é… especial. As vezes me assusto como algo tão pequeno consegue condensar tamanho poder mágico. Seu julgamento é difícil de prever, mas ele parece ter um coração no lugar certo (fora que é muito difícil não confiar em alguém que ande tão bem acompanhado como o querido Au Fredo).
+
+Johnny5 pode vir a ser preocupante. O construto continua produzindo novas armas, sendo basicamente um arsenal ambulante. Por mais que eu odeie goblins não acho digno maltratar eles, mas johnny parece pouco se importar em dissecar eles ainda vivos. E parece se divertir com isso.
+
+E a senhorita Sune… Ela é muito bonita e confiável, mas muito descuidada! Apesar de manter a vanguarda não posso descuidar pois muitas vezes ela parece pensar mais com a barriga que com a cabeça! Preciso proteger todos, especialmente ela e o Pipérion.
+
+Nota para mim mesmo: NUNCA confie em goblins.
+
 ## Diários de Pi por Caio Mizerkowski
 
 ### Dia 73 P.G
@@ -66,6 +96,24 @@ Felizmente estou acompanhando de guerreiros muito capazes que logo eliminaram as
 Após esse curto combate, precisaram novamente das minhas habilidades para encontrar um anão. Ora, olhei as pegadas no solo e segui elas com muito cuidado, até observar as costas dessa criatura gigantesca que chamam de anão. Duas buscas, dois sucessos.
 
 Tivemos que deixar a estrada, por algum motivo que não prestei a atenção e matar mais alguns goblins. Aparentemente a tortura é algo muito bem visto nessa sociedade, bastante estranho, mas ei de me adaptar.
+
+### Dia 74? P.G - Parte 2
+
+**Perdido está aquele que caminha sozinho, pois a amizade é sempre um caminho certo**
+
+Muita coisa ocorreu nas últimas horas, estou um tanto cansado e ainda um pouco bravo com tudo, mas se eu tiver uma boa noite de sono tenho certeza que amanhã estarei melhor. Meu anel está um pouco cheio com as caixas que precisaram guardar, mas ainda existe um espaço confortável para mim dentro dele. Uma boa ação nunca custa nada... bem, as vezes custa.
+
+Sem me adiantar, o principal é que após sermos guiados pelo goblin, chegamos a lugar nenhum, ou mais precisamente, em algum lugar. Uma clareira no meio da floresta, o que é bem diferente do castelo que procuramos. Não acredito que os seres desse mundo construam seus castelos em árvores, eles são muito grandes para isso e a maior parte deles não parece saber escalar bem ou voar.
+
+Nessa clareira a rainha era uma ursa-coruja, um ser que meus companheiros descreveram como possuindo patas de cavalos e uma cabeça de coruja, me pergunto que cogumelo que eles comeram para chegar nessa descrição. Se algum dia eu encontrar um cavalo com patas desse tamanho, tenho certeza que estarei a caminho de casa. Felizmente não fui o único a achar essa descrição no mínimo curiosa, Hrrrrrrrrank me pareceu até irritado com isso.
+
+Fomos de certo modo forçados a matar a ursa-coruja, após ela ter devorado nosso goblin numa bicada, ele foi o guia mais inútil que já vi, talvez tortura não seja um modo tão bom de conseguir informações. Vencemos, batalhas em geral são desinteressantes, e conseguimos alguns espólios, nesse mundo em que a fartura é incomum e a magia é rasa, toda oportunidade deve ser aproveitada. Cada parte da ursa-coruja que parecia útil foi retirada, incluindo um ovo desse ser que o Hrrrrrrrrank guardou em sua mochila.
+
+Fiquei com um elmo que deve ser muito comum nestas regiões, achei engraçado que o mesmo alterava de tamanho e coube muito bem na minha cabeça, ainda tenho que encontrar uma forma de usar isso, minhas tentativas hoje não foram bem sucedidas. Outra criatura com o mesmo elmo e uma capa escura nos observava de longe, talvez seja parente daquele que a ursa-coruja devorou.
+
+Voltamos para a caverna, para capturar outro goblin que pudesse ser nosso guia, em retrospectiva, considerando a burrice destas criaturas, não foi uma boa ideia. Um deles preferiu fugir a cumprir o acordo que tinha conosco, todos os outros morreram. Também resgatamos um humano, parece que uma prática comum entre estas criaturas começarem a devorar as presas pelos braços.
+
+Tudo parecia ir bem, um dia de vitórias eu diria, mas não, aquela pedra falante tinha que ofender meu amigo e colocar palavras na boca dele. Quando na realidade ele nunca seria mal educado como ela fez ele parecer ser. Au Fredo é muito sábio, já me salvou de muitos problemas, ele nunca ofenderia pessoas dessa forma, NUNCA, eu sim, ele não. Até o Hrrrrrrrrank ficou um pouco envergonhado com o comportamento da pedra, desculpas foram ditas, mas eu ainda tenho que me acalmar um pouco.
 
 ## Diários de Hrrank por Sara Barboza
 
