@@ -8,22 +8,22 @@ entries_layout: list
 
 ![alt text](images/image-4.png)
 
-## Ewan
+## Ewan - Simic Hybrid Guerreiro
 
 ![alt text](images/image-5.png)
 
-## Jhonny 5
+## Jhonny 5 - Warforged Artificer
 
 ![alt text](images/image-1.png)
 
-## Harpysune
+## Harpysune - Harpia Barda
 
 ![alt text](images/image.png)
 
-## Hrrank
+## Hrrank - Bugbear Mago-Barbáro
 
 ![alt text](images/image-2.png)
 
-## Pi
+## Pi - Fado Sorlock
 
 ![alt text](images/image-3.png)
