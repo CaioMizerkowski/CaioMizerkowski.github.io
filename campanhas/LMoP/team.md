@@ -8,6 +8,10 @@ entries_layout: list
 
 ![alt text](images/image-4.png)
 
+## Ali - Tiefling Ladina
+
+![alt text](images/image-6.png)
+
 ## Ewan - Simic Hybrid Guerreiro
 
 ![alt text](images/image-5.png)
