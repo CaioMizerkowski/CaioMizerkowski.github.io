@@ -5,6 +5,27 @@ show_excerpts: true
 entries_layout: list
 ---
 
+## 100 anos atrás
+
+<details>
+
+<summary>
+Ler somente ao final aventura
+</summary>
+
+O terceiro filho do Marquês Pinus do Grande Pinheiro do Leste, Pipérion "Pi" foi um membro destacado da corte do reino das fadas, conhecido por seu carisma e habilidades diplomáticas. Embora não fosse o mais inteligente ou sábio, sempre confiou em sua voz persuasiva para convencer os outros, muitas vezes estando errado. Sua lábia e finesse social lhe renderam muitos aliados na corte, e essas habilidades eventualmente lhe garantiram uma missão de um antigo e poderoso mago da corte.
+
+Pipérion foi encarregado de recuperar um objeto místico de uma sala que era muito maior por dentro do que parecia por fora. Essa sala era acessada por uma passagem estreita em um velho carvalho, com um chão adornado por padrões hipnotizantes de cores e arabescos. No centro, havia uma esfera de cristal, dentro da qual os quatro elementos borbulhavam, se misturavam e se separavam. Ao tocar a esfera, Pipérion sentiu um arrepio e viu um futuro possível onde o grande pinheiro, lar de sua família, era destruído pelo fogo de um dragão. Apavorado, ele deixou a esfera cair, causando uma pequena rachadura imperceptível, mas suficiente para desencadear sua ruína.
+
+Noite após noite, Pipérion foi assombrado por sonhos da destruição de sua casa, cada um mais vívido que o anterior. Até que uma voz misteriosa começou a ecoar em sua mente, oferecendo proteção às terras de sua família em troca de um pacto. As visões tornaram-se cada vez mais aterrorizantes, empurrando Pipérion cada vez mais perto da aceitação. A voz exigia uma única tarefa: entrar na sala do mago e destruir a esfera de cristal.
+
+Uma noite, Pipérion se esgueirou até a sala e arremessou a esfera ao chão. Na primeira tentativa, nada pareceu acontecer, mas na segunda, uma rachadura apareceu. Com a terceira arremetida, a esfera trincou e ele começou a ouvir quatro vozes distintas discutindo em uma língua desconhecida. Na quarta tentativa, a esfera se despedaçou completamente, liberando quatro poderosos gênios elementais. Três deles se dispersaram, deixando rastros de fogo, ar e água. O quarto, uma criatura pesada com aspecto terroso, olhou para Pipérion e falou em um idioma elemental que ele agora entendia:
+
+"Vou cumprir minha promessa, mas agora você deve obedecer às minhas ordens."
+
+Com um estalar de dedos do gênio, Pipérion se viu no plano material, sem saber o que havia acontecido ou como retornar. Toda noite, a partir de então, ele ouvia uma risada zombeteira em sua mente antes de dormir. Após vários meses e após enfrentar inúmeros desafios, Pipérion aproximou-se do local da aventura, montado em um mastim que carregava seus pertences e assobiando uma melodia.
+
+</details>
 
 ## Dia 73 P.G
 
@@ -59,3 +80,25 @@ Fiquei com um elmo que deve ser muito comum nestas regiões, achei engraçado qu
 Voltamos para a caverna, para capturar outro goblin que pudesse ser nosso guia, em retrospectiva, considerando a burrice destas criaturas, não foi uma boa ideia. Um deles preferiu fugir a cumprir o acordo que tinha conosco, todos os outros morreram. Também resgatamos um humano, parece que uma prática comum entre estas criaturas começarem a devorar as presas pelos braços.
 
 Tudo parecia ir bem, um dia de vitórias eu diria, mas não, aquela pedra falante tinha que ofender meu amigo e colocar palavras na boca dele. Quando na realidade ele nunca seria mal educado como ela fez ele parecer ser. Au Fredo é muito sábio, já me salvou de muitos problemas, ele nunca ofenderia pessoas dessa forma, NUNCA, eu sim, ele não. Até o Hrrrrrrrrank ficou um pouco envergonhado com o comportamento da pedra, desculpas foram ditas, mas eu ainda tenho que me acalmar um pouco.
+
+## 100 Anos e 75 dias P.G
+
+**Lagrimas na chuva são como as memórias derramadas no tempo**
+
+O mínimo a se dizer sobre esse dia é que ele foi aterrador, ao menos para mim, e imagino que também para meu amigo Ewan. Engraçado que tudo começou bem; tínhamos eliminado muitos goblins, e o resto da viagem foi tranquilo. Fiz as pazes com Hrrrrrrrrank e entreguei a ele o babador que encontrei no outro bugbear. Encontramos mais uma alma perdida, um tanto exótica para se dizer o mínimo, Ali, uma tiefling que, volta e meia, fala sozinha e, na menor oportunidade, esfaqueia os outros. Minha intuição me diz que, além de causar mortes, ela também é muito hábil no famoso pickpocket.
+
+No entanto, tudo isso pouco importa na grande escala das coisas. Me vejo até este momento aqui, à luz da lareira, junto ao Au Fredo, escrevendo sobre mais um dia. Mas, ao invés de ser mais um dia entre poucos, percebi que era mais um dia entre muitos. Em vez de ser o septuagésimo quinto dia, hoje é, de fato, o trigésimo sexto milésimo sexcentésimo dia após o fatídico incidente.
+
+Ewan possui muito em comum comigo, agora eu percebo. Estamos longe de nossas terras, somos criaturas marcadas pela magia que foge ao nosso controle, perdemos por muito tempo a nossa identidade e, ainda assim, temos que sobreviver. Sinto uma grande vontade de ajudá-lo, ao menos, as criaturas que o perseguem podem ser cortadas, como percebemos durante o combate de hoje. Mas qual lâmina é afiada o bastante para cortar as angústias que disfarçamos em sorrisos?
+
+## 100 Anos e 76 dias P.G
+
+**Mas a noite era infinita, a paz profunda e maldita**
+
+Deixe-me guiar novamente pelos meus instintos na noite passada, enquanto todos dormiam, principalmente o Au-Fredo, e após eu ter escrito meu diário, sai para fora e deixei um pequeno recado para estes tais de Marcas Vermelhas.
+
+Obviamente o recado que deixamos durante o dia, foi muito mais impactante, mas mesmo assim, sinto que deste de cedo comecei a fazer um ótimo trabalho. Quando acordamos, só me lembro agora de umas crianças, ou será que eram anões sem barba ou aqueles halflings (half ling e a outra metade é o que?), que nos guiaram para um ótimo destino, uma fazenda que plantava pães (deliciosos), e a dona da fazenda, que eu tenho certeza que era uma halfling e half alguma outra coisa, nós levou para o esconderijo dos Marcas Vermelhas.
+
+Eu não sabia o que esperar, mas entre tudo o que não esperava, o que eu esperei menos foi o que eu encontrei, um ser com um único olho verde, escalando as paredes e invadindo meus pensamentos, falando em minha mente e me trazendo lembranças do final do meu passado e do começo do meu esquecimento. Me apavorei, é verdade, e parece que uma maldição de outrorá (as vezes benção) se manifestou novamente e meus cabelos cairam, me lembro das primeiras vezes que estes efeitos estranhos ocorreram, enquanto eu ainda estudava os princípios da magia.
+
+Corri e pedi ajuda, já que nem todos haviam adentrado na caverna, quando voltei, um combate parecia se desenhar, mas Ewan parecia ter um dom para apaziguar uma luta, tanto como possuía o dom para termina-las pela força. Um acordo estranho foi feito, passagem pela caverna em troca do corpo daqueles que derrubassemos em combate. Não parecia que teriamos muitas opções e no final das contas estavamos aqui para destruir os Marcas Vermelhas.
