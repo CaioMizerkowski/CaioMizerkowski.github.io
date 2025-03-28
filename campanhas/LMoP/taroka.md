@@ -292,34 +292,52 @@ Sua sabedoria e seu limite de sabedoria aumentam em 2, sua força diminui em 1.
 
 `Serenity; inner strength and self-reliance; supreme confidence bereft of arrogance`
 
+Você tem vantagem no próximo teste de resistência que fizer.
+
 ### Missionary - Two of Glyphs
 
 `Those who spread wisdom and faith to others; warnings of the spread of fear and ignorance`
+
+Uma grande mentira é desmascarada para você em seus sonhos.
 
 ### Healer - Three of Glyphs
 
 `Healing; a contagious illness, disease, or curse; those who practice the healing arts`
 
+Você se torna imune a doenças por 1d4 anos.
+
 ### Shepherd - Four of Glyphs
 
 `Those who protect others; one who bears a burden far too great to be shouldered alone`
+
+Uma oportunidade de realizar um grande feito de bondade se revelará para você.
 
 ### Druid - Five of Glyphs
 
 `The ambivalence and cruelty of nature and those who feel drawn to it; inner turmoil`
 
+Você ganha Wild Shape por 1d4 dias. Considere seu nível como se fosse de druida.
+
 ### Anarchist - Six of Glyphs
 
 `A fundamental change brought on by one whose beliefs are being put to the test`
+
+Um grande evento vai compelir um aliado a abandonar suas crenças e adotar novas. É o equivalente a mudar de alinhamento.
 
 ### Charlatan - Seven of Glyphs
 
 `Liars; those who profess to believe one thing but actually believe another`
 
+Uma grande mentira se espalha sobre uma região próxima e as pessoas se sentem compelidas a acreditar nela.
+
 ### Bishop - Eight of Glyphs
 
 `Strict adherence to a code or a belief; those who plot, plan, and scheme`
 
+Um aliado desenvolve um código de conduta rígido e se recusa a quebrá-lo, mesmo que isso signifique a morte dele ou de outros. Não existe forma de convencê-lo a quebrar o código, seja por persuasão ou magia.
+
 ### Traitor - Nine of Glyphs
 
 `Betrayal by someone close and trusted; a weakening or loss of faith`
+
+Um aliado te trai e se junta ao seu inimigo.
