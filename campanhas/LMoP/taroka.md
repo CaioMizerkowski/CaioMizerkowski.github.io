@@ -1,8 +1,11 @@
-# Cartas
+# Deck of Many Tarokas
+
+## Regras
 
 - Puxe uma carta aleatoriamente do baralho, no máximo 3 cartas por dia.
-- O efeito da carta é ativado imediatamente após a revelação.
+- O efeito da carta é ativado imediatamente após a revelação, mas as consequências podem demorar a aparecer.
 - A carta desaparece e só reaparecerá após todo o deck ter sido revelado.
+- Uma carta destruída deixa de existir e não pode ser revelada novamente.
 - Qualquer aliado verdadeiro do dono do deck pode revelar uma carta.
 
 ## Major Arcana
@@ -227,23 +230,31 @@ Sua destreza e seu limite de destreza aumentam em 2, sua sabedoria diminui em 1.
 
 `Those who like money yet give it up freely; likable rogues and rapscallions`
 
+Você receberá um item mágico de valor considerável, mas que não é útil para você.
+
 ### Philanthropist - Two of Coins
 
 `Charity and giving on a grand scale; those who use wealth to fight evil and sickness`
+
+Uma oportunidade de ajudar uma causa nobre financeiramente se revelará para você. A recompensa é a própria causa.
 
 ### Trader - Three of Coins
 
 `Commerce; smuggling and black markets; fair and equitable trades`
 
-Você perde a proeficiência em uma salvaguarda que possua e ganha a proficiência em outra que não possua. A sua escolha, mas não pode manter a mesma.
+Você perde a proeficiência em uma salvaguarda que possua e ganha a proficiência em outra que não possua. A escolha é sua e a troca é obrigatória.
 
 ### Merchant - Four of Coins
 
 `A rare commodity or business opportunity; deceitful or dangerous business transactions`
 
+Você encontrará um item mágico poderoso, mas que ele é amaldiçoado ou necessita da realização de uma tarefa para ser utilizado.
+
 ### Guild Member - Five of Coins
 
 `Like-minded individuals joined together in a common goal; pride in one's work`
+
+Você recebe a visão de um grupo de pessoas que compartilham um objetivo em comum. Caso você os ajude, eles se tornarão seus aliados.
 
 ### Beggar - Six of Coins
 
@@ -255,13 +266,19 @@ Um aliado seu morre de causas naturais e deixa parte de sua fortuna para você.
 
 `Those who steal or burgle; a loss of property, beauty, innocence, friendship, or reputation`
 
+Um ladrão experiente se sente compelido a roubar algo de você. Ele é um mestre em seu ofício.
+
 ### Tax Collector - Eight of Coins
 
 `Corruption; honesty in an otherwise corrupt government or organization`
 
+Um imposto inesperado é cobrado de você. Caso não pague, você será perseguido por caçadores de recompensa sobrenaturais.
+
 ### Miser - Nine of Coins
 
 `Hoarded wealth; those who are irreversibly unhappy or who think money is meaningless`
+
+Você encontrará um item amaldiçoado e sofrerá a maldição até que ela seja removida. Para remover uma grande tarefa deve ser realizada. Sem a maldição, o item é inútil.
 
 ## Glyphs
 
