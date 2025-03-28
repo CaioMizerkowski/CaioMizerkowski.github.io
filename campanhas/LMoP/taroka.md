@@ -2,11 +2,12 @@
 
 ## Regras
 
-- Puxe uma carta aleatoriamente do baralho, no máximo 3 cartas por dia.
-- O efeito da carta é ativado imediatamente após a revelação, mas as consequências podem demorar a aparecer.
-- A carta desaparece e só reaparecerá após todo o deck ter sido revelado.
-- Uma carta destruída deixa de existir e não pode ser revelada novamente.
-- Qualquer aliado verdadeiro do dono do deck pode revelar uma carta.
+- Você pode revelar 1 carta aleatória do deck por vez, até 3 vezes por dia.
+- O dono do deck pode convidar uma criatura a puxar uma carta. A criatura pode aceitar ou recusar.
+- O efeito da carta se manifesta imediatamente após a revelação, preferencialmente de maneira natural. Se impossível, ocorre de forma sobrenatural, alterando a realidade conforme necessário (ex.: mudanças no tempo/espaço).
+- A carta revelada desaparece e só retorna ao deck após todas as cartas serem usadas.
+- Cartas destruídas pelo Executioner são removidas permanentemente do deck.
+- Criaturas compelidas pelo deck podem realizar um teste de Sabedoria (CD 25) para resistir ao efeito.
 
 ## Major Arcana
 
@@ -14,19 +15,19 @@
 
 `The importance of some physical object that must be obtained, protected, or destroyed at all costs`
 
-Você encontrará nas próximas 24 horas uma pista para um artefato mágico que pode mudar o rumo da história.
+Você encontrará nas próximas 24 horas uma pista para um artefato mágico que pode mudar o rumo da história. A pista é significativa e te aproximará em muito de encontrá-lo.
 
 ### Beast
 
 `Great rage or passion; something bestial or malevolent hiding in plain sight or lurking just below the surface`
 
-Um inimigo descobre a sua localização aproximada. Quanto mais próximo você estiver dele, maior será a precisão.
+Um inimigo descobre a sua localização aproximada nesse instante. Quanto mais próximo você estiver dele, maior será a precisão.
 
 ### Broken One
 
 `Defeat, failure, and despair; the loss of something or someone important, without which one feels incomplete`
 
-Algo ou alguém que é importante para você será perdido, roubado ou sequestrado.
+Algo ou alguém que é importante para você será perdido, roubado ou sequestrado nas próximas 24 horas.
 
 ### Darklord
 
@@ -38,13 +39,13 @@ Você tem um contato telepático com um inimigo poderoso por 1d4 horas, durante 
 
 `Isolation and imprisonment; being so conservative in thinking as to be a prisoner of one's own beliefs`
 
-Você é transportado para um demiplano onde tudo parece perfeito. Faça um teste de Sabedoria CD 15 a cada 1 hora para perceber que está preso em uma ilusão. Caso o tempo passe de uma 3 horas, considere um descanso curto, caso passe de 8 horas, considere um descanso longo.
+Você é transportado para um demiplano onde tudo parece perfeito. Faça um teste de Sabedoria CD 15 a cada 1 hora para perceber que está preso em uma ilusão. Caso o tempo passe de 3 horas, considere um descanso curto, caso passe de 8 horas, considere um descanso longo.
 
 ### Ghost
 
 `The looming past; the return of an old enemy or the discovery of a secret buried long ago`
 
-Um inimigo já derrotado volta a vida e busca vingança.
+Um inimigo derrotado volta a vida e busca vingança.
 
 ### Executioner
 
@@ -80,7 +81,7 @@ Você e seus aliados são transportados para um local e tempo desconhecido, que 
 
 `A hidden source of information; a fortunate turn of events; a secret potential for good`
 
-Um aliado misterioso se revela e oferece ajuda. Ele recebe a força de vontade necessária para ajudar vocês. Ele é alguém que necessitava de um empurrão para ajudar.
+Um aliado misterioso se revela e oferece ajuda. Ele é compelido a ajudar você.
 
 ### Seer
 
@@ -130,7 +131,7 @@ A próxima recompensa que você receber será dobrada em valor monetário.
 
 `Great heroes; a sudden reversal of fate; the triumph of the underdog over a mighty enemy`
 
-O próximo aliado seu que cair para 0 pontos de vida, se levantará com 1 ponto de vida e vantagem no próximo ataque que fizer.
+O próximo aliado seu que cair para 0 pontos de vida próximo a ti, se levantará com 1 ponto de vida e vantagem no próximo ataque que fizer.
 
 ### Berserker - Six of Swords
 
@@ -142,19 +143,19 @@ O próximo dano que receber em combate fará você entrar em fúria por 1 minuto
 
 `Bigotry, intolerance, and xenophobia; a mysterious presence or newcomer`
 
-Um possível aliado se torna hostil a você por preconceito.
+Um possível aliado é compelido a se tornar hostil a você.
 
 ### Dictator - Eight of Swords
 
 `All that is wrong with government and leadership; those who rule through fear and violence`
 
-Um nobre ou governante se torna hostil a você, seja por suas ações ou por boatos.
+Um nobre ou governante é compelido a se torna hostil a você.
 
 ### Torturer - Nine of Swords
 
 `The coming of suffering or merciless cruelty; one who is irredeemably evil or sadistic`
 
-Um capanga poderoso de um grande inimigo toma especial interesse em você e irá te atacar nos próximos dias.
+Um capanga poderoso de um inimigo é compelido a tomar um especial interesse em você e te atacar nos próximos dias.
 
 ## Stars
 
@@ -186,7 +187,7 @@ Você recebe duas visões contraditórias sobre um problema iminente, uma delas 
 
 `Those guided by logic and reasoning; warns of an overlooked clue or piece of information`
 
-Um pedaço de informação esquecido ou ignorado volta a tona em sua mente.
+Um pedaço de informação importante esquecido ou ignorado volta a tona em sua mente.
 
 ### Elementalist - Five of Stars
 
@@ -230,7 +231,7 @@ Sua destreza e seu limite de destreza aumentam em 2, sua sabedoria diminui em 1.
 
 `Those who like money yet give it up freely; likable rogues and rapscallions`
 
-Você receberá um item mágico de valor considerável, mas que não é útil para você.
+Você recebe instantaneamente um item mágico de valor considerável, mas que não é útil para você.
 
 ### Philanthropist - Two of Coins
 
@@ -242,13 +243,13 @@ Uma oportunidade de ajudar uma causa nobre financeiramente se revelará para voc
 
 `Commerce; smuggling and black markets; fair and equitable trades`
 
-Você perde a proeficiência em uma salvaguarda que possua e ganha a proficiência em outra que não possua. A escolha é sua e a troca é obrigatória.
+Você perde a proficiência em uma salvaguarda que possua e ganha a proficiência em outra que não possua. A escolha é sua e a troca é obrigatória.
 
 ### Merchant - Four of Coins
 
 `A rare commodity or business opportunity; deceitful or dangerous business transactions`
 
-Você encontrará um item mágico poderoso, mas que ele é amaldiçoado ou necessita da realização de uma tarefa para ser utilizado.
+Você encontrará nas próximas 24 horas um item mágico poderoso, mas que ele é amaldiçoado ou necessita da realização de uma tarefa para ser utilizado.
 
 ### Guild Member - Five of Coins
 
@@ -278,7 +279,7 @@ Um imposto inesperado é cobrado de você. Caso não pague, você será persegui
 
 `Hoarded wealth; those who are irreversibly unhappy or who think money is meaningless`
 
-Você encontrará um item amaldiçoado e sofrerá a maldição até que ela seja removida. Para remover uma grande tarefa deve ser realizada. Sem a maldição, o item é inútil.
+Você encontrará nas próximas 24 horas um item amaldiçoado poderoso e será compelido pega-lo. Para remover a maldição uma grande tarefa deve ser realizada. Sem a maldição, o item é inútil.
 
 ## Glyphs
 
@@ -292,7 +293,7 @@ Sua sabedoria e seu limite de sabedoria aumentam em 2, sua força diminui em 1.
 
 `Serenity; inner strength and self-reliance; supreme confidence bereft of arrogance`
 
-Você tem vantagem no próximo teste de resistência que fizer.
+Você tem vantagem na próxima salvaguarda que fizer.
 
 ### Missionary - Two of Glyphs
 
@@ -322,7 +323,7 @@ Você ganha Wild Shape por 1d4 dias. Considere seu nível como se fosse de druid
 
 `A fundamental change brought on by one whose beliefs are being put to the test`
 
-Um grande evento vai compelir um aliado a abandonar suas crenças e adotar novas. É o equivalente a mudar de alinhamento.
+Um grande evento vai compelir um aliado a abandonar suas crenças e adotar novas. Ele não necessariamente se tornará um traidor ou um inimigo, mas suas crenças serão mudadas para sempre.
 
 ### Charlatan - Seven of Glyphs
 
@@ -334,10 +335,10 @@ Uma grande mentira se espalha sobre uma região próxima e as pessoas se sentem 
 
 `Strict adherence to a code or a belief; those who plot, plan, and scheme`
 
-Um aliado desenvolve um código de conduta rígido e se recusa a quebrá-lo, mesmo que isso signifique a morte dele ou de outros. Não existe forma de convencê-lo a quebrar o código, seja por persuasão ou magia.
+Um aliado é compelido a desenvolver um código de conduta rígido e se recusa a quebrá-lo, mesmo que isso signifique a morte dele ou de outros. Não existe forma de convencê-lo a quebrar o código, seja por persuasão ou magia.
 
 ### Traitor - Nine of Glyphs
 
 `Betrayal by someone close and trusted; a weakening or loss of faith`
 
-Um aliado te trai e se junta ao seu inimigo.
+Um aliado é compelido a te trair e se juntar a um inimigo poderoso.
