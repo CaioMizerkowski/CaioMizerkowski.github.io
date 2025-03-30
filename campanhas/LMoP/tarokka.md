@@ -1,4 +1,4 @@
-# Deck of Many Tarokas
+# Deck of Many Tarokkas
 
 ## Regras
 
