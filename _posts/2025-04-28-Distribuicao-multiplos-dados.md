@@ -3,7 +3,7 @@ title: "ALEA IACTA EST"
 date: 2025-04-28
 ---
 
-O mais númerico e estatístico dentro os meus hobbies é jogar RPG de mesa, já que uma característica bastante comum é usar a sorte para determinar o resultado do que acontece e a sorte nestes jogos é representada muitas vezes pelo rolar dos dados. Claro, o tipo, a quantidade e os modificadores aplicados aos dados são determinados por escolhas durante o jogo, assim como por fatores externos ao personagem e que pertencem a história que está sendo contada e ao sistema de regras utilizado.
+O mais numérico e estatístico dentro os meus hobbies é jogar RPG de mesa, já que uma característica bastante comum é usar a sorte para determinar o resultado do que acontece e a sorte nestes jogos é representada muitas vezes pelo rolar dos dados. Claro, o tipo, a quantidade e os modificadores aplicados aos dados são determinados por escolhas durante o jogo, assim como por fatores externos ao personagem e que pertencem a história que está sendo contada e ao sistema de regras utilizado.
 
 O RPG mais conhecido é o Dungeons & Dragons, ele utiliza 6 diferentes tipos de dados, entre eles os sólidos platónicos com 4, 6, 8, 12 e 20 lados e uma abominação com 10 lados que só a imaginação de um herege poderia produzir. Como é perfeitamente visível na imagem, os dados são todos numerados e, portanto, a cada lançamento individual é obtido um resultado entre 1 o número de lados que o dado possui.
 
@@ -19,7 +19,7 @@ Tudo isso é muito legal e interessante, mas é um pouco chato depender de uma f
 
 ## Modelo de Dados
 
-Nos últimos anos eu tomei gosto por iniciar um projeto sempre criando algumas estruturas que me permitam organizar o código e dar significado as variáveis que utilizo. Então minha primeira pergunta ao criar esse projeto foi: Qual a principal particula de informação que eu quero representar? Minha escolha foi representar o *conjunto composto por um valor arbitrário e a sua probabilidade de ocorrer*.
+Nos últimos anos eu tomei gosto por iniciar um projeto sempre criando algumas estruturas que me permitam organizar o código e dar significado as variáveis que utilizo. Então minha primeira pergunta ao criar esse projeto foi: Qual a principal partícula de informação que eu quero representar? Minha escolha foi representar o *conjunto composto por um valor arbitrário e a sua probabilidade de ocorrer*.
 
 ```py
 class ValueProbability(NamedTuple):
@@ -107,7 +107,7 @@ Uma função foi criada para plotar a distribuição, com o seguinte resultado:
 
 ![Distribuição uniforme](/images/Distribuicao-multiplos-dados/image-2.png)
 
-Um ponto importante a se notar no código é o uso do [decorador](https://www.geeksforgeeks.org/python-property-decorator-property/) `@property`, além de permitir que um método seja chamado como se fosse um atributo, ele acaba por criar proteções a modificação da instância da classe não intencionais. Isso vai ser útil quando quisermos criar uma nova instância a partir de uma já existente, impedindo alguns bugs que poderiam ocorrer caso o estado da instância fosse alterado e ela fosse referênciada por multiplas variáveis. Python é uma linguagem que privilegia a liberdade do programador de fazer o que bem entender, então muitas vezes a adição de barreiras a essa liberdade é útil. Claro, caso alguém queira modificar o estado interno da instância, é só acessar o atributo diretamente, mas isso deve ser feito de forma consciente e intencional.
+Um ponto importante a se notar no código é o uso do [decorador](https://www.geeksforgeeks.org/python-property-decorator-property/) `@property`, além de permitir que um método seja chamado como se fosse um atributo, ele acaba por criar proteções a modificação da instância da classe não intencionais. Isso vai ser útil quando quisermos criar uma nova instância a partir de uma já existente, impedindo alguns bugs que poderiam ocorrer caso o estado da instância fosse alterado e ela fosse referenciada por múltiplas variáveis. Python é uma linguagem que privilegia a liberdade do programador de fazer o que bem entender, então muitas vezes a adição de barreiras a essa liberdade é útil. Claro, caso alguém queira modificar o estado interno da instância, é só acessar o atributo diretamente, mas isso deve ser feito de forma consciente e intencional.
 
 ## Múltiplos dados
 
@@ -302,7 +302,7 @@ ValueProbability(value=7, probability=1/8)
 ValueProbability(value=8, probability=1/8)
 ```
 
-O segredo é iniciarmos com a distribuição que já possuimos (`1d6+1d4`) e repetirmo o processo de convolução com a distribuição de `1d8`, para termos esse belo gráfico:
+O segredo é iniciarmos com a distribuição que já possuímos (`1d6+1d4`) e repetirmos o processo de convolução com a distribuição de `1d8`, para termos esse belo gráfico:
 
 ![Distribuição de 1d6+1d4+1d8](/images/Distribuicao-multiplos-dados/image-5.png)
 
@@ -314,11 +314,11 @@ O meu divulgador matemático favorito é o Grant Sanderson, então vou deixar aq
 
 ## Adicionando operações
 
-Existem duas classes de operações que queremos representar nesse projeto: números inteiros e `Die | Dice`; `Die | Dice` e `Die | Dice`. Para ambas utilizei os métodos mágicos, citados anteriormente. O uso deles permite fazer o overloading de operadores, como `+`, `*` e `@`. Eu não vou me extender a explicar todos os métodos mágicos utilizados, visto que muitos recaem no uso de outro método mágico, por exemplo a subtração pode ser vista como a adição de um número negativo.
+Existem duas classes de operações que queremos representar nesse projeto: números inteiros e `Die | Dice`; `Die | Dice` e `Die | Dice`. Para ambas utilizei os métodos mágicos, citados anteriormente. O uso deles permite fazer o overloading de operadores, como `+`, `*` e `@`. Eu não vou me estender a explicar todos os métodos mágicos utilizados, visto que muitos recaem no uso de outro método mágico, por exemplo a subtração pode ser vista como a adição de um número negativo.
 
 ### Multiplicação
 
-Na classe `Die` foi adicionado a propriedade `weight` para representar a multiplicação do dado por um número inteiro. Pegamos por exemplo `2*1d6` — diferente de `2d6` — e vejamo como essa operação modifica a distribuição.
+Na classe `Die` foi adicionado a propriedade `weight` para representar a multiplicação do dado por um número inteiro. Pegamos por exemplo `2*1d6` — diferente de `2d6` — e vejamos como essa operação modifica a distribuição.
 
 Antes:
 
