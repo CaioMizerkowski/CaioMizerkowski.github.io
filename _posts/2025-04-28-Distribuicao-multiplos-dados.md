@@ -11,7 +11,7 @@ O RPG mais conhecido é o Dungeons & Dragons, ele utiliza 6 diferentes tipos de 
 
 Em situações perfeitas, em que os dados não possuam irregularidades e sejam "justos", ao se lançar um único dado uma quantidade de vezes tendendo ao infinito, é esperado que a frequência obtida seja uniforme, ou seja, cada valor possua a mesma frequência. O lançamento de um único dado — na [notação mais comum](https://en.wikipedia.org/wiki/Dice_notation) 1ds — é um pouco tedioso, resultando somente em uma linha reta e uniforme entre os valores de 1 a N (sendo N o número de lados do dado).
 
-Ao se lançar múltiplos dados, com o mesmo número de lados ou não, a soma dos resultados se aproxima a uma distribuição normal. Esse é um resultado muito mais interessante, mas pessoas comuns não são geralmente capazes de determinar as probabilidades de cada resultado. Existe uma ferramenta online que facilita e muito a vida de quem deseja obter esses resultados, o [AnyDice](https://anydice.com/). Ela aceita um superset da notação para o lançamento de dados e fornece alguns gráficos e tabelas com os resultados.
+Ao se lançar múltiplos dados, com o mesmo número de lados ou não, a soma dos resultados se aproxima a uma distribuição normal. Esse é um resultado muito mais interessante, mas pessoas comuns não são geralmente capazes de determinar as probabilidades de cada resultado rapidamente. Existe uma ferramenta online que facilita e muito a vida de quem deseja obter esses resultados, o [AnyDice](https://anydice.com/). Ela aceita um superset da notação para o lançamento de dados e fornece alguns gráficos e tabelas com os resultados.
 
 ![Distribuição do lançamento de 3d6](/images/Distribuicao-multiplos-dados/image-1.png)
 
