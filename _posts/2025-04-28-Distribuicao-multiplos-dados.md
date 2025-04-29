@@ -409,4 +409,76 @@ No caso da classe `Dice`, o processo é feito através da criação de execuçã
 
 ### Multiplicação Matricial
 
-Continua
+Após implementar a multiplicação convencional, o operador `*` ficou indisponível para representar a quantidade de dados lançados. Como o Python adicionou o operador `@` para representar a multiplicação matricial na biblioteca numpy, minha escolha obvia se tornou usar ele para representar esse outro tipo de multiplicação. Por causa disso, a notação `2d6` se traduz ao utilizar esse código em `2@Die(6)` e gera uma instância de `Dice` com 2 dados de 6 lados internamente.
+
+A implementação desse método foi feita tanto na classe `Die` conforme o código abaixo, em que ao se utilizar o operador `@` — representado pelo método mágico `__matmul__` — junto a uma instância de `Die`, o resultado é pegar essa instância e criar `N` novas instâncias de `Die` que possuam as mesmas características. `N` também pode ser um número negativo, nesse caso o sinal do `offset` e do `weight` são invertidos.
+
+```py
+    def __matmul__(self, other: int):
+        if isinstance(other, int) and other >= 0:
+            dice = tuple(
+                Die(self.sides, self.offset, self.weight) for _ in range(other)
+            )
+            return Dice(*dice)
+
+        if isinstance(other, int) and other < 0:
+            dice = tuple(
+                Die(self.sides, -self.offset, -self.weight) for _ in range(-other)
+            )
+            return Dice(*dice)
+
+        raise TypeError(
+            "Unsupported operand type(s) for *: 'Die' and '{}'".format(
+                type(other).__name__
+            )
+        )
+```
+
+O caso da classe `Dice` é uma expansão desse conceito, para cada `Die` interno a classe, eu crio `N` novas instâncias com as mesmas características. Por exemplo: `2 @ Dice(Die(6), Die(4))` é o equivalente a `2d6+2d4`.
+
+```py
+    def __matmul__(self, other: int):
+        if isinstance(other, int) and other >= 0:
+            dice = tuple(
+                Die(die.sides, die.offset, die.weight) for die in self.dice * other
+            )
+            offset = self.offset * other
+            return type(self)(*dice, offset=offset)
+
+        if isinstance(other, int) and other < 0:
+            dice = tuple(
+                Die(die.sides, -die.offset, -die.weight)
+                for die in self.dice * abs(other)
+            )
+            offset = self.offset * other
+            return type(self)(*dice, offset=offset)
+
+        raise TypeError(
+            "Unsupported operand type(s) for *: 'Dice' and '{}'".format(
+                type(other).__name__
+            )
+        )
+```
+
+### Adição
+
+O processo de adição é ridiculamente simples. No caso de um inteiro, se adiciona o valor ao `offset` e no caso de `Die | Dice`, cria-se uma novo `Dice` cujo estado interno é composto pelos dois dados.
+
+```py
+    def __add__(self, other: Self | int):
+        if isinstance(other, int):
+            return Die(self.sides, self.offset + other, self.weight)
+
+        if isinstance(other, type(self)):
+            return Dice(self, other)
+
+        raise TypeError(
+            "Unsupported operand type(s) for +: 'Die' and '{}'".format(
+                type(other).__name__
+            )
+        )
+```
+
+## Próximos passos
+
+O próximo passo nesse projeto é criar um parser que receba a notação `1d6+1d4` e partir disso gere a distribuição esperada. Ainda não fiz, então fica para um futuro artigo. O código completo está disponível em [Github](https://github.com/CaioMizerkowski/CaioMizerkowski.github.io/tree/master/code/dice.py).
