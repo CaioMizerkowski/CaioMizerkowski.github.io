@@ -7,13 +7,13 @@ O mais númerico e estatístico dentro os meus hobbies é jogar RPG de mesa, já
 
 O RPG mais conhecido é o Dungeons & Dragons, ele utiliza 6 diferentes tipos de dados, entre eles os sólidos platónicos com 4, 6, 8, 12 e 20 lados e uma abominação com 10 lados que só a imaginação de um herege poderia produzir. Como é perfeitamente visível na imagem, os dados são todos numerados e, portanto, a cada lançamento individual é obtido um resultado entre 1 o número de lados que o dado possui.
 
-![DnD Dices](images/Distribuicao-multiplos-dados/image.png)
+![DnD Dices](/images/Distribuicao-multiplos-dados/image.png)
 
 Em situações perfeitas, em que os dados não possuam irregularidades e sejam "justos", ao se lançar um único dado uma quantidade de vezes tendendo ao infinito, é esperado que a frequência obtida seja uniforme, ou seja, cada valor possua a mesma frequência. O lançamento de um único dado — na [notação mais comum](https://en.wikipedia.org/wiki/Dice_notation) 1ds — é um pouco tedioso, resultando somente em uma linha reta e uniforme entre os valores de 1 a N (sendo N o número de lados do dado).
 
 Ao se lançar múltiplos dados, com o mesmo número de lados ou não, a soma dos resultados se aproxima a uma distribuição normal. Esse é um resultado muito mais interessante, mas pessoas comuns não são geralmente capazes de determinar as probabilidades de cada resultado. Existe uma ferramenta online que facilita e muito a vida de quem deseja obter esses resultados, o [AnyDice](https://anydice.com/). Ela aceita um superset da notação para o lançamento de dados e fornece alguns gráficos e tabelas com os resultados.
 
-![Distribuição do lançamento de 3d6](images/Distribuicao-multiplos-dados/image-1.png)
+![Distribuição do lançamento de 3d6](/images/Distribuicao-multiplos-dados/image-1.png)
 
 Tudo isso é muito legal e interessante, mas é um pouco chato depender de uma ferramenta externa e não compreender os mecanismos que permitem gerar o resultado que ela fornece. Então eu decidi esboçar um pedaço de código para reproduzir o funcionamento do AnyDice, ao menos parcialmente.
 
@@ -105,7 +105,7 @@ ValueProbability(value=7, probability=1/6)
 
 Uma função foi criada para plotar a distribuição, com o seguinte resultado:
 
-![Distribuição uniforme](images/Distribuicao-multiplos-dados/image-2.png)
+![Distribuição uniforme](/images/Distribuicao-multiplos-dados/image-2.png)
 
 Um ponto importante a se notar no código é o uso do [decorador](https://www.geeksforgeeks.org/python-property-decorator-property/) `@property`, além de permitir que um método seja chamado como se fosse um atributo, ele acaba por criar proteções a modificação da instância da classe não intencionais. Isso vai ser útil quando quisermos criar uma nova instância a partir de uma já existente, impedindo alguns bugs que poderiam ocorrer caso o estado da instância fosse alterado e ela fosse referênciada por multiplas variáveis. Python é uma linguagem que privilegia a liberdade do programador de fazer o que bem entender, então muitas vezes a adição de barreiras a essa liberdade é útil. Claro, caso alguém queira modificar o estado interno da instância, é só acessar o atributo diretamente, mas isso deve ser feito de forma consciente e intencional.
 
@@ -285,7 +285,7 @@ ValueProbability(value=10, probability=1/24)
 ```
 
 O plot dessa distribuição é:
-![Distribuição de 1d6+1d4](images/Distribuicao-multiplos-dados/image-4.png)
+![Distribuição de 1d6+1d4](/images/Distribuicao-multiplos-dados/image-4.png)
 
 ### Convolução para 3+ dados
 
@@ -304,7 +304,7 @@ ValueProbability(value=8, probability=1/8)
 
 O segredo é iniciarmos com a distribuição que já possuimos (`1d6+1d4`) e repetirmo o processo de convolução com a distribuição de `1d8`, para termos esse belo gráfico:
 
-![Distribuição de 1d6+1d4+1d8](images/Distribuicao-multiplos-dados/image-5.png)
+![Distribuição de 1d6+1d4+1d8](/images/Distribuicao-multiplos-dados/image-5.png)
 
 ### Mais detalhes sobre convolução
 
