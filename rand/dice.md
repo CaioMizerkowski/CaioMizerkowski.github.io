@@ -571,7 +571,7 @@ In this section we’ll see **three** concrete, step‑by‑step examples.  We�
 
 ### 6.1 Basic Dice Tables
 
-#### 7.1.1 One Six‑Sided Die (1d6)
+#### 6.1.1 One Six‑Sided Die (1d6)
 
 $$
 1d6(k) =
@@ -585,7 +585,7 @@ $$
 |:-------------:|:-:|:-:|:-:|:-:|:-:|:-:|
 | Probability   |1/6|1/6|1/6|1/6|1/6|1/6|
 
-#### 7.1.2 Sum of Two d6’s (2d6)
+#### 6.1.2 Sum of Two d6’s (2d6)
 
 $$
 2d6 = 1d6 + 1d6,\quad (1d6+1d6)(k) = \sum_{i+j=k}1d6(i)\,1d6(j).
@@ -595,9 +595,7 @@ $$
 |:---------:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 | Probability |1/36|2/36|3/36|4/36|5/36|6/36|5/36|4/36|3/36|2/36|1/36|
 
-Check: $$\sum_k P(k) = \tfrac{36}{36} = 1.$$
-
-#### 7.1.3 Scaling a d6 by 2 (2*1d6)
+#### 6.1.3 Scaling a d6 by 2 (2*1d6)
 
 $$
 (2*1d6)(k) =
@@ -611,13 +609,16 @@ $$
 |:-------------:|:--:|:--:|:--:|:--:|:--:|:--:|
 | Probability   |1/6 |1/6 |1/6 |1/6 |1/6 |1/6 |
 
-Check: support $$\{2,4,6,8,10,12\}$$, $$\sum P(k)=6\cdot\tfrac16=1.$$
-
 ### 6.2 Scalar‑Sum Example: $$(1\!*\!1d4)\oplus(1\!*\!1d6)$$
 
 We compute
+
 $$
-(1*1d4)\oplus(1*1d6) = 2 * M,\quad M(k)=\tfrac12\,1d4(k)+\tfrac12\,1d6(k).
+(1*1d4)\oplus(1*1d6) = 2*(\frac{1}{2}*1d4)\oplus(\frac{1}{2}*1d6) = 2 * M,
+$$
+
+$$
+M(k)=\tfrac12\,1d4(k)+\tfrac12\,1d6(k).
 $$
 
 #### Step 1: Build $$M(k)$$
@@ -632,69 +633,77 @@ $$
 |   6   | 0      | 1/6    | $$\tfrac1{12}$$                  |
 
 Check:
-$$\;4\times\tfrac5{24}+2\times\tfrac1{12}=\tfrac{20}{24}+\tfrac{2}{12}=\tfrac{20}{24}+\tfrac{4}{24}=1.$$
+
+$$\;4\times\tfrac5{24}+2\times\tfrac1{12}=1.$$
 
 #### Step 2: Scale by 2
 
 $$
-F(j) = (2*M)(j) =
+(2*M)(j) =
 \begin{cases}
 M(j/2), & 2\mid j,\\
-0,      & \text{otherwise.}
+0, & \text{otherwise.}
 \end{cases}
 $$
 
 | $$j$$ | 2    | 4    | 6    | 8    | 10   | 12   |
 |:-----:|:----:|:----:|:----:|:----:|:----:|:----:|
-| $$F(j)$$ |5/24 |5/24 |5/24 |5/24 |1/12 |1/12 |
+| $$(2*M)(j)$$ |5/24 |5/24 |5/24 |5/24 |1/12 |1/12 |
 
-Check: $$4\times\tfrac5{24}+2\times\tfrac1{12}=1.$$
+### 6.3 Shift Example: $$S_1(1d4) \oplus 1d6$$
 
-So
+We are applying the **Scalar‑Sum** operation to a $$ S_1(1d4) $$, which supports $$\{2,3,4,5\}$$ with probabilities $$\tfrac14$$ each with $$1d6$$, which supports $$\{1,2,3,4,5,6\}$$ with probabilities $$\tfrac16$$ each.
+
+#### 6.3.1 Step 1: Build $$S_1(1d4)$$ and $$1d6$$
+
 $$
-(1*1d4)\oplus(1*1d6) = F
-$$
-has support on even numbers 2–12 with the above probabilities.
-
-### 6.3 Shift Example: $$S_1(1d6 \oplus 1d4)$$
-
-First recall
-$$
-1d6\oplus1d4 = 2 * M',\quad M'(k)=\tfrac12\,1d6(k)+\tfrac12\,1d4(k).
+S_1(1d4)(k) = 1d4(k - 1) =
+\left\{
+\begin{array}{ll}
+\frac{1}{4}, & k \in \{2, 3, 4, 5\} \\
+0, & \text{otherwise}
+\end{array}
+\right.
 $$
 
-#### Step 1: Compute $$M'(k)$$
+$$
+1d6(k) =
+\left\{
+\begin{array}{ll}
+\frac{1}{6}, & k \in \{1, 2, 3, 4, 5, 6\} \\
+0, & \text{otherwise}
+\end{array}
+\right.
+$$
 
-| $$k$$ | 1d6(k) | 1d4(k) | $$M'(k)$$            |
+#### 6.3.2 Step 2: Build $$M(k)$$
+
+$$
+(S_1(1d4) \oplus 1d6)(k) = 2*M(k) = 2*(\frac{1}{2} \cdot S_1(1d4)(k) + \frac{1}{2} \cdot 1d6(k))
+$$
+
+| $$k$$ | 1d6(k) | 1d4(k) | $$M(k)$$            |
 |:-----:|:------:|:------:|:--------------------:|
-|   1   | 1/6    | 1/4    | $$\tfrac5{24}$$      |
-|   2   | 1/6    | 1/4    | $$\tfrac5{24}$$      |
-|   3   | 1/6    | 1/4    | $$\tfrac5{24}$$      |
-|   4   | 1/6    | 1/4    | $$\tfrac5{24}$$      |
-|   5   | 1/6    | 0      | $$\tfrac1{12}$$      |
-|   6   | 1/6    | 0      | $$\tfrac1{12}$$      |
+|   1   | 1/6    | 0      | $$\tfrac{1}{12}$$      |
+|   2   | 1/6    | 1/4    | $$\tfrac{5}{24}$$      |
+|   3   | 1/6    | 1/4    | $$\tfrac{5}{24}$$      |
+|   4   | 1/6    | 1/4    | $$\tfrac{5}{24}$$      |
+|   5   | 1/6    | 1/4    | $$\tfrac{5}{24}$$      |
+|   6   | 1/6    | 0      | $$\tfrac{1}{12}$$      |
 
-Normalization: same check as above.
+#### 6.3.3 Step 3: Scale by 2
 
-#### Step 2: Scale by 2 to get $$Z = 1d6\oplus1d4$$
+$$
+(2*M)(j) =
+\begin{cases}
+M(j/2), & 2\mid j,\\
+0, & \text{otherwise.}
+\end{cases}
+$$
 
 | $$j$$ | 2    | 4    | 6    | 8    | 10   | 12   |
 |:-----:|:----:|:----:|:----:|:----:|:----:|:----:|
-| $$Z(j)$$ |5/24 |5/24 |5/24 |5/24 |1/12 |1/12 |
-
-#### Step 3: Apply Shift $$S_1$$
-
-$$
-S_1 Z = \delta_{1} + Z \quad\Longrightarrow\quad (S_1 Z)(k) = Z(k-1).
-$$
-
-| New outcome $$k$$ | 3    | 5    | 7    | 9    | 11   | 13   |
-|:-----------------:|:----:|:----:|:----:|:----:|:----:|:----:|
-| $$(S_1 Z)(k)$$      |5/24 |5/24 |5/24 |5/24 |1/12 |1/12 |
-
-Check: same total mass $$=1$$, support shifted by +1.
-
-These examples illustrate how to **build**, **mix**, **scale**, and **shift** dice distributions **step by step**—all with tiny tables and sanity checks to keep you confident at each stage.
+| $$(2*M)(j)$$ |1/12 |5/24 |5/24 |5/24 |5/24 |1/12 |
 
 ## 7. Extended Operations
 
