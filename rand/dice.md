@@ -7,23 +7,23 @@ entries_layout: list
 
 Dice Algebra is a concise, systematic way to describe and manipulate any ｢dice‑like｣ probability distribution over the integers.  Instead of only talking about ｢roll two six‑sided dice｣, you get a small toolkit of algebraic operations—addition, scaling, shifting, mixing, and more—that you can combine freely.
 
-**Why use Dice Algebra?**  
+**Why use Dice Algebra?**
 
-- **Clarity:** every operation has a precise definition and all the algebraic laws (associativity, commutativity, etc.) hold.  
-- **Composability:** you can build complex distributions—clamped dice, difference of dice, random‑count rolls—by stringing together a few primitives.  
+- **Clarity:** every operation has a precise definition and all the algebraic laws (associativity, commutativity, etc.) hold.
+- **Composability:** you can build complex distributions—clamped dice, difference of dice, random‑count rolls—by stringing together a few primitives.
 - **Uniformity:** ｢numbers｣ (like the integer 3) live in the same language as probability distributions (as a degenerate delta).
 
-**Roadmap of this document:**  
+**Roadmap of this document:**
 
-1. [The Underlying Set](#1-the-underlying-set)  
-2. [Core Operations](#2-core-operations)  
-3. [Mixture Kernel](#3-the-mixture-kernel)
-4. [Embedding Integers](#4-embedding-integers)  
-5. [Algebraic Laws](#5-algebraic-laws)  
-6. [Worked Examples](#6-worked-examples)  
-7. [Extended Operations](#7-extended-operations)  
-8. [Number–Delta Dictionary](#8-numberdelta-dictionary)  
-9. [Summary & Next Steps](#9-summary--next-steps)  
+1. [The Underlying Set](#1-the-underlying-set)
+2. [Core Operations](#2-core-operations)
+3. [Mixture Kernel](#3-the-mixture-kernel-mk)
+4. [Embedding Integers](#4-embedding-integers-into-mathcald)
+5. [Algebraic Laws](#5-algebraic-laws)
+6. [Worked Examples](#6-worked-examples)
+7. [Extended Operations](#7-extended-operations)
+8. [Number–Delta Dictionary](#8-delta-distributions-and-scalar-embedding)
+9. [Summary & Next Steps](#9-summary-and-structure-of-dice-algebra)
 
 ## 1. The Underlying Set
 
@@ -37,9 +37,9 @@ $$
     \Bigr\}.
 $$
 
-- Each $$X\in\mathcal D$$ is called a *dice distribution*.  
-- Common examples:
-  - **1d6**: uniform on $$\{1,2,3,4,5,6\}$$:
+Each $$X\in\mathcal D$$ is called a *dice distribution*.
+
+- **1d6**: uniform on $$\{1,2,3,4,5,6\}$$:
 
     $$
       1d6(k) =
@@ -49,7 +49,7 @@ $$
       \end{cases}
     $$
 
-  - **2d6**: the convolution $$1d6 + 1d6$$, giving the familiar 2–12 triangular shape.
+- **2d6**: the convolution $$1d6 + 1d6$$, giving the familiar 2–12 triangular shape.
 
 ### 1.1 Delta‑Distributions
 
@@ -63,7 +63,7 @@ $$
 \end{cases}
 $$
 
-- $$\delta_0$$ is the ｢zero｣ distribution (all mass at 0).  
+- $$\delta_0$$ is the ｢zero｣ distribution (all mass at 0).
 - $$\delta_n$$ lets us encode the *exact* outcome $$n$$.
 
 **Light example table** for $$\delta_3$$:
@@ -82,62 +82,69 @@ In Dice Algebra, we have **five** fundamental ways to combine or transform dis
 
 ### 2.1 Convolution (Sum of Independent Rolls)
 
-**Notation:**  
+**Notation:**
+
 $$
 X + Y
 $$
 
-**Definition:**  
+**Definition:**
+
 $$
 (X + Y)(k)
 \;=\;
 \sum_{i + j = k} X(i)\,Y(j).
 $$
+
 You roll $$X$$ and $$Y$$ independently and add the results.
 
-**Example:**  
+**Example:**
 
-- $$1d4 + 1d6$$ has support $$\{2,\dots,10\}$$.  
-- Probability of $$5$$:  
-  $$
-    (1d4 + 1d6)(5)
-    =\sum_{i+j=5}1d4(i)\,1d6(j)
-    =\tfrac14\cdot\tfrac16\;+\;\tfrac14\cdot\tfrac16
-    =\tfrac{2}{24}=\tfrac{1}{12}.
-  $$
+$$1d4 + 1d6$$ has support $$\{2,\dots,10\}$$. Probability of $$5$$:
+
+$$
+(1d4 + 1d6)(5)
+=\sum_{i+j=5}1d4(i)\,1d6(j)
+=1d4(1)\,1d6(4)\;+\;
+1d4(2)\,1d6(3)\;+\;
+1d4(3)\,1d6(2)\;+\;
+1d4(4)\,1d6(1)
+=\tfrac{1}{6}
+$$
 
 ### 2.2 Outcome‑Scaling
 
-**Notation:**  
+**Notation:**
 $$
 n * X
 $$
 
-**Definition:**  
+**Definition:**
 $$
-(n*X)(k)
-=
-
-\begin{cases}
-X\bigl(\tfrac{k}{n}\bigr), & n\mid k,\\
+(n*X)(k) =
+\left\{
+\begin{array}{ll}
+X\left( \frac{k}{n} \right), & \text{if } n \mid k, \\
 0, & \text{otherwise.}
-\end{cases}
+\end{array}
+\right}
 $$
+
 You multiply every outcome by $$n$$, keeping probabilities the same.
 
-**Example:**  
+**Example:**
 
-- $$2 * 1d6$$ has support $$\{2,4,6,8,10,12\}$$, each with probability $$\tfrac16$$.  
+- $$2 * 1d6$$ has support $$\{2,4,6,8,10,12\}$$, each with probability $$\tfrac16$$.
 - E.g.\ $$(2*1d6)(8)=1d6(4)=\tfrac{1}{6}$$.
 
 ### 2.3 $$n$$-Fold Convolution (Roll $$n$$ Times)
 
-**Notation:**  
+**Notation:**
 $$
 n \cdot X
 $$
 
-**Definition:**  
+**Definition:**
 $$
 n\cdot X = \underbrace{X + X + \cdots + X}_{n\text{ times}},
 \quad
@@ -145,43 +152,43 @@ n\cdot X = \underbrace{X + X + \cdots + X}_{n\text{ times}},
 $$
 You roll $$X$$ independently $$n$$ times and sum the results.
 
-**Example:**  
+**Example:**
 
-- $$3\cdot 1d4 = 1d4+1d4+1d4$$ has support $$\{3,\dots,12\}$$.  
+- $$3\cdot 1d4 = 1d4+1d4+1d4$$ has support $$\{3,\dots,12\}$$.
 - It’s the familiar triangular distribution for 3d4.
 
 ### 2.4 Shift Operator
 
-**Notation:**  
+**Notation:**
 $$
 S_n X
 $$
 
-**Definition:**  
+**Definition:**
 $$
 (S_n X)(k) = X(k - n).
 $$
 Equivalently $$S_n X = \delta_n + X$$ (convolution with $$\delta_n$$).  Shifts every outcome up by $$n$$.
 
-**Example:**  
+**Example:**
 
-- $$S_2(1d6)$$ has support $$\{3,4,5,6,7,8\}$$, each $$\tfrac16$$.  
+- $$S_2(1d6)$$ has support $$\{3,4,5,6,7,8\}$$, each $$\tfrac16$$.
 - $$(S_2 1d6)(5) = 1d6(3) = \tfrac16$$.
 
 ### 2.5 Scalar‑Sum (Mix & Scale)
 
-**Notation:**  
+**Notation:**
 $$
 (m*X)\;\oplus\;(n*Y)
 $$
 
 **Two‐step Definition:**
 
-1. **Weighted mixture**  
+1. **Weighted mixture**
    $$
    M(k) = \frac{m}{m+n}\,X(k)\;+\;\frac{n}{m+n}\,Y(k).
    $$
-2. **Scale outcomes**  
+2. **Scale outcomes**
    $$
    (m*X)\oplus(n*Y)
    = (m+n)\;*\;M.
@@ -192,17 +199,17 @@ $$
 X\oplus Y = 2*\Bigl(\tfrac12X\oplus\tfrac12Y\Bigr).
 $$
 
-**Example:**  
+**Example:**
 
-- $$(1*1d4)\oplus(1*1d6)$$:  
-  1. Mix $$\tfrac12\cdot1d4 + \tfrac12\cdot1d6$$.  
+- $$(1*1d4)\oplus(1*1d6)$$:
+  1. Mix $$\tfrac12\cdot1d4 + \tfrac12\cdot1d6$$.
   2. Scale by 2 → support on even $$\{2,\dots,12\}$$.
 
-> **Tip:**  Whenever $$X=Y$$,  
-> $$(m*X)\oplus(n*X) = (m+n)*X$$.  
+> **Tip:**  Whenever $$X=Y$$,
+> $$(m*X)\oplus(n*X) = (m+n)*X$$.
 > This recovers 「add two identical dice｣ as a pure scaling.
 
-*Next up:* Section 4 will introduce the **Mixture Kernel** $$M(k)$$ in more detail, showing you exactly how to compute it in tables before scaling.  
+*Next up:* Section 4 will introduce the **Mixture Kernel** $$M(k)$$ in more detail, showing you exactly how to compute it in tables before scaling.
 
 ## 3. The Mixture Kernel $$M(k)$$
 
@@ -225,7 +232,7 @@ M(k) \;=\; p\,X(k)\;+\;q\,Y(k).
 }
 $$
 
-- Intuitively, with probability $$p$$ you 「draw｣ from $$X$$, and with probability $$q$$ from $$Y$$.  
+- Intuitively, with probability $$p$$ you 「draw｣ from $$X$$, and with probability $$q$$ from $$Y$$.
 - Note $$\sum_k M(k)=1$$ because $$p+q=1$$ and each of $$X,Y$$ sums to 1.
 
 ### 3.2 Light Example
@@ -263,7 +270,7 @@ we get the following table:
 |   5   |     0      | $$\tfrac16$$   | $$\tfrac12\!\bigl(0+\tfrac16\bigr)=\tfrac1{12}$$ |
 |   6   |     0      | $$\tfrac16$$   | $$\tfrac1{12}$$ |
 
-> **Check normalization:**  
+> **Check normalization:**
 > $$\sum_{k=1}^6 M(k) = 4\cdot\tfrac5{24} + 2\cdot\tfrac1{12}
 > = \tfrac{20}{24} + \tfrac{2}{12}
 > = \tfrac{20}{24} + \tfrac{4}{24}
@@ -290,7 +297,7 @@ $$
 
 In our example, $$(1*1d4)\oplus(1*1d6)=2*M$$ puts mass $$M(k)$$ at outcome $$2k$$.
 
-*Next:* we’ll see how **Integers embed** into $$\mathcal D$$ via delta‑distributions, and how 「adding｣ and 「multiplying｣ deltas recovers ordinary arithmetic.  
+*Next:* we’ll see how **Integers embed** into $$\mathcal D$$ via delta‑distributions, and how 「adding｣ and 「multiplying｣ deltas recovers ordinary arithmetic.
 
 ## 4. Embedding Integers into $$\mathcal{D}$$
 
@@ -326,7 +333,7 @@ $$
 \delta_{m+n}.
 $$
 
-- **Example:**  
+- **Example:**
   $$
   2 + 3 = 5
   \quad\Longleftrightarrow\quad
@@ -343,7 +350,7 @@ k * \delta_n
 \delta_{k\,n}.
 $$
 
-- **Example:**  
+- **Example:**
   $$
   3 \times 4 = 12
   \quad\Longleftrightarrow\quad
@@ -358,7 +365,7 @@ S_n X = \delta_n + X.
 $$
 So convolving any $$X$$ with $$\delta_n$$ *shifts* it up by $$n$$:
 
-- **Example:**  
+- **Example:**
   Start with $$1d6$$:
   $$
   1d6(k) =
@@ -375,11 +382,11 @@ So convolving any $$X$$ with $$\delta_n$$ *shifts* it up by $$n$$:
 
 ### 4.5 Why This Matters
 
-- **Uniformity:** You don’t need a separate 「number｣ system—integers are just a special case of dice.  
-- **Operators:** Deltas both *are* numbers and *act* as those numbers on any distribution (by convolution or scaling).  
+- **Uniformity:** You don’t need a separate 「number｣ system—integers are just a special case of dice.
+- **Operators:** Deltas both *are* numbers and *act* as those numbers on any distribution (by convolution or scaling).
 - **Simplicity:** All arithmetic properties (associativity, commutativity, distributivity) flow from the same underlying rules in $$\mathcal D$$.
 
-### 4.6 Note on integers vs. delta‑distributions  
+### 4.6 Note on integers vs. delta‑distributions
 
 Whenever you see a bare integer like `0`, `1`, or `2` in these laws, it stands for the corresponding **delta‑distribution** $$\delta_n$$.  For example:
 $$1 * X = X \Rightarrow \delta_1* X = X$$
@@ -393,63 +400,63 @@ Dice Algebra isn’t just a loose collection of operations—**every law** you k
 
 ### 5.1 Identities
 
-1. **Additive identity for convolution**  
+1. **Additive identity for convolution**
    $$
      X + \delta_{0} = X.
    $$
-   *Example:*  
+   *Example:*
    $$\;1d6 + \delta_{0} = 1d6.$$
 
-2. **Multiplicative identity for scaling**  
+2. **Multiplicative identity for scaling**
    $$
      \delta_{1} *X = X.
    $$
-   *Example:*  
+   *Example:*
    $$\;\delta_{1}* 1d4 = 1d4.$$
 
-3. **Zero rolls**  
+3. **Zero rolls**
    $$
      \delta_{0} \cdot X = \delta_{0},
      \quad
      \delta_{0} *X = \delta_{0}.
    $$
-   *Example:*  
-   $$\;\delta_{0}\cdot1d6 = \delta_{0}$$ (always 0);  
+   *Example:*
+   $$\;\delta_{0}\cdot1d6 = \delta_{0}$$ (always 0);
    $$\;\delta_{0}*1d6 = \delta_{0}.$$
 
 ### 5.2 Commutativity
 
-1. **Convolution**  
+1. **Convolution**
    $$
      X + Y = Y + X.
    $$
-   *Example:*  
+   *Example:*
    $$\;\delta_{2} + \delta_{3} = \delta_{3} + \delta_{2} = \delta_{5}.$$
 
-2. **Scalar‑Sum**  
+2. **Scalar‑Sum**
    $$
      (m*X)\oplus(n*Y) = (n*Y)\oplus(m*X).
    $$
-   *Example:*  
+   *Example:*
    $$(1*1d4)\oplus(2*1d6) = (2*1d6)\oplus(1*1d4).$$
 
 ### 5.3 Associativity
 
-1. **Convolution**  
+1. **Convolution**
    $$
      (X + Y) + Z = X + (Y + Z).
    $$
-   *Example:*  
+   *Example:*
    $$(\delta_{1}+\delta_{2})+\delta_{3} = \delta_{6} = \delta_{1}+(\delta_{2}+\delta_{3}).$$
 
-2. **Scaling**  
+2. **Scaling**
    $$
      m*(n*X) = (mn)*X.
    $$
-   *Example:*  
+   *Example:*
    $$2*(3*1d4) = 6*1d4.$$
 
-3. **Scalar‑Sum**  
+3. **Scalar‑Sum**
    $$
      \bigl((m*X)\oplus(n*Y)\bigr)\oplus(p*Z)
      = (m*X)\oplus\bigl((n*Y)\oplus(p*Z)\bigr).
@@ -457,21 +464,21 @@ Dice Algebra isn’t just a loose collection of operations—**every law** you k
 
 ### 5.4 Distributivity
 
-1. **Repeated‑roll over convolution**  
+1. **Repeated‑roll over convolution**
    $$
      n\cdot (X + Y) = n\cdot X + n\cdot Y.
    $$
 
-2. **Outcome‑scaling over convolution**  
+2. **Outcome‑scaling over convolution**
    $$
      n * (X + Y) = (n*X) + (n*Y).
    $$
-   *Example:*  
-   Let $$X = \delta_{1}, Y = \delta_{2}, n=3$$.  
-   - LHS: $$3*(\delta_{1}+\delta_{2}) = 3*\delta_{3} = \delta_{9}.$$  
+   *Example:*
+   Let $$X = \delta_{1}, Y = \delta_{2}, n=3$$.
+   - LHS: $$3*(\delta_{1}+\delta_{2}) = 3*\delta_{3} = \delta_{9}.$$
    - RHS: $$(3*\delta_{1}) + (3*\delta_{2}) = \delta_{3} + \delta_{6} = \delta_{9}.$$
 
-3. **Outcome‑scaling over scalar‑sum**  
+3. **Outcome‑scaling over scalar‑sum**
    $$
      n *\bigl((m*X)\oplus(p*Y)\bigr)
      = (n\!m)*X \;\oplus\; (n\!p)*Y.
@@ -483,7 +490,7 @@ Whenever you “scalar‑sum” **two copies of the same** distribution:
 $$
   (m*X)\oplus(n*X) = (m+n)*X.
 $$
-*Example:*  
+*Example:*
 $$(1*1d6)\oplus(2*1d6) = 3*1d6.$$
 
 ### 5.6 Shift Semigroup
@@ -494,7 +501,7 @@ $$
   \quad
   S_{0}X = X.
 $$
-*Example:*  
+*Example:*
 $$
   S_{2}\bigl(S_{1}(1d4)\bigr) = S_{3}(1d4).
 $$
@@ -565,7 +572,7 @@ $$
 |   5   | 0      | 1/6    | $$\tfrac1{12}$$                  |
 |   6   | 0      | 1/6    | $$\tfrac1{12}$$                  |
 
-Check:  
+Check:
 $$\;4\times\tfrac5{24}+2\times\tfrac1{12}=\tfrac{20}{24}+\tfrac{2}{12}=\tfrac{20}{24}+\tfrac{4}{24}=1.$$
 
 #### Step 2: Scale by 2
@@ -628,7 +635,7 @@ $$
 
 Check: same total mass $$=1$$, support shifted by +1.
 
-These examples illustrate how to **build**, **mix**, **scale**, and **shift** dice distributions **step by step**—all with tiny tables and sanity checks to keep you confident at each stage.  
+These examples illustrate how to **build**, **mix**, **scale**, and **shift** dice distributions **step by step**—all with tiny tables and sanity checks to keep you confident at each stage.
 
 ## 7. Extended Operations
 
@@ -650,7 +657,7 @@ $$
 
 ### 7.2 Maximum / Minimum of Two Dice
 
-**Definitions:**  
+**Definitions:**
 $$
 (X\vee Y)(k) \;=\; \sum_{\max(i,j)=k} X(i)\,Y(j),
 \qquad
@@ -679,7 +686,7 @@ $$
 
 ### 7.3 Convolution with Reflection (「Difference｣)
 
-**Definition:**  
+**Definition:**
 $$
 X - Y \;=\; X * -(Y),
 \quad (X-Y)(k)=\sum_{i-j=k}X(i)\,Y(j).
@@ -696,7 +703,7 @@ $$
 
 ### 7.4 Composition of Dice
 
-**Definition:**  
+**Definition:**
 $$
 (X\circ Y)(k)
 =\sum_{i\in\mathbb Z}X(i)\;\bigl(i\text{-fold roll sum of }Y\bigr)(k).
@@ -830,7 +837,7 @@ The Dice Algebra is a **formal system** for manipulating probability distributio
 | $$ S_n $$     | Semigroup: $$ S_n \circ S_m = S_{n+m} $$            |
 | Composition   | Not associative, but well-defined and useful        |
 
-Together, these components define a **complete system** of probabilistic arithmetic:  
+Together, these components define a **complete system** of probabilistic arithmetic:
 any expression involving dice rolls, deterministic numbers, or their interactions can be represented and manipulated using Dice Algebra.
 
 This framework allows precise modeling and reasoning about randomness, especially useful in games, simulations, and probabilistic programming.
