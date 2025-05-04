@@ -134,22 +134,25 @@ You multiply every outcome by $$n$$, keeping probabilities the same.
 ### 2.3 $$n$$-Fold Convolution (Roll $$n$$ Times)
 
 **Notation:**
+
 $$
 n \cdot X
 $$
 
 **Definition:**
+
 $$
 n\cdot X = \underbrace{X + X + \cdots + X}_{n\text{ times}},
 \quad
 0\cdot X = \delta_0.
 $$
+
 You roll $$X$$ independently $$n$$ times and sum the results.
 
 **Example:**
 
 - $$3\cdot 1d4 = 1d4+1d4+1d4$$ has support $$\{3,\dots,12\}$$.
-- It’s the familiar triangular distribution for 3d4.
+- It’s the familiar triangular distribution for $$3d4$$.
 
 ### 2.4 Shift Operator
 
@@ -159,19 +162,22 @@ S_n X
 $$
 
 **Definition:**
+
 $$
 (S_n X)(k) = X(k - n).
 $$
-Equivalently $$S_n X = \delta_n + X$$ (convolution with $$\delta_n$$).  Shifts every outcome up by $$n$$.
+
+Equivalently $$S_n X = \delta_n + X$$ (convolution with $$\delta_n$$). Shifts every outcome up by $$n$$.
 
 **Example:**
 
-- $$S_2(1d6)$$ has support $$\{3,4,5,6,7,8\}$$, each $$\tfrac16$$.
+- $$S_{2}1d6$$ has support $$\{3,4,5,6,7,8\}$$, each $$\tfrac16$$.
 - $$(S_2 1d6)(5) = 1d6(3) = \tfrac16$$.
 
 ### 2.5 Scalar‑Sum (Mix & Scale)
 
 **Notation:**
+
 $$
 (m*X)\;\oplus\;(n*Y)
 $$
@@ -179,33 +185,34 @@ $$
 **Two‐step Definition:**
 
 1. **Weighted mixture**
+
    $$
    M(k) = \frac{m}{m+n}\,X(k)\;+\;\frac{n}{m+n}\,Y(k).
    $$
+
 2. **Scale outcomes**
+
    $$
    (m*X)\oplus(n*Y)
    = (m+n)\;*\;M.
    $$
 
 Special case $$m=n=1$$:
+
 $$
 X\oplus Y = 2*\Bigl(\tfrac12X\oplus\tfrac12Y\Bigr).
 $$
 
 **Example:**
 
-- $$(1*1d4)\oplus(1*1d6)$$:
-  1. Mix $$\tfrac12\cdot1d4 + \tfrac12\cdot1d6$$.
-  2. Scale by 2 → support on even $$\{2,\dots,12\}$$.
+$$(1*1d4)\oplus(1*1d6)$$:
 
-> **Tip:**  Whenever $$X=Y$$,
-> $$(m*X)\oplus(n*X) = (m+n)*X$$.
-> This recovers 「add two identical dice｣ as a pure scaling.
+1. Mix $$\tfrac12\cdot1d4 + \tfrac12\cdot1d6$$.
+2. Scale by 2 → support on even $$\{2,\dots,12\}$$.
 
-*Next up:* Section 4 will introduce the **Mixture Kernel** $$M(k)$$ in more detail, showing you exactly how to compute it in tables before scaling.
+**Tip:**  $$X=Y \Leftarrow (m*X)\oplus(n*X) = (m+n)*X$$. This recovers 「add two identical dice｣ as a pure scaling.
 
-## 3. The Mixture Kernel $$M(k)$$
+### 3. The Mixture Kernel $$M(k)$$
 
 Before we scale outcomes in the **Scalar‑Sum**, we first form a **pointwise mixture** of two distributions.  This is captured by the **Mixture Kernel** $$M$$.
 
