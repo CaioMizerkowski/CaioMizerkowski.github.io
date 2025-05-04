@@ -203,14 +203,11 @@ $$
 X\oplus Y = 2*\Bigl(\tfrac12X\oplus\tfrac12Y\Bigr).
 $$
 
-**Example:**
+**Tip:**
 
-$$(1*1d4)\oplus(1*1d6)$$:
+$$X=Y \Leftarrow (m*X)\oplus(n*X) = (m+n)*X$$.
 
-1. Mix $$\tfrac12\cdot1d4 + \tfrac12\cdot1d6$$.
-2. Scale by 2 → support on even $$\{2,\dots,12\}$$.
-
-**Tip:**  $$X=Y \Leftarrow (m*X)\oplus(n*X) = (m+n)*X$$. This recovers 「add two identical dice｣ as a pure scaling.
+This recovers ｢add two identical dice｣ as a pure scaling.
 
 ### 3. The Mixture Kernel $$M(k)$$
 
@@ -218,15 +215,22 @@ Before we scale outcomes in the **Scalar‑Sum**, we first form a **pointwise mi
 
 ### 3.1 Definition
 
-For any $$X,Y\in\mathcal D$$ and weights $$m,n\in\mathbb{N}$$, set
+For any $$X,Y\in\mathcal D$$ and weights $$m,n\in\mathbb{N}$$, set:
+
 $$
 p = \frac{m}{m+n},
-\quad
+$$
+
+$$
 q = \frac{n}{m+n},
-\quad
+$$
+
+$$
 p+q=1.
 $$
+
 Then define the **Mixture Kernel**:
+
 $$
 \boxed{
 M(k) \;=\; p\,X(k)\;+\;q\,Y(k).
@@ -239,27 +243,37 @@ $$
 ### 3.2 Light Example
 
 Let
+
 $$
 X = 1d4,\quad Y = 1d6,\quad m=1,\quad n=1.
 $$
+
 Then $$p=q=\tfrac12$$, and
+
 $$
 M(k) = \tfrac12\,1d4(k)\;+\;\tfrac12\,1d6(k).
 $$
+
 Since
+
 $$
 1d4(k)=
 \begin{cases}
 \tfrac14,&k=1,2,3,4,\\
 0,&\text{otherwise,}
 \end{cases}
-\quad
+$$
+
+and
+
+$$
 1d6(k)=
 \begin{cases}
 \tfrac16,&k=1,2,3,4,5,6,\\
 0,&\text{otherwise,}
 \end{cases}
 $$
+
 we get the following table:
 
 | $$k$$ | $$1d4(k)$$ | $$1d6(k)$$ | $$M(k)=\tfrac12[1d4(k)+1d6(k)]$$ |
@@ -271,11 +285,8 @@ we get the following table:
 |   5   |     0      | $$\tfrac16$$   | $$\tfrac12\!\bigl(0+\tfrac16\bigr)=\tfrac1{12}$$ |
 |   6   |     0      | $$\tfrac16$$   | $$\tfrac1{12}$$ |
 
-> **Check normalization:**
-> $$\sum_{k=1}^6 M(k) = 4\cdot\tfrac5{24} + 2\cdot\tfrac1{12}
-> = \tfrac{20}{24} + \tfrac{2}{12}
-> = \tfrac{20}{24} + \tfrac{4}{24}
-> = 1.$$
+**Check normalization:**
+$$\sum_{k=1}^6 M(k) = 4\cdot\tfrac5{24} + 2\cdot\tfrac1{12} = 1.$$
 
 ### 3.3 How to Use $$M(k)$$
 
@@ -285,11 +296,11 @@ $$
 (m*X)\oplus(n*Y)
 = (m+n) * M
 $$
-simply **scales** each outcome by $$(m+n)$$.  Concretely:
-$$
-\bigl((m*X)\oplus(n*Y)\bigr)(j)
-=
 
+simply **scales** each outcome by $$(m+n)$$.  Concretely:
+
+$$
+\bigl((m*X)\oplus(n*Y)\bigr)(j) =
 \begin{cases}
 M\bigl(\tfrac{j}{m+n}\bigr), & (m+n)\mid j,\\
 0, & \text{otherwise}.
@@ -297,8 +308,6 @@ M\bigl(\tfrac{j}{m+n}\bigr), & (m+n)\mid j,\\
 $$
 
 In our example, $$(1*1d4)\oplus(1*1d6)=2*M$$ puts mass $$M(k)$$ at outcome $$2k$$.
-
-*Next:* we’ll see how **Integers embed** into $$\mathcal D$$ via delta‑distributions, and how 「adding｣ and 「multiplying｣ deltas recovers ordinary arithmetic.
 
 ## 4. Embedding Integers into $$\mathcal{D}$$
 
