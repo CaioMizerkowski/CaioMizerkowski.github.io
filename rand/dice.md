@@ -712,9 +712,11 @@ Beyond the core five, Dice Algebra includes powerful extras.  We’ll define e
 ### 7.1 Reflection / Negation
 
 **Definition:**
+
 $$
 -(X)(k) \;=\; X(-k).
 $$
+
 ｢Mirror｣ the pmf about zero.
 
 **Example:** Reflecting a 1d6 gives outcomes $$-1,\dots,-6$$.
@@ -726,14 +728,19 @@ $$
 ### 7.2 Maximum / Minimum of Two Dice
 
 **Definitions:**
+
 $$
 (X\vee Y)(k) \;=\; \sum_{\max(i,j)=k} X(i)\,Y(j),
-\qquad
+$$
+
+$$
 (X\wedge Y)(k) \;=\; \sum_{\min(i,j)=k} X(i)\,Y(j).
 $$
+
 ｢Roll two dice; pick the larger (or smaller).｣
 
 **Example:** $$X=1d4,\;Y=1d6$$.  We compute $$P(\max=k)$$ via
+
 $$
 P(\max \le k) = P(X\le k)\,P(Y\le k),
 \quad
@@ -748,6 +755,7 @@ $$
 | $$P(\max= k)$$ |1/24|1/6−1/24=3/24|3/8−1/6=1/24|4/6−3/8=7/24|5/6−4/6=1/6|1−5/6=1/6|
 
 So
+
 $$
 X\vee Y = \{1:1/24,\;2:3/24,\;3:1/24,\;4:7/24,\;5:1/6,\;6:1/6\}.
 $$
@@ -755,12 +763,14 @@ $$
 ### 7.3 Convolution with Reflection (｢Difference｣)
 
 **Definition:**
+
 $$
 X - Y \;=\; X * -(Y),
 \quad (X-Y)(k)=\sum_{i-j=k}X(i)\,Y(j).
 $$
 
 **Example:** $$1d6 - 1d6$$ has support $$\{-5,\dots,5\}$$, with
+
 $$
 P(k) = \frac{6 - |k|}{36}.
 $$
@@ -772,10 +782,12 @@ $$
 ### 7.4 Composition of Dice
 
 **Definition:**
+
 $$
 (X\circ Y)(k)
 =\sum_{i\in\mathbb Z}X(i)\;\bigl(i\text{-fold roll sum of }Y\bigr)(k).
 $$
+
 You first roll $$X$$ to get $$i$$, then roll $$Y$$ a total of $$i$$ times and sum.
 
 **Example:** Let $$X=1d2$$ (a coin: outcomes 1 or 2 with $$\tfrac12$$) and $$Y=1d4$$.
@@ -787,11 +799,7 @@ You first roll $$X$$ to get $$i$$, then roll $$Y$$ a total of $$i$$ times and su
 |:-------------:|:----:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | $$1d4(k)$$    |1/4  |1/4     |1/4     |1/4     |0       |0       |0       |0       |
 | $$2d4(k)$$    |0    |1/16    |2/16    |3/16    |4/16    |3/16    |2/16    |1/16    |
-| $$(X\circ Y)(k)$$ |½·1/4=1/8 |½·1/4+½·1/16=5/32 |½·1/4+½·2/16=3/16 |½·1/4+½·3/16=7/32 |½·0+½·4/16=1/8 |½·0+½·3/16=3/32 |½·0+½·2/16=1/16 |½·0+½·1/16=1/32 |
-
-Check $$\sum_k(X\circ Y)(k)=1$$.
-
-These four extensions—reflection, max/min, signed convolution, and composition—round out a **rich toolkit** for modeling virtually any dice‑based random process.
+| $$(X\circ Y)(k)$$ |½·1/4=1/8 |½(1/4+1/16)=5/32 |½(1/4+2/16)=3/16 |½(1/4+3/16)=7/32 |½·4/16=1/8 |½·3/16=3/32 |½·2/16=1/16 |½·1/16=1/32 |
 
 ## 8. Delta Distributions and Scalar Embedding
 
