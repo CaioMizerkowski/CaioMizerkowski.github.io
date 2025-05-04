@@ -5,8 +5,6 @@ show_excerpts: true
 entries_layout: list
 ---
 
-## 1. Overview
-
 Dice Algebra is a concise, systematic way to describe and manipulate any ｢dice‑like｣ probability distribution over the integers.  Instead of only talking about ｢roll two six‑sided dice｣, you get a small toolkit of algebraic operations—addition, scaling, shifting, mixing, and more—that you can combine freely.
 
 **Why use Dice Algebra?**  
@@ -17,18 +15,17 @@ Dice Algebra is a concise, systematic way to describe and manipulate any ｢dice
 
 **Roadmap of this document:**  
 
-1. Overview  
-2. The Underlying Set  
-3. Core Operations  
-4. Mixture Kernel  
-5. Embedding Integers  
-6. Algebraic Laws  
-7. Worked Examples  
-8. Extended Operations  
-9. Number–Delta Dictionary  
-10. Summary & Next Steps  
+1. [The Underlying Set](#1-the-underlying-set)  
+2. [Core Operations](#2-core-operations)  
+3. [Mixture Kernel](#3-the-mixture-kernel)
+4. [Embedding Integers](#4-embedding-integers)  
+5. [Algebraic Laws](#5-algebraic-laws)  
+6. [Worked Examples](#6-worked-examples)  
+7. [Extended Operations](#7-extended-operations)  
+8. [Number–Delta Dictionary](#8-numberdelta-dictionary)  
+9. [Summary & Next Steps](#9-summary--next-steps)  
 
-## 2. The Underlying Set
+## 1. The Underlying Set
 
 We work in the universe of **finite discrete probability distributions** over the integers:
 $$
@@ -43,6 +40,7 @@ $$
 - Each $$X\in\mathcal D$$ is called a *dice distribution*.  
 - Common examples:
   - **1d6**: uniform on $$\{1,2,3,4,5,6\}$$:
+
     $$
       1d6(k) =
       \begin{cases}
@@ -50,9 +48,10 @@ $$
         0, & \text{otherwise.}
       \end{cases}
     $$
+
   - **2d6**: the convolution $$1d6 + 1d6$$, giving the familiar 2–12 triangular shape.
 
-### 2.1 Delta‑Distributions
+### 1.1 Delta‑Distributions
 
 For any integer $$n$$, define the **degenerate** or **delta** distribution at $$n$$:
 
@@ -64,7 +63,7 @@ $$
 \end{cases}
 $$
 
-- $$\delta_0$$ is the 「zero｣ distribution (all mass at 0).  
+- $$\delta_0$$ is the ｢zero｣ distribution (all mass at 0).  
 - $$\delta_n$$ lets us encode the *exact* outcome $$n$$.
 
 **Light example table** for $$\delta_3$$:
@@ -77,11 +76,11 @@ $$
 |   3   |       1         |
 |   4   |       0         |
 
-## 3. Core Operations
+## 2. Core Operations
 
 In Dice Algebra, we have **five** fundamental ways to combine or transform distributions.  Each one is precise, yet builds the familiar ideas of ｢rolling,｣ 「adding,｣ 「scaling,｣ and more.
 
-### 3.1 Convolution (Sum of Independent Rolls)
+### 2.1 Convolution (Sum of Independent Rolls)
 
 **Notation:**  
 $$
@@ -107,7 +106,7 @@ You roll $$X$$ and $$Y$$ independently and add the results.
     =\tfrac{2}{24}=\tfrac{1}{12}.
   $$
 
-### 3.2 Outcome‑Scaling
+### 2.2 Outcome‑Scaling
 
 **Notation:**  
 $$
@@ -131,7 +130,7 @@ You multiply every outcome by $$n$$, keeping probabilities the same.
 - $$2 * 1d6$$ has support $$\{2,4,6,8,10,12\}$$, each with probability $$\tfrac16$$.  
 - E.g.\ $$(2*1d6)(8)=1d6(4)=\tfrac{1}{6}$$.
 
-### 3.3 $$n$$-Fold Convolution (Roll $$n$$ Times)
+### 2.3 $$n$$-Fold Convolution (Roll $$n$$ Times)
 
 **Notation:**  
 $$
@@ -151,7 +150,7 @@ You roll $$X$$ independently $$n$$ times and sum the results.
 - $$3\cdot 1d4 = 1d4+1d4+1d4$$ has support $$\{3,\dots,12\}$$.  
 - It’s the familiar triangular distribution for 3d4.
 
-### 3.4 Shift Operator
+### 2.4 Shift Operator
 
 **Notation:**  
 $$
@@ -169,7 +168,7 @@ Equivalently $$S_n X = \delta_n + X$$ (convolution with $$\delta_n$$).  Shifts e
 - $$S_2(1d6)$$ has support $$\{3,4,5,6,7,8\}$$, each $$\tfrac16$$.  
 - $$(S_2 1d6)(5) = 1d6(3) = \tfrac16$$.
 
-### 3.5 Scalar‑Sum (Mix & Scale)
+### 2.5 Scalar‑Sum (Mix & Scale)
 
 **Notation:**  
 $$
@@ -205,11 +204,11 @@ $$
 
 *Next up:* Section 4 will introduce the **Mixture Kernel** $$M(k)$$ in more detail, showing you exactly how to compute it in tables before scaling.  
 
-## 4. The Mixture Kernel $$M(k)$$
+## 3. The Mixture Kernel $$M(k)$$
 
 Before we scale outcomes in the **Scalar‑Sum**, we first form a **pointwise mixture** of two distributions.  This is captured by the **Mixture Kernel** $$M$$.
 
-### 4.1 Definition
+### 3.1 Definition
 
 For any $$X,Y\in\mathcal D$$ and weights $$m,n\in\mathbb{N}$$, set
 $$
@@ -229,7 +228,7 @@ $$
 - Intuitively, with probability $$p$$ you 「draw｣ from $$X$$, and with probability $$q$$ from $$Y$$.  
 - Note $$\sum_k M(k)=1$$ because $$p+q=1$$ and each of $$X,Y$$ sums to 1.
 
-### 4.2 Light Example
+### 3.2 Light Example
 
 Let
 $$
@@ -270,7 +269,7 @@ we get the following table:
 > = \tfrac{20}{24} + \tfrac{4}{24}
 > = 1.$$
 
-### 4.3 How to Use $$M(k)$$
+### 3.3 How to Use $$M(k)$$
 
 Once you have $$M(k)$$, the **Scalar‑Sum** operation
 
@@ -293,11 +292,11 @@ In our example, $$(1*1d4)\oplus(1*1d6)=2*M$$ puts mass $$M(k)$$ at outcome $$2k$
 
 *Next:* we’ll see how **Integers embed** into $$\mathcal D$$ via delta‑distributions, and how 「adding｣ and 「multiplying｣ deltas recovers ordinary arithmetic.  
 
-## 5. Embedding Integers into $$\mathcal{D}$$
+## 4. Embedding Integers into $$\mathcal{D}$$
 
 A key feature of Dice Algebra is that **ordinary integers live inside** the same universe $$\mathcal D$$ as all dice distributions.  We do this via the **delta‑distributions** $$\delta_n$$.
 
-### 5.1 The Embedding Map
+### 4.1 The Embedding Map
 
 Define
 $$
@@ -315,7 +314,7 @@ $$
 $$
 Thus the integer $$n$$ is 「the distribution that is always $$n$$.｣
 
-### 5.2 Recovering Integer Addition
+### 4.2 Recovering Integer Addition
 
 Under **convolution**, deltas add just like integers:
 
@@ -334,7 +333,7 @@ $$
   \delta_2 + \delta_3 = \delta_5.
   $$
 
-### 5.3 Recovering Integer Multiplication
+### 4.3 Recovering Integer Multiplication
 
 Under **outcome‑scaling**, deltas multiply:
 
@@ -351,7 +350,7 @@ $$
   3 * \delta_4 = \delta_{12}.
   $$
 
-### 5.4 Shifts as Delta‑Convolution
+### 4.4 Shifts as Delta‑Convolution
 
 Recall the **shift** operation
 $$
@@ -374,13 +373,13 @@ So convolving any $$X$$ with $$\delta_n$$ *shifts* it up by $$n$$:
   $$
   which has support $$\{3,4,5,6,7,8\}$$ each with probability $$\tfrac16$$.
 
-### 5.5 Why This Matters
+### 4.5 Why This Matters
 
 - **Uniformity:** You don’t need a separate 「number｣ system—integers are just a special case of dice.  
 - **Operators:** Deltas both *are* numbers and *act* as those numbers on any distribution (by convolution or scaling).  
 - **Simplicity:** All arithmetic properties (associativity, commutativity, distributivity) flow from the same underlying rules in $$\mathcal D$$.
 
-### 5.6 Note on integers vs. delta‑distributions  
+### 4.6 Note on integers vs. delta‑distributions  
 
 Whenever you see a bare integer like `0`, `1`, or `2` in these laws, it stands for the corresponding **delta‑distribution** $$\delta_n$$.  For example:
 $$1 * X = X \Rightarrow \delta_1* X = X$$
@@ -388,11 +387,11 @@ $$X + 0 = X \Rightarrow X + \delta_0 = X$$
 $$2 \cdot X = X + X \Rightarrow \delta_2 \cdot X = X + X$$
 This shorthand relies on the embedding $$n \mapsto \delta_n$$ from Section 5.
 
-## 6. Algebraic Laws
+## 5. Algebraic Laws
 
 Dice Algebra isn’t just a loose collection of operations—**every law** you know from elementary arithmetic (and more) holds here.  We state them in ⚙️ operational form, illustrating each with a tiny example using delta‑distributions $$\delta_n$$.
 
-### 6.1 Identities
+### 5.1 Identities
 
 1. **Additive identity for convolution**  
    $$
@@ -418,7 +417,7 @@ Dice Algebra isn’t just a loose collection of operations—**every law** you k
    $$\;\delta_{0}\cdot1d6 = \delta_{0}$$ (always 0);  
    $$\;\delta_{0}*1d6 = \delta_{0}.$$
 
-### 6.2 Commutativity
+### 5.2 Commutativity
 
 1. **Convolution**  
    $$
@@ -434,7 +433,7 @@ Dice Algebra isn’t just a loose collection of operations—**every law** you k
    *Example:*  
    $$(1*1d4)\oplus(2*1d6) = (2*1d6)\oplus(1*1d4).$$
 
-### 6.3 Associativity
+### 5.3 Associativity
 
 1. **Convolution**  
    $$
@@ -456,7 +455,7 @@ Dice Algebra isn’t just a loose collection of operations—**every law** you k
      = (m*X)\oplus\bigl((n*Y)\oplus(p*Z)\bigr).
    $$
 
-### 6.4 Distributivity
+### 5.4 Distributivity
 
 1. **Repeated‑roll over convolution**  
    $$
@@ -478,7 +477,7 @@ Dice Algebra isn’t just a loose collection of operations—**every law** you k
      = (n\!m)*X \;\oplus\; (n\!p)*Y.
    $$
 
-### 6.5 Scalar‑Sum Collapse Law
+### 5.5 Scalar‑Sum Collapse Law
 
 Whenever you “scalar‑sum” **two copies of the same** distribution:
 $$
@@ -487,7 +486,7 @@ $$
 *Example:*  
 $$(1*1d6)\oplus(2*1d6) = 3*1d6.$$
 
-### 6.6 Shift Semigroup
+### 5.6 Shift Semigroup
 
 Shifts compose like integers:
 $$
@@ -500,11 +499,11 @@ $$
   S_{2}\bigl(S_{1}(1d4)\bigr) = S_{3}(1d4).
 $$
 
-## 7. Worked Examples
+## 6. Worked Examples
 
 In this section we’ll see **three** concrete, step‑by‑step examples.  We’ll build small probability tables and check normalization at each stage.
 
-### 7.1 Basic Dice Tables
+### 6.1 Basic Dice Tables
 
 #### 7.1.1 One Six‑Sided Die (1d6)
 
@@ -548,7 +547,7 @@ $$
 
 Check: support $$\{2,4,6,8,10,12\}$$, $$\sum P(k)=6\cdot\tfrac16=1.$$
 
-### 7.2 Scalar‑Sum Example: $$(1\!*\!1d4)\oplus(1\!*\!1d6)$$
+### 6.2 Scalar‑Sum Example: $$(1\!*\!1d4)\oplus(1\!*\!1d6)$$
 
 We compute
 $$
@@ -591,7 +590,7 @@ $$
 $$
 has support on even numbers 2–12 with the above probabilities.
 
-### 7.3 Shift Example: $$S_1(1d6 \oplus 1d4)$$
+### 6.3 Shift Example: $$S_1(1d6 \oplus 1d4)$$
 
 First recall
 $$
@@ -631,11 +630,11 @@ Check: same total mass $$=1$$, support shifted by +1.
 
 These examples illustrate how to **build**, **mix**, **scale**, and **shift** dice distributions **step by step**—all with tiny tables and sanity checks to keep you confident at each stage.  
 
-## 8. Extended Operations
+## 7. Extended Operations
 
 Beyond the core five, Dice Algebra includes powerful extras.  We’ll define each and work a small example.
 
-### 8.1 Reflection / Negation
+### 7.1 Reflection / Negation
 
 **Definition:**
 $$
@@ -649,7 +648,7 @@ $$
 |:------:|:----:|:----:|:----:|:----:|:----:|:----:|
 | $$-(1d6)(k)$$ |1/6|1/6|1/6|1/6|1/6|1/6|
 
-### 8.2 Maximum / Minimum of Two Dice
+### 7.2 Maximum / Minimum of Two Dice
 
 **Definitions:**  
 $$
@@ -678,7 +677,7 @@ $$
 X\vee Y = \{1:1/24,\;2:3/24,\;3:1/24,\;4:7/24,\;5:1/6,\;6:1/6\}.
 $$
 
-### 8.3 Convolution with Reflection (「Difference｣)
+### 7.3 Convolution with Reflection (「Difference｣)
 
 **Definition:**  
 $$
@@ -695,7 +694,7 @@ $$
 |:-----:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 | $$P$$ |1/36|2/36|3/36|4/36|5/36|6/36|5/36|4/36|3/36|2/36|1/36|
 
-### 8.4 Composition of Dice
+### 7.4 Composition of Dice
 
 **Definition:**  
 $$
@@ -719,9 +718,9 @@ Check $$\sum_k(X\circ Y)(k)=1$$.
 
 These four extensions—reflection, max/min, signed convolution, and composition—round out a **rich toolkit** for modeling virtually any dice‑based random process.
 
-## 9. Delta Distributions and Scalar Embedding
+## 8. Delta Distributions and Scalar Embedding
 
-### 9.1 Delta Distributions
+### 8.1 Delta Distributions
 
 **Delta Distributions** are probability distributions where **all** the probability mass is concentrated at a single outcome.
 
@@ -752,7 +751,7 @@ $$
   \delta_1 \oplus X = X.
   $$
 
-### 9.2 Numbers as Deltas
+### 8.2 Numbers as Deltas
 
 Every integer $$ n \in \mathbb{Z} $$ can be interpreted as the delta distribution $$ \delta_n $$. This provides a **bridge** between deterministic and probabilistic values.
 
@@ -767,7 +766,7 @@ This lets us:
 - Use them in convolution, scalar sums, and shifts,
 - Define arithmetic in fully probabilistic terms.
 
-### 9.3 Delta Properties and Usage
+### 8.3 Delta Properties and Usage
 
 Let $$ X $$ be any dice distribution.
 
@@ -780,18 +779,18 @@ Let $$ X $$ be any dice distribution.
 | $$ X \circ \delta_n $$ | $$ X $$ scaled: $$ X(nk) $$         | Composition with delta acts as stretching |
 | $$ \delta_n \circ X $$ | Roll $$ X $$ $$ n $$ times and sum | Useful for repeating distributions |
 
-### 9.4 Summary
+### 8.4 Summary
 
 - Deltas are fundamental building blocks.
 - Numbers are special cases of dice.
 - All operations from Dice Algebra are **compatible** with deltas.
 - This provides **algebraic uniformity**: every element in Dice Algebra is a distribution.
 
-## 10. Summary and Structure of Dice Algebra
+## 9. Summary and Structure of Dice Algebra
 
 The Dice Algebra is a **formal system** for manipulating probability distributions over integers, built to model and compose dice-based randomness.
 
-### 10.1 Core Structures
+### 9.1 Core Structures
 
 | Operation       | Symbol | Description                          |
 |----------------|--------|--------------------------------------|
@@ -801,7 +800,7 @@ The Dice Algebra is a **formal system** for manipulating probability distributio
 | Shift          | $$ S_n $$    | Additive shift of distribution      |
 | Delta          | $$ \delta_n $$ | Deterministic values as dice      |
 
-### 10.2 Extended Operations
+### 9.2 Extended Operations
 
 | Operation          | Symbol         | Description                              |
 |-------------------|----------------|------------------------------------------|
@@ -810,7 +809,7 @@ The Dice Algebra is a **formal system** for manipulating probability distributio
 | Signed Convolution| $$ X - Y $$     | Difference of rolls                      |
 | Composition       | $$ X \circ Y $$ | "Roll a roll" – hierarchical dice        |
 
-### 10.3 Key Elements
+### 9.3 Key Elements
 
 | Symbol       | Meaning                                  |
 |--------------|------------------------------------------|
@@ -821,7 +820,7 @@ The Dice Algebra is a **formal system** for manipulating probability distributio
 | $$ \delta_n $$ | A single deterministic value $$ n $$   |
 | $$ S_n $$    | Shifts the support by $$ n $$            |
 
-### 10.4 Algebraic Properties
+### 9.4 Algebraic Properties
 
 | Operation     | Properties                                           |
 |---------------|------------------------------------------------------|
