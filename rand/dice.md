@@ -105,10 +105,6 @@ $$1d4 + 1d6$$ has support $$\{2,\dots,10\}$$. Probability of $$5$$:
 $$
 (1d4 + 1d6)(5)
 =\sum_{i+j=5}1d4(i)\,1d6(j)
-=1d4(1)\,1d6(4)\;+\;
-1d4(2)\,1d6(3)\;+\;
-1d4(3)\,1d6(2)\;+\;
-1d4(4)\,1d6(1)
 =\tfrac{1}{6}
 $$
 
@@ -122,12 +118,10 @@ $$
 **Definition:**
 $$
 (n*X)(k) =
-\left\{
-\begin{array}{ll}
+\begin{cases}
 X\left( \frac{k}{n} \right), & \text{if } n \mid k, \\
 0, & \text{otherwise.}
-\end{array}
-\right}
+\end{cases}
 $$
 
 You multiply every outcome by $$n$$, keeping probabilities the same.
