@@ -232,9 +232,7 @@ $$
 Then define the **Mixture Kernel**:
 
 $$
-\boxed{
 M(k) \;=\; p\,X(k)\;+\;q\,Y(k).
-}
 $$
 
 - Intuitively, with probability $$p$$ you ｢draw｣ from $$X$$, and with probability $$q$$ from $$Y$$.
@@ -286,6 +284,7 @@ we get the following table:
 |   6   |     0      | $$\tfrac16$$   | $$\tfrac1{12}$$ |
 
 **Check normalization:**
+
 $$\sum_{k=1}^6 M(k) = 4\cdot\tfrac5{24} + 2\cdot\tfrac1{12} = 1.$$
 
 ### 3.3 How to Use $$M(k)$$
@@ -427,62 +426,85 @@ Dice Algebra isn’t just a loose collection of operations—**every law** you k
 ### 5.1 Identities
 
 1. **Additive identity for convolution**
+
    $$
      X + \delta_{0} = X.
    $$
+
    *Example:*
+
    $$\;1d6 + \delta_{0} = 1d6.$$
 
 2. **Multiplicative identity for scaling**
+
    $$
      \delta_{1} *X = X.
    $$
+
    *Example:*
+
    $$\;\delta_{1}* 1d4 = 1d4.$$
 
 3. **Zero rolls**
+
    $$
      \delta_{0} \cdot X = \delta_{0},
      \quad
      \delta_{0} *X = \delta_{0}.
    $$
+
    *Example:*
-   $$\;\delta_{0}\cdot1d6 = \delta_{0}$$ (always 0);
+
+   $$\;\delta_{0}\cdot1d6 = \delta_{0}$$;
+
    $$\;\delta_{0}*1d6 = \delta_{0}.$$
 
 ### 5.2 Commutativity
 
 1. **Convolution**
+
    $$
      X + Y = Y + X.
    $$
+
    *Example:*
+
    $$\;\delta_{2} + \delta_{3} = \delta_{3} + \delta_{2} = \delta_{5}.$$
 
 2. **Scalar‑Sum**
+
    $$
      (m*X)\oplus(n*Y) = (n*Y)\oplus(m*X).
    $$
+
    *Example:*
+
    $$(1*1d4)\oplus(2*1d6) = (2*1d6)\oplus(1*1d4).$$
 
 ### 5.3 Associativity
 
 1. **Convolution**
+
    $$
      (X + Y) + Z = X + (Y + Z).
    $$
+
    *Example:*
+
    $$(\delta_{1}+\delta_{2})+\delta_{3} = \delta_{6} = \delta_{1}+(\delta_{2}+\delta_{3}).$$
 
 2. **Scaling**
+
    $$
      m*(n*X) = (mn)*X.
    $$
+
    *Example:*
+
    $$2*(3*1d4) = 6*1d4.$$
 
 3. **Scalar‑Sum**
+
    $$
      \bigl((m*X)\oplus(n*Y)\bigr)\oplus(p*Z)
      = (m*X)\oplus\bigl((n*Y)\oplus(p*Z)\bigr).
@@ -491,20 +513,25 @@ Dice Algebra isn’t just a loose collection of operations—**every law** you k
 ### 5.4 Distributivity
 
 1. **Repeated‑roll over convolution**
+
    $$
      n\cdot (X + Y) = n\cdot X + n\cdot Y.
    $$
 
 2. **Outcome‑scaling over convolution**
+
    $$
      n * (X + Y) = (n*X) + (n*Y).
    $$
+
    *Example:*
+
    Let $$X = \delta_{1}, Y = \delta_{2}, n=3$$.
    - LHS: $$3*(\delta_{1}+\delta_{2}) = 3*\delta_{3} = \delta_{9}.$$
    - RHS: $$(3*\delta_{1}) + (3*\delta_{2}) = \delta_{3} + \delta_{6} = \delta_{9}.$$
 
 3. **Outcome‑scaling over scalar‑sum**
+
    $$
      n *\bigl((m*X)\oplus(p*Y)\bigr)
      = (n\!m)*X \;\oplus\; (n\!p)*Y.
@@ -513,21 +540,27 @@ Dice Algebra isn’t just a loose collection of operations—**every law** you k
 ### 5.5 Scalar‑Sum Collapse Law
 
 Whenever you “scalar‑sum” **two copies of the same** distribution:
+
 $$
   (m*X)\oplus(n*X) = (m+n)*X.
 $$
+
 *Example:*
+
 $$(1*1d6)\oplus(2*1d6) = 3*1d6.$$
 
 ### 5.6 Shift Semigroup
 
 Shifts compose like integers:
+
 $$
   S_{m}\bigl(S_{n}X\bigr) = S_{m+n}X,
   \quad
   S_{0}X = X.
 $$
+
 *Example:*
+
 $$
   S_{2}\bigl(S_{1}(1d4)\bigr) = S_{3}(1d4).
 $$
