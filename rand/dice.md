@@ -50,9 +50,7 @@ Dice Algebra is a concise, systematic way to describe and manipulate any ｢dice
    3. [Shift Example: $$S_1(1d4) \oplus 1d6$$](#63-shift-example-s_11d4-oplus-1d6)
 7. [Extended Operations](#7-extended-operations)
    1. [Reflection / Negation](#71-reflection--negation)
-   2. [Maximum / Minimum of Two Dice](#72-maximum--minimum-of-two-dice)
-   3. [Convolution with Reflection (｢Difference｣)](#73-convolution-with-reflection-difference)
-   4. [Composition of Dice](#74-composition-of-dice)
+   2. [Convolution with Reflection (｢Difference｣)](#72-convolution-with-reflection-difference)
 8. [Number–Delta Dictionary](#8-delta-distributions-and-scalar-embedding)
    1. [Delta Distributions](#81-delta-distributions)
    2. [Numbers as deltas](#82-numbers-as-deltas)
@@ -758,7 +756,26 @@ $$
 |:------:|:----:|:----:|:----:|:----:|:----:|:----:|
 | $$-(1d6)(k)$$ |1/6|1/6|1/6|1/6|1/6|1/6|
 
-### 7.2 Maximum / Minimum of Two Dice
+### 7.2 Convolution with Reflection (｢Difference｣)
+
+**Definition:**
+
+$$
+X - Y \;=\; X * -(Y),
+\quad (X-Y)(k)=\sum_{i-j=k}X(i)\,Y(j).
+$$
+
+**Example:** $$1d6 - 1d6$$ has support $$\{-5,\dots,5\}$$, with
+
+$$
+P(k) = \frac{6 - |k|}{36}.
+$$
+
+| $$k$$ | –5 | –4 | –3 | –2 | –1 | 0  | 1  | 2  | 3  | 4  | 5  |
+|:-----:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| $$P$$ |1/36|2/36|3/36|4/36|5/36|6/36|5/36|4/36|3/36|2/36|1/36|
+
+<!-- ### 7.2 Maximum / Minimum of Two Dice -->
 
 **Definitions:**
 
@@ -793,26 +810,7 @@ $$
 X\vee Y = \{1:1/24,\;2:3/24,\;3:1/24,\;4:7/24,\;5:1/6,\;6:1/6\}.
 $$
 
-### 7.3 Convolution with Reflection (｢Difference｣)
-
-**Definition:**
-
-$$
-X - Y \;=\; X * -(Y),
-\quad (X-Y)(k)=\sum_{i-j=k}X(i)\,Y(j).
-$$
-
-**Example:** $$1d6 - 1d6$$ has support $$\{-5,\dots,5\}$$, with
-
-$$
-P(k) = \frac{6 - |k|}{36}.
-$$
-
-| $$k$$ | –5 | –4 | –3 | –2 | –1 | 0  | 1  | 2  | 3  | 4  | 5  |
-|:-----:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-| $$P$$ |1/36|2/36|3/36|4/36|5/36|6/36|5/36|4/36|3/36|2/36|1/36|
-
-### 7.4 Composition of Dice
+<!-- ### 7.4 Composition of Dice
 
 **Definition:**
 
@@ -832,7 +830,7 @@ You first roll $$X$$ to get $$i$$, then roll $$Y$$ a total of $$i$$ times and su
 |:-------------:|:----:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | $$1d4(k)$$    |1/4  |1/4     |1/4     |1/4     |0       |0       |0       |0       |
 | $$2d4(k)$$    |0    |1/16    |2/16    |3/16    |4/16    |3/16    |2/16    |1/16    |
-| $$(X\circ Y)(k)$$ |½·1/4=1/8 |½(1/4+1/16)=5/32 |½(1/4+2/16)=3/16 |½(1/4+3/16)=7/32 |½·4/16=1/8 |½·3/16=3/32 |½·2/16=1/16 |½·1/16=1/32 |
+| $$(X\circ Y)(k)$$ |½·1/4=1/8 |½(1/4+1/16)=5/32 |½(1/4+2/16)=3/16 |½(1/4+3/16)=7/32 |½·4/16=1/8 |½·3/16=3/32 |½·2/16=1/16 |½·1/16=1/32 | -->
 
 ## 8. Delta Distributions and Scalar Embedding
 
@@ -903,6 +901,4 @@ This lets us:
 | Operation          | Symbol         | Description                              |
 |-------------------|----------------|------------------------------------------|
 | Reflection        | $$ -(X) $$ | Mirror values: $$ X(-k) $$             |
-| Max / Min         | $$ X \vee Y, X \wedge Y $$ | Max/min of two dice         |
 | Signed Convolution| $$ X - Y $$     | Difference of rolls                      |
-| Composition       | $$ X \circ Y $$ | "Roll a roll" – hierarchical dice        |
