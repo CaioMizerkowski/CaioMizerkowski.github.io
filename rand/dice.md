@@ -78,7 +78,7 @@ $$
 
 ## 2. Core Operations
 
-In Dice Algebra, we have **five** fundamental ways to combine or transform distributions.  Each one is precise, yet builds the familiar ideas of ｢rolling,｣ 「adding,｣ 「scaling,｣ and more.
+In Dice Algebra, we have **five** fundamental ways to combine or transform distributions.  Each one is precise, yet builds the familiar ideas of ｢rolling,｣ ｢adding,｣ ｢scaling,｣ and more.
 
 ### 2.1 Convolution (Sum of Independent Rolls)
 
@@ -237,7 +237,7 @@ M(k) \;=\; p\,X(k)\;+\;q\,Y(k).
 }
 $$
 
-- Intuitively, with probability $$p$$ you 「draw｣ from $$X$$, and with probability $$q$$ from $$Y$$.
+- Intuitively, with probability $$p$$ you ｢draw｣ from $$X$$, and with probability $$q$$ from $$Y$$.
 - Note $$\sum_k M(k)=1$$ because $$p+q=1$$ and each of $$X,Y$$ sums to 1.
 
 ### 3.2 Light Example
@@ -316,12 +316,15 @@ A key feature of Dice Algebra is that **ordinary integers live inside** the sa
 ### 4.1 The Embedding Map
 
 Define
+
 $$
 \iota\colon \mathbb{Z}\;\longrightarrow\;\mathcal D,
 \qquad
 \iota(n) = \delta_n,
 $$
+
 where
+
 $$
 \delta_n(k) =
 \begin{cases}
@@ -329,7 +332,8 @@ $$
 0, & \text{otherwise.}
 \end{cases}
 $$
-Thus the integer $$n$$ is 「the distribution that is always $$n$$.｣
+
+Thus the integer $$n$$ is ｢the distribution that is always $$n$$.｣
 
 ### 4.2 Recovering Integer Addition
 
@@ -344,6 +348,7 @@ $$
 $$
 
 - **Example:**
+
   $$
   2 + 3 = 5
   \quad\Longleftrightarrow\quad
@@ -361,6 +366,7 @@ k * \delta_n
 $$
 
 - **Example:**
+
   $$
   3 \times 4 = 12
   \quad\Longleftrightarrow\quad
@@ -370,13 +376,16 @@ $$
 ### 4.4 Shifts as Delta‑Convolution
 
 Recall the **shift** operation
+
 $$
 S_n X = \delta_n + X.
 $$
+
 So convolving any $$X$$ with $$\delta_n$$ *shifts* it up by $$n$$:
 
 - **Example:**
   Start with $$1d6$$:
+
   $$
   1d6(k) =
   \begin{cases}
@@ -384,25 +393,32 @@ So convolving any $$X$$ with $$\delta_n$$ *shifts* it up by $$n$$:
     0,&\text{otherwise}.
   \end{cases}
   $$
+
   Then
+
   $$
   S_2(1d6) = \delta_2 + 1d6,
   $$
+
   which has support $$\{3,4,5,6,7,8\}$$ each with probability $$\tfrac16$$.
 
 ### 4.5 Why This Matters
 
-- **Uniformity:** You don’t need a separate 「number｣ system—integers are just a special case of dice.
+- **Uniformity:** You don’t need a separate ｢number｣ system—integers are just a special case of dice.
 - **Operators:** Deltas both *are* numbers and *act* as those numbers on any distribution (by convolution or scaling).
 - **Simplicity:** All arithmetic properties (associativity, commutativity, distributivity) flow from the same underlying rules in $$\mathcal D$$.
 
 ### 4.6 Note on integers vs. delta‑distributions
 
 Whenever you see a bare integer like `0`, `1`, or `2` in these laws, it stands for the corresponding **delta‑distribution** $$\delta_n$$.  For example:
+
 $$1 * X = X \Rightarrow \delta_1* X = X$$
+
 $$X + 0 = X \Rightarrow X + \delta_0 = X$$
+
 $$2 \cdot X = X + X \Rightarrow \delta_2 \cdot X = X + X$$
-This shorthand relies on the embedding $$n \mapsto \delta_n$$ from Section 5.
+
+This shorthand relies on the embedding $$n \mapsto \delta_n$$.
 
 ## 5. Algebraic Laws
 
@@ -657,7 +673,7 @@ Beyond the core five, Dice Algebra includes powerful extras.  We’ll define e
 $$
 -(X)(k) \;=\; X(-k).
 $$
-「Mirror｣ the pmf about zero.
+｢Mirror｣ the pmf about zero.
 
 **Example:** Reflecting a 1d6 gives outcomes $$-1,\dots,-6$$.
 
@@ -673,7 +689,7 @@ $$
 \qquad
 (X\wedge Y)(k) \;=\; \sum_{\min(i,j)=k} X(i)\,Y(j).
 $$
-「Roll two dice; pick the larger (or smaller).｣
+｢Roll two dice; pick the larger (or smaller).｣
 
 **Example:** $$X=1d4,\;Y=1d6$$.  We compute $$P(\max=k)$$ via
 $$
@@ -694,7 +710,7 @@ $$
 X\vee Y = \{1:1/24,\;2:3/24,\;3:1/24,\;4:7/24,\;5:1/6,\;6:1/6\}.
 $$
 
-### 7.3 Convolution with Reflection (「Difference｣)
+### 7.3 Convolution with Reflection (｢Difference｣)
 
 **Definition:**
 $$
