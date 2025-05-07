@@ -1,19 +1,15 @@
 ---
-title: "Dice Algebra: A Formal System for Dice Distributions"
+title: "Dice Algebra"
 layout: post
 show_excerpts: true
 entries_layout: list
 ---
 
-Dice Algebra is a concise, systematic way to describe and manipulate any ｢dice‑like｣ probability distribution over the integers.  Instead of only talking about ｢roll two six‑sided dice｣, you get a small toolkit of algebraic operations—addition, scaling, shifting, mixing, and more—that you can combine freely.
+Criei a Álgebra de Dados como um toolkit para me ajudar a modelar o comportamento das distribuições de dados em jogos de RPG, assim como para modelar as operações realizadas entre estas distribuições. A maior parte do que está presente nesse documento é só a formalização de operações já conhecidas e usadas nos mais diversos jogos de RPG, somente com uma notação um pouco mais formal e "matematizada". A utilidade disso para mim é facilitar o desenvolvimento de um programa para gerar a distribuição de probabilidade da combinação de dados e a suprir as minhas necessidades emocionais de encapsular o que eu já conhecia de forma mais completa. Peço já desculpas por qualquer uso inadequado da linguagem matemática.
 
-**Why use Dice Algebra?**
+Podemos dizer que esse documento descreve as operações de adição, deslocamento, multiplicação e mistura de distribuições de modo a facilitar a implementação das mesmas em um programa de computador.
 
-- **Clarity:** every operation has a precise definition and all the algebraic laws (associativity, commutativity, etc.) hold.
-- **Composability:** you can build complex distributions—clamped dice, difference of dice, random‑count rolls—by stringing together a few primitives.
-- **Uniformity:** ｢numbers｣ (like the integer 3) live in the same language as probability distributions (as a degenerate delta).
-
-**Roadmap of this document:**
+**Sumário:**
 
 1. [The Underlying Set](#1-the-underlying-set)1.1
    1. [Delta Distributions](#11-deltadistributions)
@@ -60,7 +56,12 @@ Dice Algebra is a concise, systematic way to describe and manipulate any ｢dice
 
 ## 1. The Underlying Set
 
-We work in the universe of **finite discrete probability distributions** over the integers:
+O universo $$\mathcal{D}$$ analisado é o conjunto de **distribuições de probabilidade discretas e finitas** sobre os números inteiros $$\mathbb{Z}$$.
+
+O valor $$k\in\mathbb{Z}$$ é o **resultado** ou **índice**, com valores no intervalo $$\(-\infty,+\infty\)$$.
+
+A **distribuição de probabilidade** $$X$$ é uma função que associa a cada **resultado** $$k$$ uma **probabilidade** $$X(k)$$, com valores no intervalo $$\[0,1\]$$. Cada distribuição $$X$$ tem suporte finito, ou seja, $$X(k)$$ é diferente de zero para apenas um número finito de valores de $$k$$ e a soma de todas as probabilidades é igual a 1:
+
 $$
 \mathcal{D} = \Bigl\{
     \,X:\mathbb{Z}\to[0,1]\;
@@ -70,9 +71,9 @@ $$
     \Bigr\}.
 $$
 
-Each $$X\in\mathcal D$$ is called a *dice distribution*.
+Alguns exemplos de distribuições $$X\in\mathcal{D}$$:
 
-- **1d6**: uniform on $$\{1,2,3,4,5,6\}$$:
+- $$X=1d6$$: é a distribuição uniforme:
 
     $$
       1d6(k) =
@@ -82,11 +83,13 @@ Each $$X\in\mathcal D$$ is called a *dice distribution*.
       \end{cases}
     $$
 
-- **2d6**: the convolution $$1d6 + 1d6$$, giving the familiar 2–12 triangular shape.
+- $$X=2d6$$: é a distribuição triangular formada pela adição entre duas distribuições uniformes.
+
+![Distribuição Triangular](/rand/images/image.png)
 
 ### 1.1 Delta‑Distributions
 
-For any integer $$n$$, define the **degenerate** or **delta** distribution at $$n$$:
+Para lidar com os números inteiros $$\mathbb{Z}$$ presentes em jogos de RPG, foi necessário mapear estes como **deltas**. Todo número inteiro $$n$$ passa a ser representado por meio de uma distribuição $$\delta_n\in\mathcal{D}$$, onde $$\delta_n$$ é a **distribuição delta** que tem suporte apenas em $$n$$:
 
 $$
 \delta_n(k) =
@@ -96,10 +99,12 @@ $$
 \end{cases}
 $$
 
-- $$\delta_0$$ is the ｢zero｣ distribution (all mass at 0).
-- $$\delta_n$$ lets us encode the *exact* outcome $$n$$.
+**Casos especiais:**
 
-**Light example table** for $$\delta_3$$:
+- $$\delta_0$$ é a distribuição ｢zero｣, é a identidade para operações análogas à soma,
+- $$\delta_1$$ é a distribuição ｢unitária｣, é a identidade para operações análogas à multiplicação.
+
+**Exemplo** para $$\delta_3$$, somente o resultado $$3$$ tem probabilidade diferente de zero:
 
 | $$k$$ | $$\delta_3(k)$$ |
 |:-----:|:---------------:|
