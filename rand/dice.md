@@ -58,9 +58,9 @@ Podemos dizer que esse documento descreve as operações de adição, deslocamen
 
 O universo $$\mathcal{D}$$ analisado é o conjunto de **distribuições de probabilidade discretas e finitas** sobre os números inteiros $$\mathbb{Z}$$.
 
-O valor $$k\in\mathbb{Z}$$ é o **resultado** ou **índice**, com valores no intervalo $$\(-\infty,+\infty\)$$.
+O valor $$k\in\mathbb{Z}$$ é o **resultado**, com valores no intervalo $$(-\infty,+\infty)$$.
 
-A **distribuição de probabilidade** $$X$$ é uma função que associa a cada **resultado** $$k$$ uma **probabilidade** $$X(k)$$, com valores no intervalo $$\[0,1\]$$. Cada distribuição $$X$$ tem suporte finito, ou seja, $$X(k)$$ é diferente de zero para apenas um número finito de valores de $$k$$ e a soma de todas as probabilidades é igual a 1:
+A **distribuição** $$X$$ é uma função que associa a cada **resultado** $$k$$ uma **probabilidade** $$X(k)$$, com valores no intervalo $$[0,1]$$. Cada distribuição $$X$$ tem suporte finito, ou seja, $$X(k)$$ é diferente de zero para apenas um número finito de valores de $$k$$ e a soma de todas as probabilidades é igual a 1:
 
 $$
 \mathcal{D} = \Bigl\{
@@ -116,43 +116,65 @@ $$
 
 ## 2. Core Operations
 
-In Dice Algebra, we have **five** fundamental ways to combine or transform distributions.  Each one is precise, yet builds the familiar ideas of ｢rolling,｣ ｢adding,｣ ｢scaling,｣ and more.
+Foram definidas **cinco** maneiras fundamentais de se combinar as distribuições pertencentes a $$\mathcal{D}$$. E por meio delas se procurou expressar as principais maneiras de se ｢somar｣, ｢escalar｣ e ｢misturar｣ um conjunto de dados em um jogo de RPG. Elas podem parecer um tanto complexas ao serem expressas por meio de funções, mas quase todas elas são operações simples e intuitivas em um jogo de RPG. A única operação incomum para a maior parte dos jogos é a **Scalar-Sum** e ela foi adicionada para auxiliar a operação de **Outcome-Scaling** e generalizar os conceitos subjacentes a ela.
 
 ### 2.1 Convolution (Sum of Independent Rolls)
 
-**Notation:**
+A distribuição resultante da soma de duas distribuições $$X$$ e $$Y$$ é chamada de **Convolução** ou **Soma**. Essa é a distribuição representa o lançamento de dois dados independentes e a soma dos resultados.
+
+**Notação:**
 
 $$
-X + Y
+Z = X + Y
 $$
 
-**Definition:**
+**Definição:**
+
+Para cada resultado $$k$$, existe um conjunto de pares ordenados $$(i,j)$$ cuja soma é igual a $$k$$. Portanto, caso o resultado $$i$$ seja obtido em $$X$$, é necessário que o resultado $$j=k-i$$ seja obtido em $$Y$$, e a probabilidade desse evento é $$X(i)Y(j)$$. Essa lógica é válida para todos os pares $$(i,j)$$ cuja soma é $$k$$, e a probabilidade de $$Z(k)$$ é a soma de $$X(i)Y(j)$$ para todos os pares $$(i,j): i+j=k$$. Portanto:
 
 $$
-(X + Y)(k)
+Z(k)
 \;=\;
 \sum_{i + j = k} X(i)\,Y(j).
 $$
 
-You roll $$X$$ and $$Y$$ independently and add the results.
+A probabilidade $$Z(k)$$ é a soma de todas as probabilidades $$X(i)Y(j)$$ em que o resultado $$k$$ é igual ao resultado $$i+j$$.
 
-**Example:** $$1d4 + 1d6$$ has support $$\{2,\dots,10\}$$. Probability of $$5$$:
+Esse processo é equivalete a [convolução discreta](https://en.wikipedia.org/wiki/Convolution#Discrete_convolution) entre duas funções:
 
 $$
-(1d4 + 1d6)(5)
+[f * g](k) = \sum_{i=-\infty}^{\infty} f[i] \cdot g[k - i]
+$$
+
+**Exemplo:** Para $$Z = 1d4 + 1d6$$, a probabilidade de $$Z(5)$$ é dada por:
+
+$$
+Z(5)
 =\sum_{i+j=5}1d4(i)\,1d6(j)
+$$
+
+Aonde $$(i,j)\in\{(1,4),(2,3),(3,2),(4,1)\}$$. Portanto:
+
+$$
+RHS: 1d4(1)\,1d6(4) + 1d4(2)\,1d6(3) + 1d4(3)\,1d6(2) + 1d4(4)\,1d6(1)
+$$
+
+$$
+Z(5) = 4\cdot\tfrac{1}{4}\cdot\tfrac{1}{6}
 =\tfrac{1}{6}
 $$
 
 ### 2.2 $$n$$-Fold Convolution (Roll $$n$$ Times)
 
-**Notation:**
+Assim como o produto pode ser visto como a repetição da soma, a operação de $$n$$-Fold Convolution é a repetição da operação de convolução $$n$$ vezes para a distribuição $$X$$. Essa operação é distribuição obtida ao se rolar o mesmo dado $$n$$ vezes de forma independente e somar os resultados.
+
+**Notação:**
 
 $$
-n \cdot X
+Z = n \cdot X
 $$
 
-**Definition:**
+**Definição:**
 
 $$
 n\cdot X = \underbrace{X + X + \cdots + X}_{n\text{ times}},
@@ -160,12 +182,10 @@ n\cdot X = \underbrace{X + X + \cdots + X}_{n\text{ times}},
 0\cdot X = \delta_0.
 $$
 
-You roll $$X$$ independently $$n$$ times and sum the results.
+**Exemplo:**
 
-**Example:**
-
-- $$3\cdot 1d4 = 1d4+1d4+1d4$$ has support $$\{3,\dots,12\}$$.
-- It’s the familiar triangular distribution for $$3d4$$.
+- $$3\cdot 1d4 = 1d4+1d4+1d4$$ é a distribuição binomial com suporte $$\{3,\dots,12\}$$:
+![3d4](/rand/images/image-2.png)
 
 ### 2.3 Scalar‑Sum (Mix & Scale)
 
