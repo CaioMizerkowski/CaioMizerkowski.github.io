@@ -120,7 +120,7 @@ Foram definidas **cinco** maneiras fundamentais de se combinar as distribuiçõe
 
 ### 2.1 Convolution (Sum of Independent Rolls)
 
-A distribuição resultante da soma de duas distribuições $$X$$ e $$Y$$ é chamada de **Convolução** ou **Soma**. Essa é a distribuição representa o lançamento de dois dados independentes e a soma dos resultados.
+A operação que resulta na soma de duas distribuições é chamada de **Convolução**. Essa operação representa o lançamento de dois dados independentes e a soma dos resultados. Um exemplo é lançar $$1d20+1d8$$.
 
 **Notação:**
 
@@ -166,7 +166,7 @@ $$
 
 ### 2.2 $$n$$-Fold Convolution (Roll $$n$$ Times)
 
-Assim como o produto pode ser visto como a repetição da soma, a operação de $$n$$-Fold Convolution é a repetição da operação de convolução $$n$$ vezes para a distribuição $$X$$. Essa operação é distribuição obtida ao se rolar o mesmo dado $$n$$ vezes de forma independente e somar os resultados.
+Assim como o produto pode ser visto como a repetição da soma, a operação de $$n$$-Fold Convolution é a repetição da operação de convolução $$n$$ vezes para a distribuição $$X$$. Essa operação é distribuição obtida ao se rolar o mesmo dado $$n$$ vezes de forma independente e somar os resultados. Um exemplo disso é o lançamento de três dados de seis lados (3d6).
 
 **Notação:**
 
