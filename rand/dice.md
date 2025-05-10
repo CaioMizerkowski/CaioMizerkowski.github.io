@@ -16,9 +16,10 @@ Podemos dizer que esse documento descreve as operações de adição, deslocamen
 2. [Core Operations](#2-core-operations)
    1. [Convolution (Sum of Independent Rolls)](#21-convolution-sum-of-independent-rolls)
    2. [$$n$$-Fold Convolution (Roll $$n$$ Times)](#22-n-fold-convolution-roll-n-times)
-   3. [Scalar-Sum (Mix & Scale)](#23-scalarsum-mix--scale)
-   4. [Outcome-Scaling](#24-outcomescaling)
-   5. [Shift Operator](#25-shift-operator)
+   3. [Scalar-Sum (Mix & Scale)](#23-outcomescaling)
+   4. [Outcome-Scaling](#24-shift-operator)
+   5. [Shift Operator](#25-pointwise-sum)
+   6. [Pointwise Sum](#26-scalarsum)
 3. [Mixture Kernel](#3-the-mixture-kernel-mk)
    1. [Definition](#31-definition)
    2. [Example](#32-example)
@@ -187,51 +188,18 @@ $$
 - $$3\cdot 1d4 = 1d4+1d4+1d4$$ é a distribuição binomial com suporte $$\{3,\dots,12\}$$:
 ![3d4](/rand/images/image-2.png)
 
-### 2.3 Scalar‑Sum (Mix & Scale)
+### 2.3 Outcome‑Scaling
 
 **Notation:**
 
 $$
-(m*X)\;\oplus\;(n*Y)
-$$
-
-**Two‐step Definition:**
-
-- **Weighted mixture**
-
-   $$
-   M(k) = \frac{m}{m+n}\,X(k)\;+\;\frac{n}{m+n}\,Y(k).
-   $$
-
-- **Scale outcomes**
-
-   $$
-   (m*X)\oplus(n*Y)
-   = (m+n)\;*\;M.
-   $$
-
-Special case $$m=n=1$$:
-
-$$
-X\oplus Y = 2*\Bigl(\tfrac12X\oplus\tfrac12Y\Bigr).
-$$
-
-**Tip:** $$X=Y \Leftarrow (m*X)\oplus(n*X) = (m+n)*X$$.
-
-This recovers ｢add two identical dice｣ as a pure scaling.
-
-### 2.4 Outcome‑Scaling
-
-**Notation:**
-
-$$
-n * X
+Z = n * X
 $$
 
 **Definition:**
 
 $$
-(n*X)(k) =
+Z(k) =
 \begin{cases}
 X\left( \frac{k}{n} \right), & \text{if } n \mid k, \\
 0, & \text{otherwise.}
@@ -245,7 +213,7 @@ You multiply every outcome by $$n$$, keeping probabilities the same.
 - $$2 * 1d6$$ has support $$\{2,4,6,8,10,12\}$$, each with probability $$\tfrac16$$.
 - E.g.\ $$(2*1d6)(8)=1d6(4)=\tfrac{1}{6}$$.
 
-### 2.5 Shift Operator
+### 2.4 Shift Operator
 
 **Notation:**
 $$
@@ -264,6 +232,174 @@ Equivalently $$S_n X = \delta_n + X$$ (convolution with $$\delta_n$$). Shifts ev
 
 - $$S_{2}1d6$$ has support $$\{3,4,5,6,7,8\}$$, each $$\tfrac16$$.
 - $$(S_2 1d6)(5) = 1d6(3) = \tfrac16$$.
+
+### 2.5 Pointwise Sum
+
+#### 2.5.1
+
+Let $$\Zeta_X$$ be the Support of $$X$$:
+
+$$
+\Zeta_X = \{\,s_1, s_2, \dots, s_N\}\subset\mathbb Z,\quad s_1 < s_2 < \cdots < s_N
+$$
+
+Let $$\Delta_X$$ be the **gaps** between consecutive outcomes:
+
+$$
+\Delta_X = \{\,s_i - s_{i-1} \;\big|\; i=2,\dots,N\}
+$$
+
+Let $$\mdc$$ be the **greatest common divisor** of a set of integers and $$d(X)$$ be the **greatest common divisor** of the gaps:
+
+$$
+d(X) \;=\;\mdc\bigl(\Delta_X\bigr)
+$$
+
+Let $$X'$$ be the **scaled distribution**:
+
+$$
+X'(k) = X(k/d(X))
+$$
+
+and
+
+$$
+X = d(X)*X'
+$$
+
+#### 2.5.2
+
+**Notação:**
+
+$$
+Z = X \plus' Y
+$$
+
+**Definição:**
+
+$$
+Z(k) =
+\frac{1}{2}
+\bigl(
+   X'(k) + Y'(k)
+\bigr)
+$$
+
+**Notação:**
+
+$$
+Z = X \plus' n*X
+$$
+
+**Definição:**
+
+$$
+Z(k) = \frac{1}{2}
+\bigl(
+   X'(k) + X'(k)
+\bigr)
+= X'(k)
+$$
+
+#### 2.5.3
+
+Define the **Scalar-Sum** operation:
+
+$$
+X \oplus Y = (d(Y)+d(X))*(X' \plus' Y')
+$$
+
+```latex
+
+m*{1,2,3,4} \oplus n*{1,2,3,4}
+m*{1,2,3,4} \oplus n*{1,2,3,4}
+(m+n)*({1,2,3,4} \plus' {1,2,3,4})
+(m+n)*{1,2,3,4}
+{m+n, 2m+2n, 3m+3n, 4m+4n}
+(m+n)*{1,2,3,4}
+
+a*{1,2,3,4} \oplus b*{1,2,3,4} \oplus c*{1,2,3,4}
+
+(a+b)*({1,2,3,4} \plus' {1,2,3,4}) \oplus c*{1,2,3,4}
+(a+b)*{1,2,3,4} \oplus c*{1,2,3,4}
+((a+b)+c)*({1,2,3,4} \plus' {1,2,3,4})
+(a+b+c)*{1,2,3,4}
+
+a*{1,2,3,4} \oplus (b+c)*({1,2,3,4} \plus' {1,2,3,4})
+a*{1,2,3,4} \oplus (b+c)*{1,2,3,4}
+(a+(b+c))*({1,2,3,4} \plus' {1,2,3,4})
+(a+b+c)*{1,2,3,4}
+
+---
+
+m*X \oplus n*X
+(m+n)*(X \plus' X)
+(m+n)*X
+{m+n, 2m+2n, 3m+3n, 4m+4n}
+(m+n)*X
+
+a*X \oplus b*X \oplus c*X
+
+(a+b)*(X \plus' X) \oplus c*X
+(a+b)*X \oplus c*X
+((a+b)+c)*(X \plus' X)
+(a+b+c)*X
+
+a*X \oplus (b+c)*(X \plus' X)
+a*X \oplus (b+c)*X
+(a+(b+c))*(X \plus' X)
+(a+b+c)*X
+
+---
+
+m*X \oplus n*Y
+(m+n)*(X \plus' Y)
+(m+n)*Z
+
+a*X \oplus b*X \oplus c*Y
+
+(a+b)*(X \plus' X) \oplus c*Y
+(a+b)*X \oplus c*Y
+((a+b)+c)*(X \plus' Y)
+(a+b+c)*Z
+
+a*X \oplus (b+c)*(X \plus' X)
+a*X \oplus (b+c)*Z
+(a+(b+c))*(X \plus' Z)
+(a+b+c)*?
+
+---
+
+a*{1,3} \oplus b*{1,3} \oplus c*{1,2}
+
+(a+b)*({1,3} \plus' {1,3}) \oplus c*{1,2}
+(a+b)*{1,3} \oplus c*{1,2}
+((a+b)+c)*({1,3} \plus' {1,2})
+(a+b+c)*{1:0.5,2:0.25,3:0.25}
+
+a*{1,3} \oplus (b+c)*({1,3} \plus' {1,2})
+a*{1,3} \oplus (b+c)*{1:0.5,2:0.25,3:0.25}
+(a+(b+c))*({1,3} \plus' {1:0.5,2:0.25,3:0.25})
+(a+b+c)*{
+   1:0.5*2/2=0.5,
+   2:0.25*1/2=0.125,
+   3:0.25*1/2+0.5*1/2=0.375
+}
+
+```
+
+So
+
+$$
+X \oplus X = d(X)*X' \oplus d(X)*X' = (d(X)+d(X))*(X' \plus' X') = 2*d(X)*X'
+$$
+
+And
+
+$$
+(X \oplus X) \oplus X = (d(X)+d(X))*(X' \plus' X') \oplus d(X)*X' =
+2*d(X)*X' \oplus d(X)*X' = (2*d(X)+d(X))*(X' \plus' X') = 3*d(X)*X'
+$$
 
 ## 3. The Mixture Kernel $$M(k)$$
 
@@ -670,7 +806,7 @@ $$
 We compute
 
 $$
-(1*1d4)\oplus(1*1d6) = 2*(\frac{1}{2}*1d4)\oplus(\frac{1}{2}*1d6) = 2 * M,
+(1*1d4)\oplus(1*1d6) = 2*(\frac{1}{2}*1d4)\oplus(\frac{1}{2}*1d6) = 2* M,
 $$
 
 $$
