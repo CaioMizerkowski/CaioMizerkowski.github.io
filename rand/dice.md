@@ -11,49 +11,47 @@ Podemos dizer que esse documento descreve as operações de adição, deslocamen
 
 **Sumário:**
 
-1. [The Underlying Set](#1-the-underlying-set)1.1
-   1. [Delta Distributions](#11-deltadistributions)
-2. [Core Operations](#2-core-operations)
-   1. [Convolution (Sum of Independent Rolls)](#21-convolution-sum-of-independent-rolls)
-   2. [$$n$$-Fold Convolution (Roll $$n$$ Times)](#22-n-fold-convolution-roll-n-times)
-   3. [Scalar-Sum (Mix & Scale)](#23-outcomescaling)
-   4. [Outcome-Scaling](#24-shift-operator)
-   5. [Shift Operator](#25-pointwise-sum)
-   6. [Pointwise Sum](#26-scalarsum)
-3. [Mixture Kernel](#3-the-mixture-kernel-mk)
-   1. [Definition](#31-definition)
-   2. [Example](#32-example)
-   3. [How to Use $$M(k)$$](#33-how-to-use-mk)
-4. [Embedding Integers](#4-embedding-integers-into-mathcald)
-   1. [The Embedding Map](#41-the-embedding-map)
-   2. [Recovering Integer Addition](#42-recovering-integer-addition)
-   3. [Recovering Integer Multiplication](#43-recovering-integer-multiplication)
-   4. [Shifts as Delta-Convolution](#44-shifts-as-deltaconvolution)
-   5. [Why This Matters](#45-why-this-matters)
-   6. [Note on integers vs. delta-distributions](#46-note-on-integers-vs-deltadistributions)
-5. [Algebraic Laws](#5-algebraic-laws)
-   1. [Identities](#51-identities)
-   2. [Commutativity](#52-commutativity)
-   3. [Associativity](#53-associativity)
-   4. [Distributivity](#54-distributivity)
-   5. [Scalar-Sum Collapse Law](#55-scalarsum-collapse-law)
-   6. [Shift Semigroup](#56-shift-semigroup)
-6. [Worked Examples](#6-worked-examples)
-   1. [Basic Dice Tables](#61-basic-dice-tables)
-      1. [One Six-Sided Die (1d6)](#611-one-sixsided-die-1d6)
-      2. [Sum of Two d6’s (2d6)](#612-sum-of-two-d6s-2d6)
-      3. [Scaling a d6 by 2 (2*1d6)](#613-scaling-a-d6-by-2-21d6)
-   2. [Scalar-Sum Example: $$(1*1d4)\oplus(1*1d6)$$](#62-scalarsum-example-11d4oplus11d6)
-   3. [Shift Example: $$S_1(1d4) \oplus 1d6$$](#63-shift-example-s_11d4-oplus-1d6)
-7. [Extended Operations](#7-extended-operations)
-   1. [Reflection / Negation](#71-reflection--negation)
-   2. [Convolution with Reflection (｢Difference｣)](#72-convolution-with-reflection-difference)
-8. [Number–Delta Dictionary](#8-delta-distributions-and-scalar-embedding)
-   1. [Delta Distributions](#81-delta-distributions)
-   2. [Numbers as deltas](#82-numbers-as-deltas)
-9. [Summary & Next Steps](#9-summary-and-structure-of-dice-algebra)
-   1. [Core Structures](#91-core-structures)
-   2. [Extended Operations](#92-extended-operations)
+- [1. The Underlying Set](#1-the-underlying-set)
+  - [1.1 Delta‑Distributions](#11-deltadistributions)
+- [2. Core Operations](#2-core-operations)
+  - [2.1 Convolution (Sum of Independent Rolls)](#21-convolution-sum-of-independent-rolls)
+  - [2.2 $$n$$-Fold Convolution (Roll $$n$$ Times)](#22-n-fold-convolution-roll-n-times)
+  - [2.3 Scaling](#23-scaling)
+  - [2.4 Shift](#24-shift)
+- [4. Embedding Integers into $$\\mathcal{D}$$](#4-embedding-integers-into-mathcald)
+  - [4.1 The Embedding Map](#41-the-embedding-map)
+  - [4.2 Recovering Integer Addition](#42-recovering-integer-addition)
+  - [4.3 Recovering Integer Multiplication](#43-recovering-integer-multiplication)
+  - [4.4 Shifts as Delta‑Convolution](#44-shifts-as-deltaconvolution)
+  - [4.5 Why This Matters](#45-why-this-matters)
+  - [4.6 Note on integers vs. delta‑distributions](#46-note-on-integers-vs-deltadistributions)
+- [5. Algebraic Laws](#5-algebraic-laws)
+  - [5.1 Identities](#51-identities)
+  - [5.2 Commutativity](#52-commutativity)
+  - [5.3 Associativity](#53-associativity)
+  - [5.4 Distributivity](#54-distributivity)
+  - [5.5 Shift Semigroup](#55-shift-semigroup)
+- [6. Worked Examples](#6-worked-examples)
+  - [6.1 Basic Dice Tables](#61-basic-dice-tables)
+    - [6.1.1 One Six‑Sided Die (1d6)](#611-one-sixsided-die-1d6)
+    - [6.1.2 Sum of Two d6’s (2d6)](#612-sum-of-two-d6s-2d6)
+    - [6.1.3 Scaling a d6 by 2 (2\*1d6)](#613-scaling-a-d6-by-2-21d6)
+- [7. Extended Operations](#7-extended-operations)
+  - [7.1 Reflection / Negation](#71-reflection--negation)
+  - [7.2 Convolution with Reflection (｢Difference｣)](#72-convolution-with-reflection-difference)
+  - [7.3 Pointwise Sum](#73-pointwise-sum)
+    - [7.3.1](#731)
+    - [7.3.2](#732)
+    - [7.3.3](#733)
+  - [7.4 The Mixture Kernel $$M(k)$$](#74-the-mixture-kernel-mk)
+    - [7.4.1 Definition](#741-definition)
+    - [7.4.2 Example](#742-example)
+- [8. Delta Distributions and Scalar Embedding](#8-delta-distributions-and-scalar-embedding)
+  - [8.1 Delta Distributions](#81-delta-distributions)
+  - [8.2 Numbers as Deltas](#82-numbers-as-deltas)
+- [9. Summary and Structure of Dice Algebra](#9-summary-and-structure-of-dice-algebra)
+  - [9.1 Core Structures](#91-core-structures)
+  - [9.2 Extended Operations](#92-extended-operations)
 
 ## 1. The Underlying Set
 
@@ -117,7 +115,7 @@ $$
 
 ## 2. Core Operations
 
-Foram definidas **cinco** maneiras fundamentais de se combinar as distribuições pertencentes a $$\mathcal{D}$$. E por meio delas se procurou expressar as principais maneiras de se ｢somar｣, ｢escalar｣ e ｢misturar｣ um conjunto de dados em um jogo de RPG. Elas podem parecer um tanto complexas ao serem expressas por meio de funções, mas quase todas elas são operações simples e intuitivas em um jogo de RPG. A única operação incomum para a maior parte dos jogos é a **Scalar-Sum** e ela foi adicionada para auxiliar a operação de **Outcome-Scaling** e generalizar os conceitos subjacentes a ela.
+Foram definidas **quatro** maneiras fundamentais de se combinar as distribuições pertencentes a $$\mathcal{D}$$. E por meio delas se procurou expressar as principais maneiras de se ｢somar｣ e ｢escalar｣ um conjunto de dados em um jogo de RPG. Elas podem parecer um tanto complexas ao serem expressas por meio de funções, mas quase todas elas são operações simples e intuitivas em um jogo de RPG.
 
 ### 2.1 Convolution (Sum of Independent Rolls)
 
@@ -188,7 +186,7 @@ $$
 - $$3\cdot 1d4 = 1d4+1d4+1d4$$ é a distribuição binomial com suporte $$\{3,\dots,12\}$$:
 ![3d4](/rand/images/image-2.png)
 
-### 2.3 Outcome‑Scaling
+### 2.3 Scaling
 
 **Notation:**
 
@@ -213,7 +211,7 @@ You multiply every outcome by $$n$$, keeping probabilities the same.
 - $$2 * 1d6$$ has support $$\{2,4,6,8,10,12\}$$, each with probability $$\tfrac16$$.
 - E.g.\ $$(2*1d6)(8)=1d6(4)=\tfrac{1}{6}$$.
 
-### 2.4 Shift Operator
+### 2.4 Shift
 
 **Notation:**
 $$
@@ -232,273 +230,6 @@ Equivalently $$S_n X = \delta_n + X$$ (convolution with $$\delta_n$$). Shifts ev
 
 - $$S_{2}1d6$$ has support $$\{3,4,5,6,7,8\}$$, each $$\tfrac16$$.
 - $$(S_2 1d6)(5) = 1d6(3) = \tfrac16$$.
-
-### 2.5 Pointwise Sum
-
-#### 2.5.1
-
-Let $$\Zeta_X$$ be the Support of $$X$$:
-
-$$
-\Zeta_X = \{\,s_1, s_2, \dots, s_N\}\subset\mathbb Z,\quad s_1 < s_2 < \cdots < s_N
-$$
-
-Let $$\Delta_X$$ be the **gaps** between consecutive outcomes:
-
-$$
-\Delta_X = \{\,s_i - s_{i-1} \;\big|\; i=2,\dots,N\}
-$$
-
-Let $$\mdc$$ be the **greatest common divisor** of a set of integers and $$d(X)$$ be the **greatest common divisor** of the gaps:
-
-$$
-d(X) \;=\;\mdc\bigl(\Delta_X\bigr)
-$$
-
-Let $$X'$$ be the **scaled distribution**:
-
-$$
-X'(k) = X(k/d(X))
-$$
-
-and
-
-$$
-X = d(X)*X'
-$$
-
-#### 2.5.2
-
-**Notação:**
-
-$$
-Z = X \plus' Y
-$$
-
-**Definição:**
-
-$$
-Z(k) =
-\frac{1}{2}
-\bigl(
-   X'(k) + Y'(k)
-\bigr)
-$$
-
-**Notação:**
-
-$$
-Z = X \plus' n*X
-$$
-
-**Definição:**
-
-$$
-Z(k) = \frac{1}{2}
-\bigl(
-   X'(k) + X'(k)
-\bigr)
-= X'(k)
-$$
-
-#### 2.5.3
-
-Define the **Scalar-Sum** operation:
-
-$$
-X \oplus Y = (d(Y)+d(X))*(X' \plus' Y')
-$$
-
-```latex
-
-m*{1,2,3,4} \oplus n*{1,2,3,4}
-m*{1,2,3,4} \oplus n*{1,2,3,4}
-(m+n)*({1,2,3,4} \plus' {1,2,3,4})
-(m+n)*{1,2,3,4}
-{m+n, 2m+2n, 3m+3n, 4m+4n}
-(m+n)*{1,2,3,4}
-
-a*{1,2,3,4} \oplus b*{1,2,3,4} \oplus c*{1,2,3,4}
-
-(a+b)*({1,2,3,4} \plus' {1,2,3,4}) \oplus c*{1,2,3,4}
-(a+b)*{1,2,3,4} \oplus c*{1,2,3,4}
-((a+b)+c)*({1,2,3,4} \plus' {1,2,3,4})
-(a+b+c)*{1,2,3,4}
-
-a*{1,2,3,4} \oplus (b+c)*({1,2,3,4} \plus' {1,2,3,4})
-a*{1,2,3,4} \oplus (b+c)*{1,2,3,4}
-(a+(b+c))*({1,2,3,4} \plus' {1,2,3,4})
-(a+b+c)*{1,2,3,4}
-
----
-
-m*X \oplus n*X
-(m+n)*(X \plus' X)
-(m+n)*X
-{m+n, 2m+2n, 3m+3n, 4m+4n}
-(m+n)*X
-
-a*X \oplus b*X \oplus c*X
-
-(a+b)*(X \plus' X) \oplus c*X
-(a+b)*X \oplus c*X
-((a+b)+c)*(X \plus' X)
-(a+b+c)*X
-
-a*X \oplus (b+c)*(X \plus' X)
-a*X \oplus (b+c)*X
-(a+(b+c))*(X \plus' X)
-(a+b+c)*X
-
----
-
-m*X \oplus n*Y
-(m+n)*(X \plus' Y)
-(m+n)*Z
-
-a*X \oplus b*X \oplus c*Y
-
-(a+b)*(X \plus' X) \oplus c*Y
-(a+b)*X \oplus c*Y
-((a+b)+c)*(X \plus' Y)
-(a+b+c)*Z
-
-a*X \oplus (b+c)*(X \plus' X)
-a*X \oplus (b+c)*Z
-(a+(b+c))*(X \plus' Z)
-(a+b+c)*?
-
----
-
-a*{1,3} \oplus b*{1,3} \oplus c*{1,2}
-
-(a+b)*({1,3} \plus' {1,3}) \oplus c*{1,2}
-(a+b)*{1,3} \oplus c*{1,2}
-((a+b)+c)*({1,3} \plus' {1,2})
-(a+b+c)*{1:0.5,2:0.25,3:0.25}
-
-a*{1,3} \oplus (b+c)*({1,3} \plus' {1,2})
-a*{1,3} \oplus (b+c)*{1:0.5,2:0.25,3:0.25}
-(a+(b+c))*({1,3} \plus' {1:0.5,2:0.25,3:0.25})
-(a+b+c)*{
-   1:0.5*2/2=0.5,
-   2:0.25*1/2=0.125,
-   3:0.25*1/2+0.5*1/2=0.375
-}
-
-```
-
-So
-
-$$
-X \oplus X = d(X)*X' \oplus d(X)*X' = (d(X)+d(X))*(X' \plus' X') = 2*d(X)*X'
-$$
-
-And
-
-$$
-(X \oplus X) \oplus X = (d(X)+d(X))*(X' \plus' X') \oplus d(X)*X' =
-2*d(X)*X' \oplus d(X)*X' = (2*d(X)+d(X))*(X' \plus' X') = 3*d(X)*X'
-$$
-
-## 3. The Mixture Kernel $$M(k)$$
-
-Before we scale outcomes in the **Scalar‑Sum**, we first form a **pointwise mixture** of two distributions.  This is captured by the **Mixture Kernel** $$M$$.
-
-### 3.1 Definition
-
-For any $$X,Y\in\mathcal D$$ and weights $$m,n\in\mathbb{N}$$, set:
-
-$$
-p = \frac{m}{m+n},
-$$
-
-$$
-q = \frac{n}{m+n},
-$$
-
-$$
-p+q=1.
-$$
-
-Then define the **Mixture Kernel**:
-
-$$
-M(k) \;=\; p\,X(k)\;+\;q\,Y(k).
-$$
-
-- Intuitively, with probability $$p$$ you ｢draw｣ from $$X$$, and with probability $$q$$ from $$Y$$.
-- Note $$\sum_k M(k)=1$$ because $$p+q=1$$ and each of $$X,Y$$ sums to 1.
-
-### 3.2 Example
-
-Let
-
-$$
-X = 1d4,\quad Y = 1d6,\quad m=1,\quad n=1.
-$$
-
-Then $$p=q=\tfrac12$$, and
-
-$$
-M(k) = \tfrac12\,1d4(k)\;+\;\tfrac12\,1d6(k).
-$$
-
-Since
-
-$$
-1d4(k)=
-\begin{cases}
-\tfrac14,&k=1,2,3,4,\\
-0,&\text{otherwise,}
-\end{cases}
-$$
-
-and
-
-$$
-1d6(k)=
-\begin{cases}
-\tfrac16,&k=1,2,3,4,5,6,\\
-0,&\text{otherwise,}
-\end{cases}
-$$
-
-we get the following table:
-
-| $$k$$ | $$1d4(k)$$ | $$1d6(k)$$ | $$M(k)=\tfrac12[1d4(k)+1d6(k)]$$ |
-|:-----:|:----------:|:----------:|:--------------------------------:|
-|   1   | $$\tfrac14$$   | $$\tfrac16$$   | $$\tfrac12\!\bigl(\tfrac14+\tfrac16\bigr)=\tfrac5{24}$$ |
-|   2   | $$\tfrac14$$   | $$\tfrac16$$   | $$\tfrac5{24}$$ |
-|   3   | $$\tfrac14$$   | $$\tfrac16$$   | $$\tfrac5{24}$$ |
-|   4   | $$\tfrac14$$   | $$\tfrac16$$   | $$\tfrac5{24}$$ |
-|   5   |     0      | $$\tfrac16$$   | $$\tfrac12\!\bigl(0+\tfrac16\bigr)=\tfrac1{12}$$ |
-|   6   |     0      | $$\tfrac16$$   | $$\tfrac1{12}$$ |
-
-**Check normalization:**
-
-$$\sum_{k=1}^6 M(k) = 4\cdot\tfrac5{24} + 2\cdot\tfrac1{12} = 1.$$
-
-### 3.3 How to Use $$M(k)$$
-
-Once you have $$M(k)$$, the **Scalar‑Sum** operation
-
-$$
-(m*X)\oplus(n*Y)
-= (m+n) * M
-$$
-
-simply **scales** each outcome by $$(m+n)$$.  Concretely:
-
-$$
-\bigl((m*X)\oplus(n*Y)\bigr)(j) =
-\begin{cases}
-M\bigl(\tfrac{j}{m+n}\bigr), & (m+n)\mid j,\\
-0, & \text{otherwise}.
-\end{cases}
-$$
-
-In our example, $$(1*1d4)\oplus(1*1d6)=2*M$$ puts mass $$M(k)$$ at outcome $$2k$$. Where $$(m+n)\mid j$$ means $$j$$ is a multiple of $$m+n$$.
 
 ## 4. Embedding Integers into $$\mathcal{D}$$
 
@@ -548,7 +279,7 @@ $$
 
 ### 4.3 Recovering Integer Multiplication
 
-Under **outcome‑scaling**, deltas multiply:
+Under **Scaling**, deltas multiply:
 
 $$
 k * \delta_n
@@ -663,16 +394,6 @@ Dice Algebra isn’t just a loose collection of operations—**every law** you k
 
    $$\;\delta_{2} + \delta_{3} = \delta_{3} + \delta_{2} = \delta_{5}.$$
 
-2. **Scalar‑Sum**
-
-   $$
-     (m*X)\oplus(n*Y) = (n*Y)\oplus(m*X).
-   $$
-
-   *Example:*
-
-   $$(1*1d4)\oplus(2*1d6) = (2*1d6)\oplus(1*1d4).$$
-
 ### 5.3 Associativity
 
 1. **Convolution**
@@ -695,13 +416,6 @@ Dice Algebra isn’t just a loose collection of operations—**every law** you k
 
    $$2*(3*1d4) = 6*1d4.$$
 
-3. **Scalar‑Sum**
-
-   $$
-     \bigl((m*X)\oplus(n*Y)\bigr)\oplus(p*Z)
-     = (m*X)\oplus\bigl((n*Y)\oplus(p*Z)\bigr).
-   $$
-
 ### 5.4 Distributivity
 
 1. **Repeated‑roll over convolution**
@@ -710,7 +424,7 @@ Dice Algebra isn’t just a loose collection of operations—**every law** you k
      n\cdot (X + Y) = n\cdot X + n\cdot Y.
    $$
 
-2. **Outcome‑scaling over convolution**
+2. **Scaling over convolution**
 
    $$
      n * (X + Y) = (n*X) + (n*Y).
@@ -722,26 +436,7 @@ Dice Algebra isn’t just a loose collection of operations—**every law** you k
    - LHS: $$3*(\delta_{1}+\delta_{2}) = 3*\delta_{3} = \delta_{9}.$$
    - RHS: $$(3*\delta_{1}) + (3*\delta_{2}) = \delta_{3} + \delta_{6} = \delta_{9}.$$
 
-3. **Outcome‑scaling over scalar‑sum**
-
-   $$
-     n *\bigl((m*X)\oplus(p*Y)\bigr)
-     = (n\!m)*X \;\oplus\; (n\!p)*Y.
-   $$
-
-### 5.5 Scalar‑Sum Collapse Law
-
-Whenever you “scalar‑sum” **two copies of the same** distribution:
-
-$$
-  (m*X)\oplus(n*X) = (m+n)*X.
-$$
-
-*Example:*
-
-$$(1*1d6)\oplus(2*1d6) = 3*1d6.$$
-
-### 5.6 Shift Semigroup
+### 5.5 Shift Semigroup
 
 Shifts compose like integers:
 
@@ -800,102 +495,6 @@ $$
 | Outcome $$k$$ | 2  | 4  | 6  | 8  | 10 | 12 |
 |:-------------:|:--:|:--:|:--:|:--:|:--:|:--:|
 | Probability   |1/6 |1/6 |1/6 |1/6 |1/6 |1/6 |
-
-### 6.2 Scalar‑Sum Example: $$(1\!*\!1d4)\oplus(1\!*\!1d6)$$
-
-We compute
-
-$$
-(1*1d4)\oplus(1*1d6) = 2*(\frac{1}{2}*1d4)\oplus(\frac{1}{2}*1d6) = 2* M,
-$$
-
-$$
-M(k)=\tfrac12\,1d4(k)+\tfrac12\,1d6(k).
-$$
-
-#### Step 1: Build $$M(k)$$
-
-| $$k$$ | 1d4(k) | 1d6(k) | $$M(k)=\tfrac12[1d4(k)+1d6(k)]$$ |
-|:-----:|:------:|:------:|:--------------------------------:|
-|   1   | 1/4    | 1/6    | $$\tfrac5{24}$$                  |
-|   2   | 1/4    | 1/6    | $$\tfrac5{24}$$                  |
-|   3   | 1/4    | 1/6    | $$\tfrac5{24}$$                  |
-|   4   | 1/4    | 1/6    | $$\tfrac5{24}$$                  |
-|   5   | 0      | 1/6    | $$\tfrac1{12}$$                  |
-|   6   | 0      | 1/6    | $$\tfrac1{12}$$                  |
-
-Check:
-
-$$\;4\times\tfrac5{24}+2\times\tfrac1{12}=1.$$
-
-#### Step 2: Scale by 2
-
-$$
-(2*M)(j) =
-\begin{cases}
-M(j/2), & 2\mid j,\\
-0, & \text{otherwise.}
-\end{cases}
-$$
-
-| $$j$$ | 2    | 4    | 6    | 8    | 10   | 12   |
-|:-----:|:----:|:----:|:----:|:----:|:----:|:----:|
-| $$(2*M)(j)$$ |5/24 |5/24 |5/24 |5/24 |1/12 |1/12 |
-
-### 6.3 Shift Example: $$S_1(1d4) \oplus 1d6$$
-
-We are applying the **Scalar‑Sum** operation to a $$ S_1(1d4) $$, which supports $$\{2,3,4,5\}$$ with probabilities $$\tfrac14$$ each with $$1d6$$, which supports $$\{1,2,3,4,5,6\}$$ with probabilities $$\tfrac16$$ each.
-
-#### 6.3.1 Step 1: Build $$S_1(1d4)$$ and $$1d6$$
-
-$$
-S_1(1d4)(k) = 1d4(k - 1) =
-\left\{
-\begin{array}{ll}
-\frac{1}{4}, & k \in \{2, 3, 4, 5\} \\
-0, & \text{otherwise}
-\end{array}
-\right.
-$$
-
-$$
-1d6(k) =
-\left\{
-\begin{array}{ll}
-\frac{1}{6}, & k \in \{1, 2, 3, 4, 5, 6\} \\
-0, & \text{otherwise}
-\end{array}
-\right.
-$$
-
-#### 6.3.2 Step 2: Build $$M(k)$$
-
-$$
-(S_1(1d4) \oplus 1d6)(k) = 2*M(k) = 2*(\frac{1}{2} \cdot S_1(1d4)(k) + \frac{1}{2} \cdot 1d6(k))
-$$
-
-| $$k$$ | 1d6(k) | 1d4(k) | $$M(k)$$            |
-|:-----:|:------:|:------:|:--------------------:|
-|   1   | 1/6    | 0      | $$\tfrac{1}{12}$$      |
-|   2   | 1/6    | 1/4    | $$\tfrac{5}{24}$$      |
-|   3   | 1/6    | 1/4    | $$\tfrac{5}{24}$$      |
-|   4   | 1/6    | 1/4    | $$\tfrac{5}{24}$$      |
-|   5   | 1/6    | 1/4    | $$\tfrac{5}{24}$$      |
-|   6   | 1/6    | 0      | $$\tfrac{1}{12}$$      |
-
-#### 6.3.3 Step 3: Scale by 2
-
-$$
-(2*M)(j) =
-\begin{cases}
-M(j/2), & 2\mid j,\\
-0, & \text{otherwise.}
-\end{cases}
-$$
-
-| $$j$$ | 2    | 4    | 6    | 8    | 10   | 12   |
-|:-----:|:----:|:----:|:----:|:----:|:----:|:----:|
-| $$(2*M)(j)$$ |1/12 |5/24 |5/24 |5/24 |5/24 |1/12 |
 
 ## 7. Extended Operations
 
@@ -993,6 +592,251 @@ You first roll $$X$$ to get $$i$$, then roll $$Y$$ a total of $$i$$ times and su
 | $$2d4(k)$$    |0    |1/16    |2/16    |3/16    |4/16    |3/16    |2/16    |1/16    |
 | $$(X\circ Y)(k)$$ |½·1/4=1/8 |½(1/4+1/16)=5/32 |½(1/4+2/16)=3/16 |½(1/4+3/16)=7/32 |½·4/16=1/8 |½·3/16=3/32 |½·2/16=1/16 |½·1/16=1/32 | -->
 
+### 7.3 Pointwise Sum
+
+#### 7.3.1
+
+Let $$\Zeta_X$$ be the Support of $$X$$:
+
+$$
+\Zeta_X = \{\,s_1, s_2, \dots, s_N\}\subset\mathbb Z,\quad s_1 < s_2 < \cdots < s_N
+$$
+
+Let $$\Delta_X$$ be the **gaps** between consecutive outcomes:
+
+$$
+\Delta_X = \{\,s_i - s_{i-1} \;\big|\; i=2,\dots,N\}
+$$
+
+Let $$\mdc$$ be the **greatest common divisor** of a set of integers and $$d(X)$$ be the **greatest common divisor** of the gaps:
+
+$$
+d(X) \;=\;\mdc\bigl(\Delta_X\bigr)
+$$
+
+Let $$X'$$ be the **scaled distribution**:
+
+$$
+X'(k) = X(k/d(X))
+$$
+
+and
+
+$$
+X = d(X)*X'
+$$
+
+#### 7.3.2
+
+**Notação:**
+
+$$
+Z = X \plus^' Y
+$$
+
+**Definição:**
+
+$$
+Z(k) =
+\frac{1}{2}
+\bigl(
+   X'(k) + Y'(k)
+\bigr)
+$$
+
+**Notação:**
+
+$$
+Z = X \plus^' n*X
+$$
+
+**Definição:**
+
+$$
+Z(k) = \frac{1}{2}
+\bigl(
+   X'(k) + X'(k)
+\bigr)
+= X'(k)
+$$
+
+#### 7.3.3
+
+Define the **Scalar-Sum** operation:
+
+$$
+X \oplus Y = (d(Y)+d(X))*(X' \plus^' Y')
+$$
+
+```latex
+
+m*{1,2,3,4} \oplus n*{1,2,3,4}
+m*{1,2,3,4} \oplus n*{1,2,3,4}
+(m+n)*({1,2,3,4} \plus^' {1,2,3,4})
+(m+n)*{1,2,3,4}
+{m+n, 2m+2n, 3m+3n, 4m+4n}
+(m+n)*{1,2,3,4}
+
+a*{1,2,3,4} \oplus b*{1,2,3,4} \oplus c*{1,2,3,4}
+
+(a+b)*({1,2,3,4} \plus^' {1,2,3,4}) \oplus c*{1,2,3,4}
+(a+b)*{1,2,3,4} \oplus c*{1,2,3,4}
+((a+b)+c)*({1,2,3,4} \plus^' {1,2,3,4})
+(a+b+c)*{1,2,3,4}
+
+a*{1,2,3,4} \oplus (b+c)*({1,2,3,4} \plus^' {1,2,3,4})
+a*{1,2,3,4} \oplus (b+c)*{1,2,3,4}
+(a+(b+c))*({1,2,3,4} \plus^' {1,2,3,4})
+(a+b+c)*{1,2,3,4}
+
+---
+
+m*X \oplus n*X
+(m+n)*(X \plus^' X)
+(m+n)*X
+{m+n, 2m+2n, 3m+3n, 4m+4n}
+(m+n)*X
+
+a*X \oplus b*X \oplus c*X
+
+(a+b)*(X \plus^' X) \oplus c*X
+(a+b)*X \oplus c*X
+((a+b)+c)*(X \plus^' X)
+(a+b+c)*X
+
+a*X \oplus (b+c)*(X \plus^' X)
+a*X \oplus (b+c)*X
+(a+(b+c))*(X \plus^' X)
+(a+b+c)*X
+
+---
+
+m*X \oplus n*Y
+(m+n)*(X \plus^' Y)
+(m+n)*Z
+
+a*X \oplus b*X \oplus c*Y
+
+(a+b)*(X \plus^' X) \oplus c*Y
+(a+b)*X \oplus c*Y
+((a+b)+c)*(X \plus^' Y)
+(a+b+c)*Z
+
+a*X \oplus (b+c)*(X \plus^' X)
+a*X \oplus (b+c)*Z
+(a+(b+c))*(X \plus^' Z)
+(a+b+c)*?
+
+---
+
+a*{1,3} \oplus b*{1,3} \oplus c*{1,2}
+
+(a+b)*({1,3} \plus^' {1,3}) \oplus c*{1,2}
+(a+b)*{1,3} \oplus c*{1,2}
+((a+b)+c)*({1,3} \plus^' {1,2})
+(a+b+c)*{1:0.5,2:0.25,3:0.25}
+
+a*{1,3} \oplus (b+c)*({1,3} \plus^' {1,2})
+a*{1,3} \oplus (b+c)*{1:0.5,2:0.25,3:0.25}
+(a+(b+c))*({1,3} \plus^' {1:0.5,2:0.25,3:0.25})
+(a+b+c)*{
+   1:0.5*2/2=0.5,
+   2:0.25*1/2=0.125,
+   3:0.25*1/2+0.5*1/2=0.375
+}
+
+```
+
+So
+
+$$
+n*X \oplus m*X = d(X)*n*X' \oplus d(X)*m*X' = (d(X)*n+d(X)*m)*(X' \plus^' X') = (m+n)*d(X)*X'
+$$
+
+And
+
+$$
+(X \oplus X) \oplus X = 2*d(X)*X' \oplus d(X)*X' = 3*d(X)*X'
+$$
+
+### 7.4 The Mixture Kernel $$M(k)$$
+
+Before we scale outcomes in the **Scalar‑Sum**, we first form a **pointwise mixture** of two distributions.  This is captured by the **Mixture Kernel** $$M$$.
+
+#### 7.4.1 Definition
+
+For any $$X,Y\in\mathcal D$$ and weights $$m,n\in\mathbb{N}$$, set:
+
+$$
+p = \frac{m}{m+n},
+$$
+
+$$
+q = \frac{n}{m+n},
+$$
+
+$$
+p+q=1.
+$$
+
+Then define the **Mixture Kernel**:
+
+$$
+M(k) \;=\; p\,X(k)\;+\;q\,Y(k).
+$$
+
+- Intuitively, with probability $$p$$ you ｢draw｣ from $$X$$, and with probability $$q$$ from $$Y$$.
+- Note $$\sum_k M(k)=1$$ because $$p+q=1$$ and each of $$X,Y$$ sums to 1.
+
+#### 7.4.2 Example
+
+Let
+
+$$
+X = 1d4,\quad Y = 1d6,\quad m=1,\quad n=1.
+$$
+
+Then $$p=q=\tfrac12$$, and
+
+$$
+M(k) = \tfrac12\,1d4(k)\;+\;\tfrac12\,1d6(k).
+$$
+
+Since
+
+$$
+1d4(k)=
+\begin{cases}
+\tfrac14,&k=1,2,3,4,\\
+0,&\text{otherwise,}
+\end{cases}
+$$
+
+and
+
+$$
+1d6(k)=
+\begin{cases}
+\tfrac16,&k=1,2,3,4,5,6,\\
+0,&\text{otherwise,}
+\end{cases}
+$$
+
+we get the following table:
+
+| $$k$$ | $$1d4(k)$$ | $$1d6(k)$$ | $$M(k)=\tfrac12[1d4(k)+1d6(k)]$$ |
+|:-----:|:----------:|:----------:|:--------------------------------:|
+|   1   | $$\tfrac14$$   | $$\tfrac16$$   | $$\tfrac12\!\bigl(\tfrac14+\tfrac16\bigr)=\tfrac5{24}$$ |
+|   2   | $$\tfrac14$$   | $$\tfrac16$$   | $$\tfrac5{24}$$ |
+|   3   | $$\tfrac14$$   | $$\tfrac16$$   | $$\tfrac5{24}$$ |
+|   4   | $$\tfrac14$$   | $$\tfrac16$$   | $$\tfrac5{24}$$ |
+|   5   |     0      | $$\tfrac16$$   | $$\tfrac12\!\bigl(0+\tfrac16\bigr)=\tfrac1{12}$$ |
+|   6   |     0      | $$\tfrac16$$   | $$\tfrac1{12}$$ |
+
+**Check normalization:**
+
+$$\sum_{k=1}^6 M(k) = 4\cdot\tfrac5{24} + 2\cdot\tfrac1{12} = 1.$$
+
 ## 8. Delta Distributions and Scalar Embedding
 
 ### 8.1 Delta Distributions
@@ -1052,8 +896,7 @@ This lets us:
 |-----------------|----------------|---------------------------------------|
 | Sum             | $$ + $$        | Convolution (sum of independent dice) |
 | $$n$$-Sum       | $$ \cdot $$    | Repeated convolution $$n$$ times      |
-| Scalar-Sum      | $$ \oplus $$   | Mixture / repeated structure          |
-| Outcome‑Scaling | $$ * $$        | Scale outcomes by $$n$$               |
+| Scaling         | $$ * $$        | Scale outcomes by $$n$$               |
 | Shift           | $$ S_n $$      | Additive shift of distribution        |
 | Delta           | $$ \delta_n $$ | Deterministic values as dice          |
 
