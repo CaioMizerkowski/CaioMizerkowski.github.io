@@ -631,7 +631,7 @@ $$
 **Notação:**
 
 $$
-Z = X \plus ' Y
+Z = X + ' Y
 $$
 
 **Definição:**
@@ -647,7 +647,7 @@ $$
 **Notação:**
 
 $$
-Z = X \plus ' n*X
+Z = X + ' n*X
 $$
 
 **Definição:**
@@ -665,80 +665,80 @@ $$
 Define the **Scalar-Sum** operation:
 
 $$
-X \oplus Y = (d(Y)+d(X))*(X' \plus ' Y')
+X \oplus Y = (d(Y)+d(X))*(X' + ' Y')
 $$
 
 ```latex
 
 m*{1,2,3,4} \oplus n*{1,2,3,4}
 m*{1,2,3,4} \oplus n*{1,2,3,4}
-(m+n)*({1,2,3,4} \plus ' {1,2,3,4})
+(m+n)*({1,2,3,4} + ' {1,2,3,4})
 (m+n)*{1,2,3,4}
 {m+n, 2m+2n, 3m+3n, 4m+4n}
 (m+n)*{1,2,3,4}
 
 a*{1,2,3,4} \oplus b*{1,2,3,4} \oplus c*{1,2,3,4}
 
-(a+b)*({1,2,3,4} \plus ' {1,2,3,4}) \oplus c*{1,2,3,4}
+(a+b)*({1,2,3,4} + ' {1,2,3,4}) \oplus c*{1,2,3,4}
 (a+b)*{1,2,3,4} \oplus c*{1,2,3,4}
-((a+b)+c)*({1,2,3,4} \plus ' {1,2,3,4})
+((a+b)+c)*({1,2,3,4} + ' {1,2,3,4})
 (a+b+c)*{1,2,3,4}
 
-a*{1,2,3,4} \oplus (b+c)*({1,2,3,4} \plus ' {1,2,3,4})
+a*{1,2,3,4} \oplus (b+c)*({1,2,3,4} + ' {1,2,3,4})
 a*{1,2,3,4} \oplus (b+c)*{1,2,3,4}
-(a+(b+c))*({1,2,3,4} \plus ' {1,2,3,4})
+(a+(b+c))*({1,2,3,4} + ' {1,2,3,4})
 (a+b+c)*{1,2,3,4}
 
 ---
 
 m*X \oplus n*X
-(m+n)*(X \plus ' X)
+(m+n)*(X + ' X)
 (m+n)*X
 {m+n, 2m+2n, 3m+3n, 4m+4n}
 (m+n)*X
 
 a*X \oplus b*X \oplus c*X
 
-(a+b)*(X \plus ' X) \oplus c*X
+(a+b)*(X + ' X) \oplus c*X
 (a+b)*X \oplus c*X
-((a+b)+c)*(X \plus ' X)
+((a+b)+c)*(X + ' X)
 (a+b+c)*X
 
-a*X \oplus (b+c)*(X \plus ' X)
+a*X \oplus (b+c)*(X + ' X)
 a*X \oplus (b+c)*X
-(a+(b+c))*(X \plus ' X)
+(a+(b+c))*(X + ' X)
 (a+b+c)*X
 
 ---
 
 m*X \oplus n*Y
-(m+n)*(X \plus ' Y)
+(m+n)*(X + ' Y)
 (m+n)*Z
 
 a*X \oplus b*X \oplus c*Y
 
-(a+b)*(X \plus ' X) \oplus c*Y
+(a+b)*(X + ' X) \oplus c*Y
 (a+b)*X \oplus c*Y
-((a+b)+c)*(X \plus ' Y)
+((a+b)+c)*(X + ' Y)
 (a+b+c)*Z
 
-a*X \oplus (b+c)*(X \plus ' X)
+a*X \oplus (b+c)*(X + ' X)
 a*X \oplus (b+c)*Z
-(a+(b+c))*(X \plus ' Z)
+(a+(b+c))*(X + ' Z)
 (a+b+c)*?
 
 ---
 
 a*{1,3} \oplus b*{1,3} \oplus c*{1,2}
 
-(a+b)*({1,3} \plus ' {1,3}) \oplus c*{1,2}
+(a+b)*({1,3} + ' {1,3}) \oplus c*{1,2}
 (a+b)*{1,3} \oplus c*{1,2}
-((a+b)+c)*({1,3} \plus ' {1,2})
+((a+b)+c)*({1,3} + ' {1,2})
 (a+b+c)*{1:0.5,2:0.25,3:0.25}
 
-a*{1,3} \oplus (b+c)*({1,3} \plus ' {1,2})
+a*{1,3} \oplus (b+c)*({1,3} + ' {1,2})
 a*{1,3} \oplus (b+c)*{1:0.5,2:0.25,3:0.25}
-(a+(b+c))*({1,3} \plus ' {1:0.5,2:0.25,3:0.25})
+(a+(b+c))*({1,3} + ' {1:0.5,2:0.25,3:0.25})
 (a+b+c)*{
    1:0.5*2/2=0.5,
    2:0.25*1/2=0.125,
@@ -750,7 +750,7 @@ a*{1,3} \oplus (b+c)*{1:0.5,2:0.25,3:0.25}
 So
 
 $$
-n*X \oplus m*X = d(X)*n*X' \oplus d(X)*m*X' = (d(X)*n+d(X)*m)*(X' \plus ' X') = (m+n)*d(X)*X'
+n*X \oplus m*X = d(X)*n*X' \oplus d(X)*m*X' = (d(X)*n+d(X)*m)*(X' + ' X') = (m+n)*d(X)*X'
 $$
 
 And
