@@ -859,20 +859,6 @@ $$
 \delta_n = \text{"always returns } n\text{"}.
 $$
 
-**Examples:**
-
-- $$\delta_0$$ is the identity element for convolution:
-
-  $$
-  \delta_0 * X = X.
-  $$
-
-- $$\delta_1$$ is the multiplicative identity for scalar sum:
-
-  $$
-  \delta_1 \oplus X = X.
-  $$
-
 ### 8.2 Numbers as Deltas
 
 Every integer $$ n \in \mathbb{Z} $$ can be interpreted as the delta distribution $$ \delta_n $$. This provides a **bridge** between deterministic and probabilistic values.
