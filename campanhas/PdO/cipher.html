@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presente de um Goliath</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="puzzle-header">
+            <h1>⬢ Enigma do Telo ⬢</h1>
+            <p>Uma caixa com um enigma a ser descoberto...</p>
+        </div>
+
+        <div class="tribal-symbols">
+            ◆ ◇ ◈ ◉ ◊ ◆ ◇ ◈
+        </div>
+
+        <div class="encoded-text" id="encodedText">
+            Loading inscribed runes...
+        </div>
+
+        <div class="key-section">
+            <label for="keyInput">⚿ Perigosa como uma flecha, uma vez disparada não volta jamais:</label>
+            <div class="input-container">
+                <input type="text" id="keyInput" class="key-input" placeholder="Resolva-me" oninput="processKey()"
+                    autocomplete="off">
+            </div>
+        </div>
+
+        <div class="decoded-text" id="decodedText">
+            ...
+        </div>
+
+        <div class="tribal-symbols">
+            ◉ ◊ ◆ ◇ ◈ ◉ ◊ ◆
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+</html>

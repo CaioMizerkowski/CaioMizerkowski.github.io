@@ -1,0 +1,374 @@
+body {
+    background: #1a1a1a;
+    background-image:
+        linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 50%, #050505 100%),
+        radial-gradient(circle at 20% 80%, rgba(40, 40, 40, 0.3) 0%, transparent 60%),
+        radial-gradient(circle at 80% 20%, rgba(45, 45, 45, 0.2) 0%, transparent 60%),
+        radial-gradient(circle at 40% 40%, rgba(35, 35, 35, 0.15) 0%, transparent 40%);
+    font-family: 'Times New Roman', serif;
+    color: #a0a0a0;
+    margin: 0;
+    padding: 5px;
+    min-height: 100vh;
+    animation: fadeIn 1s ease-in-out;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.8), 0 0 30px rgba(212, 175, 55, 0.4);
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.container {
+    max-width: min(95vw, 650px);
+    margin: 5px auto;
+    background:
+        linear-gradient(145deg, #3a3a3a, #252525),
+        radial-gradient(circle at 30% 30%, rgba(80, 80, 80, 0.2) 0%, transparent 70%);
+    border: 3px solid #353535;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.8),
+        inset 0 1px 6px rgba(100, 100, 100, 0.2),
+        inset 0 -1px 6px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    animation: slideInUp 0.8s ease-out;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 1px solid rgba(90, 90, 90, 0.3);
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.container:hover {
+    transform: translateY(-1px);
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.9),
+        inset 0 1px 6px rgba(110, 110, 110, 0.25),
+        inset 0 -1px 6px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.puzzle-header {
+    text-align: center;
+    margin-bottom: 15px;
+    border-bottom: 2px groove #6a6a6a;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.puzzle-header::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #888888, transparent);
+}
+
+.puzzle-header h1 {
+    margin: 0;
+    font-size: 2.2em;
+    text-shadow:
+        2px 2px 4px rgba(0, 0, 0, 0.9),
+        0 0 8px rgba(100, 100, 100, 0.4);
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #707070;
+}
+
+.puzzle-header p {
+    margin: 8px 0 0 0;
+    font-style: italic;
+    opacity: 0.8;
+    font-size: 1em;
+    color: #808080;
+}
+
+.tribal-symbols {
+    opacity: 0.4;
+    font-size: 2.2em;
+    text-align: center;
+    margin: 25px 0;
+    user-select: none;
+    color: #6b5d4f;
+    letter-spacing: 8px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.encoded-text {
+    background:
+        linear-gradient(145deg, #2a251f, #1f1b16),
+        radial-gradient(circle at 50% 50%, rgba(107, 93, 79, 0.1) 0%, transparent 70%);
+    border: 3px inset #3c362e;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 25px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 1.3em;
+    line-height: 1.7;
+    letter-spacing: 2px;
+    word-break: break-all;
+    color: #8b735a;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.key-section {
+    margin: 20px 0;
+}
+
+.key-section label {
+    display: block;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 6px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+    color: #909090;
+}
+
+.key-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 5px;
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .key-input {
+        font-size: 1em;
+        padding: 10px 12px;
+    }
+
+    .key-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .puzzle-header h1 {
+        font-size: 2.2em;
+    }
+}
+
+.input-container {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.key-input {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px 15px;
+    font-size: 1.1em;
+    font-family: 'Courier New', monospace;
+    background:
+        linear-gradient(145deg, #1f1b16, #2a251f),
+        radial-gradient(circle at 50% 50%, rgba(107, 93, 79, 0.1) 0%, transparent 70%);
+    border: 3px inset #3c362e;
+    border-radius: 8px;
+    color: #8b735a;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.6);
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.key-input:focus {
+    outline: none;
+    border-color: #6b5d4f;
+    box-shadow:
+        inset 0 2px 8px rgba(0, 0, 0, 0.8),
+        0 0 15px rgba(107, 93, 79, 0.6);
+    background:
+        linear-gradient(145deg, #1a1611, #252018),
+        radial-gradient(circle at 50% 50%, rgba(107, 93, 79, 0.2) 0%, transparent 70%);
+    transform: scale(1.01);
+}
+
+.key-input:hover {
+    border-color: #5a5045;
+    background:
+        linear-gradient(145deg, #1c1813, #272219),
+        radial-gradient(circle at 50% 50%, rgba(107, 93, 79, 0.15) 0%, transparent 70%);
+}
+
+.key-input.processing {
+    animation: glow 1.5s infinite;
+}
+
+.repeated-key {
+    margin: 12px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 1.0em;
+    opacity: 0.6;
+    word-break: break-all;
+    color: #786a5a;
+}
+
+.decoded-text {
+    background:
+        linear-gradient(145deg, #2a251f, #1f1b16),
+        radial-gradient(circle at 50% 50%, rgba(107, 93, 79, 0.1) 0%, transparent 70%);
+    border: 3px inset #5a5045;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 25px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 1.3em;
+    line-height: 1.7;
+    min-height: 70px;
+    word-break: break-all;
+    color: #a0927a;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.tribal-symbols {
+    opacity: 0.4;
+    font-size: 2.2em;
+    text-align: center;
+    margin: 25px 0;
+    user-select: none;
+    color: #6b5d4f;
+    letter-spacing: 8px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.success {
+    border-color: #5a7a5a;
+    box-shadow:
+        inset 0 1px 4px rgba(0, 0, 0, 0.8),
+        0 0 15px rgba(90, 122, 90, 0.6),
+        0 0 25px rgba(90, 122, 90, 0.3);
+    animation: successPulse 2s infinite;
+    background:
+        linear-gradient(145deg, #2a3a2a, #353535),
+        radial-gradient(circle at 50% 50%, rgba(90, 122, 90, 0.15) 0%, transparent 70%);
+}
+
+@keyframes successPulse {
+
+    0%,
+    100% {
+        box-shadow:
+            inset 0 1px 4px rgba(0, 0, 0, 0.8),
+            0 0 15px rgba(90, 122, 90, 0.6),
+            0 0 25px rgba(90, 122, 90, 0.3);
+    }
+
+    50% {
+        box-shadow:
+            inset 0 1px 4px rgba(0, 0, 0, 0.8),
+            0 0 20px rgba(90, 122, 90, 0.8),
+            0 0 35px rgba(90, 122, 90, 0.4);
+    }
+}
+
+.decoded-text.typing {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 2s steps(40, end);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background:
+        linear-gradient(145deg, #1f1b16, #2a251f);
+    border: 1px inset #3c362e;
+    border-radius: 3px;
+    margin: 15px 0;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #6b5d4f, #8b735a, #6b5d4f);
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 2px;
+    box-shadow: 0 0 8px rgba(139, 115, 90, 0.6);
+}
+
+.character-count {
+    font-size: 0.9em;
+    opacity: 0.6;
+    text-align: right;
+    margin-top: 8px;
+    color: #786a5a;
+}
