@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastreador de Negociações D&D 5e</title>
+    <link rel="stylesheet" href="tracker.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="tracker-header">
+            <h1>⚖️ Rastreador de Negociações ⚖️</h1>
+            <p class="subtitle">Sistema de Matt Colville adaptado para D&D 5e por Matthew Perkins</p>
+        </header>
+
+        <!-- Setup Phase -->
+        <div id="setup-phase" class="phase-section">
+            <h2>Configuração da Negociação</h2>
+
+            <div class="setup-group">
+                <label for="attitude-select">Atitude Inicial do NPC:</label>
+                <select id="attitude-select" class="form-select">
+                    <option value="hostile">Hostil (Interesse: 1, Paciência: 2)</option>
+                    <option value="suspicious">Suspicioso (Interesse: 2, Paciência: 2)</option>
+                    <option value="neutral" selected>Neutro (Interesse: 2, Paciência: 3)</option>
+                    <option value="open">Aberto (Interesse: 3, Paciência: 3)</option>
+                    <option value="friendly">Amigável (Interesse: 3, Paciência: 4)</option>
+                    <option value="trusting">Confiante (Interesse: 3, Paciência: 5)</option>
+                </select>
+            </div>
+
+            <div class="setup-group">
+                <label>Modificadores de Situação:</label>
+                <div class="modifier-checkboxes">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="mod-bad-rep" value="-1-interest">
+                        Reputação Extremamente Ruim (-1 Interesse)
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="mod-good-rep" value="+1-patience">
+                        Reputação Extremamente Boa (+1 Paciência)
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="mod-one-lang" value="+1-patience">
+                        1 jogador fala idioma nativo (+1 Paciência)
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="mod-three-lang" value="+2-patience">
+                        3+ jogadores falam idioma nativo (+2 Paciência)
+                    </label>
+                </div>
+            </div>
+
+            <div class="setup-group">
+                <label>Pedido do Grupo:</label>
+                <textarea id="party-request" class="form-textarea" rows="3"
+                    placeholder="Ex: 'Princesa, acreditamos que seu conselheiro é secretamente um vilão — prenda-o imediatamente!'"></textarea>
+            </div>
+
+            <div class="setup-group">
+                <label>Motivações do NPC (recomendado: 3):</label>
+                <div class="trait-grid" id="motivations-grid">
+                    <label class="trait-checkbox">
+                        <input type="checkbox" name="motivation" value="benevolence">
+                        <span>Benevolência</span>
+                    </label>
+                    <label class="trait-checkbox">
+                        <input type="checkbox" name="motivation" value="discovery">
+                        <span>Descoberta</span>
+                    </label>
+                    <label class="trait-checkbox">
+                        <input type="checkbox" name="motivation" value="freedom">
+                        <span>Liberdade</span>
+                    </label>
+                    <label class="trait-checkbox">
+                        <input type="checkbox" name="motivation" value="greed">
+                        <span>Ganância</span>
+                    </label>
+                    <label class="trait-checkbox">
+                        <input type="checkbox" name="motivation" value="authority">
+                        <span>Autoridade Superior</span>
+                    </label>
+                    <label class="trait-checkbox">
+                        <input type="checkbox" name="motivation" value="justice">
+                        <span>Justiça</span>
+                    </label>
+                    <label class="trait-checkbox">
+                        <input type="checkbox" name="motivation" value="legacy">
+                        <span>Legado</span>
+                    </label>
+                    <label class="trait-checkbox">
+                        <input type="checkbox" name="motivation" value="peace">
+                        <span>Paz</span>
+                    </label>
+                    <label class="trait-checkbox">
+                        <input type="checkbox" name="motivation" value="power">
+                        <span>Poder</span>
+                    </label>
+                    <label class="trait-checkbox">
+                        <input type="checkbox" name="motivation" value="protection">
+                        <span>Proteção</span>
+                    </label>
+                    <label class="trait-checkbox">
+                        <input type="checkbox" name="motivation" value="revelry">
+                        <span>Festividade</span>
+                    </label>
+                    <label class="trait-checkbox">
+                        <input type="checkbox" name="motivation" value="vengeance">
+                        <span>Vingança</span>
+                    </label>
+                </div>
+                <p class="trait-counter" id="motivation-counter">0 selecionadas (recomendado: 3)</p>
+            </div>
+
+            <div class="setup-group">
+                <label>Armadilhas do NPC (recomendado: 2):</label>
+                <div class="trait-grid" id="pitfalls-grid">
+                    <label class="trait-checkbox">
+                        <input type="checkbox" name="pitfall" value="benevolence">
+                        <span>Benevolência</span>
+                    </label>
+                    <label class="trait-checkbox">
+                        <input type="checkbox" name="pitfall" value="discovery">
+                        <span>Descoberta</span>
+                    </label>
+                    <label class="trait-checkbox">
+                        <input type="checkbox" name="pitfall" value="freedom">
+                        <span>Liberdade</span>
+                    </label>
+                    <label class="trait-checkbox">
+                        <input type="checkbox" name="pitfall" value="greed">
+                        <span>Ganância</span>
+                    </label>
+                    <label class="trait-checkbox">
+                        <input type="checkbox" name="pitfall" value="authority">
+                        <span>Autoridade Superior</span>
+                    </label>
+                    <label class="trait-checkbox">
+                        <input type="checkbox" name="pitfall" value="justice">
+                        <span>Justiça</span>
+                    </label>
+                    <label class="trait-checkbox">
+                        <input type="checkbox" name="pitfall" value="legacy">
+                        <span>Legado</span>
+                    </label>
+                    <label class="trait-checkbox">
+                        <input type="checkbox" name="pitfall" value="peace">
+                        <span>Paz</span>
+                    </label>
+                    <label class="trait-checkbox">
+                        <input type="checkbox" name="pitfall" value="power">
+                        <span>Poder</span>
+                    </label>
+                    <label class="trait-checkbox">
+                        <input type="checkbox" name="pitfall" value="protection">
+                        <span>Proteção</span>
+                    </label>
+                    <label class="trait-checkbox">
+                        <input type="checkbox" name="pitfall" value="revelry">
+                        <span>Festividade</span>
+                    </label>
+                    <label class="trait-checkbox">
+                        <input type="checkbox" name="pitfall" value="vengeance">
+                        <span>Vingança</span>
+                    </label>
+                </div>
+                <p class="trait-counter" id="pitfall-counter">0 selecionadas (recomendado: 2)</p>
+            </div>
+
+            <button id="start-negotiation-btn" class="btn-primary">Iniciar Negociação</button>
+        </div>
+
+        <!-- Active Negotiation Phase -->
+        <div id="active-phase" class="phase-section hidden">
+            <div class="negotiation-header">
+                <h2>Negociação em Andamento</h2>
+                <button id="restart-btn" class="btn-secondary">Reiniciar Negociação</button>
+            </div>
+
+            <div class="request-display" id="request-display">
+                <strong>Pedido:</strong> <span id="display-request"></span>
+            </div>
+
+            <div class="meters-container">
+                <div class="meter-box">
+                    <h3>Interesse</h3>
+                    <div class="meter-bar">
+                        <div id="interest-fill" class="meter-fill interest-fill"></div>
+                    </div>
+                    <div class="meter-value">
+                        <span id="interest-value">2</span> / 5
+                    </div>
+                    <p class="meter-description">Vontade de conceder o pedido</p>
+                </div>
+
+                <div class="meter-box">
+                    <h3>Paciência</h3>
+                    <div class="meter-bar">
+                        <div id="patience-fill" class="meter-fill patience-fill"></div>
+                    </div>
+                    <div class="meter-value">
+                        <span id="patience-value">3</span> / 5
+                    </div>
+                    <p class="meter-description">Vontade de continuar a conversa</p>
+                </div>
+            </div>
+
+            <div class="outcome-preview">
+                <h3>Resultado Atual</h3>
+                <div id="current-outcome" class="current-outcome-display">
+                    <div class="outcome-title" id="preview-title">Não, mas algo bom...</div>
+                    <div class="outcome-desc" id="preview-desc">O NPC rejeita o pedido, mas oferece uma alternativa
+                        benéfica ou informação útil.</div>
+                </div>
+            </div>
+
+            <div class="actions-panel">
+                <h3>Ações do Grupo</h3>
+                <div class="action-buttons">
+                    <button id="action-read-btn" class="btn-action">Ler o NPC (Intuição)</button>
+                    <button id="action-argue-btn" class="btn-action">Fazer Argumento</button>
+                    <button id="action-offer-btn" class="btn-action">Aceitar Oferta</button>
+                </div>
+            </div>
+
+            <div class="action-log-container">
+                <h3>
+                    Registro de Ações
+                    <button id="toggle-log-btn" class="btn-toggle-log" title="Mostrar/Ocultar">▼</button>
+                </h3>
+                <div id="action-log" class="action-log"></div>
+            </div>
+        </div>
+
+        <!-- Outcome Phase -->
+        <div id="outcome-phase" class="phase-section hidden">
+            <h2>Resultado da Negociação</h2>
+            <div id="outcome-content" class="outcome-content"></div>
+            <button id="new-negotiation-btn" class="btn-primary">Nova Negociação</button>
+        </div>
+
+        <!-- Reference Tables (Collapsible) -->
+        <div class="reference-section">
+            <button id="toggle-reference-btn" class="btn-toggle">📚 Mostrar/Ocultar Tabelas de Referência</button>
+            <div id="reference-tables" class="reference-tables hidden">
+                <div class="reference-table">
+                    <h3>Atitude → Interesse e Paciência Iniciais</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Atitude</th>
+                                <th>Interesse</th>
+                                <th>Paciência</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Hostil</td>
+                                <td>1</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Suspicioso</td>
+                                <td>2</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Neutro</td>
+                                <td>2</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>Aberto</td>
+                                <td>3</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>Amigável</td>
+                                <td>3</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>Confiante</td>
+                                <td>3</td>
+                                <td>5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="reference-table">
+                    <h3>Interesse → Resultado Final</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Interesse</th>
+                                <th>Resultado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0</td>
+                                <td>Não, e algo ruim...</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Não...</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Não, mas algo bom...</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Sim, mas algo ruim...</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Sim...</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Sim, e algo bom...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="reference-table">
+                    <h3>Ler o NPC (teste de Intuição)</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Resultado</th>
+                                <th>Efeito</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>≤ 11 (Falha)</td>
+                                <td>Paciência -1</td>
+                            </tr>
+                            <tr>
+                                <td>12-16 (Falha Parcial)</td>
+                                <td>NPC é difícil de ler (sem efeito)</td>
+                            </tr>
+                            <tr>
+                                <td>≥ 17 (Sucesso)</td>
+                                <td>Aprende 1 Motivação ou Armadilha</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="reference-table">
+                    <h3>Apelar para Motivação (Persuasão/Intimidação)</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Resultado</th>
+                                <th>Efeito</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>≤ 11 (Falha)</td>
+                                <td>Paciência -1</td>
+                            </tr>
+                            <tr>
+                                <td>12-16 (Sucesso Parcial)</td>
+                                <td>Interesse +1, Paciência -1</td>
+                            </tr>
+                            <tr>
+                                <td>≥ 17 (Sucesso)</td>
+                                <td>Interesse +1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="table-note">Cada Motivação pode ser usada apenas uma vez.</p>
+                </div>
+
+                <div class="reference-table">
+                    <h3>Apelar para Armadilha</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Resultado</th>
+                                <th>Efeito</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Automático</td>
+                                <td>Interesse -1, Paciência -1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="reference-table">
+                    <h3>Argumento Neutro (sem Motivação/Armadilha)</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Resultado</th>
+                                <th>Efeito</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>≤ 11 (Falha)</td>
+                                <td>Interesse -1, Paciência -1</td>
+                            </tr>
+                            <tr>
+                                <td>12-16 (Falha Parcial)</td>
+                                <td>Paciência -1</td>
+                            </tr>
+                            <tr>
+                                <td>≥ 17 (Sucesso)</td>
+                                <td>Interesse +1, Paciência -1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="reference-table">
+                    <h3>Mentir (Enganação)</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Resultado</th>
+                                <th>Efeito</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>≤ 11 (Falha)</td>
+                                <td>Efeito da tabela aplicável + Interesse -1, Paciência -1</td>
+                            </tr>
+                            <tr>
+                                <td>12+ (Sucesso)</td>
+                                <td>Use a tabela aplicável (Motivação, Neutro, etc.)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="table-note">Se o teste de Enganação falhar, aplique a penalidade adicional.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="tracker-footer">
+            <p>Sistema de negociação de <a href="https://www.youtube.com/@mcolville" target="_blank">Matt Colville</a>
+                (Draw Steel) adaptado para D&D 5e por <a href="https://www.youtube.com/@matthewperkins7577"
+                    target="_blank">Matthew Perkins</a></p>
+            <p>Baseado no vídeo: <a href="https://www.youtube.com/watch?v=A5_dDGbiGBk" target="_blank">Matt Colville
+                    made RULES for roleplaying</a></p>
+        </footer>
+    </div>
+
+    <!-- Action Modal -->
+    <div id="action-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3 id="modal-title">Registrar Ação</h3>
+            <div id="modal-body"></div>
+            <div class="modal-buttons">
+                <button id="modal-cancel-btn" class="btn-secondary">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="tracker.js"></script>
+</body>
+
+</html>
